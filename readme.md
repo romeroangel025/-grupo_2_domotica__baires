@@ -10,7 +10,7 @@
 
 - Maximiliano Orellana, 31 años, Lanus.
 
-- Juan Jose Alarcon 
+- Juan Jose Alarcon, 27 años, Lanus.
 
 
 
