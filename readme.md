@@ -4,7 +4,7 @@
 
 #### Nuestros productos seran destinados hacia familias, empresas e instituciones.
 
-- Angel Salvador Romero, 26 años, Longchamps
+- Angel Salvador Romero, 26 años, Longchamps.
 
 - Julieta Schegtel
 
