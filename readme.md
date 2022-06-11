@@ -6,7 +6,7 @@
 
 - Angel Salvador Romero, 26 años, Longchamps.
 
-- Julieta Schegtel
+- Julieta Schegtel, 30 años, San Miguel.
 
 - Maximiliano Orellana
 
