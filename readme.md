@@ -8,7 +8,7 @@
 
 - Julieta Schegtel, 30 años, San Miguel.
 
-- Maximiliano Orellana
+- Maximiliano Orellana, 31 años, Lanus.
 
 - Juan Jose Alarcon 
 
