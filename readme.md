@@ -7,7 +7,6 @@
 - Angel Salvador Romero, 26 años, Longchamps.
 
 - Julieta Schegtel, 30 años, San Miguel.
-<<<<<<< HEAD
 
 - Maximiliano Orellana, 31 años, Lanus.
 
@@ -22,7 +21,6 @@
 - https://www.domoticafibaro.com.ar/index.html Elejimos esta por como dividieron las categorias.
 - https://intelhome.com.ar/ Elejimos esta por el catalogo de productos y el texto del carrousel  
 
-=======
 
 - Maximiliano Orellana, 31 años, Lanus.
 
@@ -45,7 +43,6 @@
 
 ## **Link de Trello** 
 - https://trello.com/b/uZInnRNV/dom%C3%B3tica-baires
->>>>>>> master
 
 
 
