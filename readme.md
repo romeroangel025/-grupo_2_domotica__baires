@@ -20,3 +20,7 @@
 - https://www.dled.com.ar/  Elejimos esta por el menu despegable de contactos.
 - https://www.domoticafibaro.com.ar/index.html Elejimos esta por como dividieron las categorias.
 - https://intelhome.com.ar/ Elejimos esta por el catalogo de productos y el texto del carrousel  
+
+
+### Link al Trello
+- https://trello.com/b/uZInnRNV/dom%C3%B3tica-baires
