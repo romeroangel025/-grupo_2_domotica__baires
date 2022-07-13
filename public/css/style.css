@@ -1,21 +1,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
-@import url(./general.css);
 
-@import url(./index.css);
+@import './general.css';
 
-@import url(./login.css);
+@import './index.css';
 
-@import url(./productCart.css);
+@import './login.css';
 
-@import url(./productDetail.css);
+@import './productCart.css';
 
-@import url(./register.css);
+@import './productDetail.css';
+
+@import './register.css';
 
 @import './header.css';
 
-@import './footer.css'
+@import './header.css';
 
 
 

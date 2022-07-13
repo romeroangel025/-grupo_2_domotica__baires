@@ -1,5 +1,72 @@
+.body__header{
+    background-color: var(--color-azul) ;
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-items: center;
+    gap: 10px ;
+    border-bottom: 1px solid gray;
 
-.body__header--logo div img{
-    width: 50px;
-    
 }
+.body__header a{
+    text-decoration: none;
+    color: white;
+}
+.body__header__navegacion{
+
+}
+.body__header__navegacion--menuBurguer{
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    padding: 5px;
+
+}
+.body__header__navegacion--menuBurguer button{
+   
+}
+.body__header__navegacion--barraDeNavegacion{
+    display: none;
+
+
+}
+.body__header__barraDeBusqueda{
+    order: 1;
+}
+.body__header__barraDeBusqueda form input{
+   border: solid rgba(255, 255, 255, 0.5) 1px;
+    border-radius: 7px ;
+
+}
+.body__header__logo{
+
+}
+.body__header__logo img{ 
+width: 60px;
+}
+.body__header__utilidades{
+
+}
+.body__header__utilidades p{
+    text-align: center;
+}
+.body__header__utilidades p i{
+    font-size: 25px;
+}
+.body__header__utilidades .miCuenta{
+    display: none;
+}
+
+
+/* @media (min-width:768px ){
+
+    .body__header__navegacion--menuBurguer{
+        display: none;
+    }
+
+    .body__header__navegacion--barraDeNavegacion{
+        display: block;
+    }
+
+} */

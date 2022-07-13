@@ -17,44 +17,49 @@
 </head>
 <body class="body__index">
     <header class="body__header">
-        <nav>
-            <div class="body__header--menu">
-                <button><i class="fa-solid fa-bars"></i></button>
-            </div>
-            <div>
-                <ul>
-                    <li><a href="/views/index.html">Inicio</a></li>
-                </ul>
-                <ul>
-                    <li><a href="">Iluminacion</a></li>
-                    <li><a href="">Alarmas y Sensores</a></li>
-                    <li><a href="">electronica, audio y video</a></li>
-                </ul>
-                <ul>
-                    <li><a href="">¿Quienes somos?</a></li>
-                </ul>
-            </div>
-    
-        </nav>
-        <section class="body__header--barraDeBusqueda">
+        <section class="body__header__navegacion">
+            <nav class="body__header__navegacion--menuBurguer">
+                <div>
+                <a href=""><i class="fa-solid fa-bars"></i></a>
+                </div>
+            </nav>
+            <nav  class="body__header__navegacion--barraDeNavegacion">
+                <div>
+                    <ul>
+                        <li><a href="/views/index.html">Inicio</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">Iluminacion</a></li>
+                        <li><a href="">Alarmas y Sensores</a></li>
+                        <li><a href="">electronica, audio y video</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">¿Quienes somos?</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+        </section>
+       
+        <section class="body__header__barraDeBusqueda">
             <form action="">
                 <input type="text" placeholder="¿Que estas buscando?"><button> <i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </section>
-        <section class="body__header--logo">
+        <section class="body__header__logo">
             <div>
                 <img src="/imagenes/logo_1.png" alt="logo">
             </div>
         
            
         </section>
-        <section class="body__header--utilidades">
+        <section class="body__header__utilidades">
             
-            <div>
+            <div class="miCuenta">
                 <p> <i class="fa-solid fa-user"></i> <br> Mi cuenta </p>
             </div>
-            <div>
-               <p> <i class="fa-light fa-cart-shopping"></i> <br> Mi carrito  </p> 
+            <div class="miCarrito" >
+               <p> <i class="fa-solid fa-cart-shopping"></i> <br> Mi carrito  </p> 
             </div>
 
         </section>
