@@ -1,3 +1,5 @@
+
+
 .body__header{
     background-color: var(--color-azul) ;
     padding: 10px 0;
@@ -7,7 +9,11 @@
     align-items: center;
     gap: 10px ;
     border-bottom: 1px solid gray;
-
+   
+}
+.body__header p,li {
+    color: white;
+    
 }
 .body__header__navegacion{
 
@@ -33,9 +39,13 @@
 .body__header__barraDeBusqueda{
     order: 1;
 }
+.body__header__barraDeBusqueda form{
+    margin: auto 70px;
+}
 .body__header__barraDeBusqueda form input{
    border: solid rgba(255, 255, 255, 0.5) 1px;
     border-radius: 7px ;
+    
 
 }
 .body__header__logo{
@@ -118,6 +128,7 @@ width: 60px;
         margin: auto;
     }
     .body__header__utilidades{
+        
         order: 1;
         margin: auto;
     }
@@ -128,10 +139,24 @@ width: 60px;
         display: none;
     }
 
+}
 
+@media(min-width:1024px){
+    .body__header__logo{
+        margin: auto 40px;
+    }
+    .body__header__utilidades{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: auto 40px;
+        gap: 15px;
+    }
 
-
-
-
-
+    .body__header__utilidades .miCuenta{
+        display: block;
+    }
+    .body__header__utilidades .miCarrito{
+        display: block;
+    }
 }
