@@ -40,7 +40,7 @@
     order: 1;
 }
 .body__header__barraDeBusqueda form{
-    margin: auto 70px;
+    margin: auto 60px;
 }
 .body__header__barraDeBusqueda form input{
    border: solid rgba(255, 255, 255, 0.5) 1px;
@@ -52,23 +52,40 @@
 
 }
 .body__header__logo img{ 
-width: 60px;
+width: 50px;
 }
 .body__header__utilidades{
+    display: flex;
+    justify-content: center;
+
+}
+.body__header__utilidades i{
+    color: white;
+    font-size: 25px;
+    justify-content: center;
+    
+  
 
 }
 .body__header__utilidades p{
     text-align: center;
 }
-.body__header__utilidades p i{
-    font-size: 25px;
-}
+
+
 .body__header__utilidades .miCuenta{
     display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
+
 .body__header__utilidades .miCarrito{
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 @media(min-width:768px){
 
     .body__header{
@@ -132,12 +149,19 @@ width: 60px;
         order: 1;
         margin: auto;
     }
+    .body__header__utilidades i{
+        font-size: 30px;
+    }
+      
     .body__header__utilidades .miCuenta{
-        display: block;
+        display:flex;
     }
     .body__header__utilidades .miCarrito{
         display: none;
     }
+    .body__header__logo img{ 
+        width: 60px;
+        }
 
 }
 
@@ -154,9 +178,19 @@ width: 60px;
     }
 
     .body__header__utilidades .miCuenta{
-        display: block;
+        display: flex;
     }
     .body__header__utilidades .miCarrito{
-        display: block;
+        display: flex;
+    }
+    .body__header__barraDeBusqueda form input{
+        width: 260px;
+        height: 30px;
+        border: solid rgba(255, 255, 255, 0.5) 1px;
+        border-radius: 9px ;
+
+}
+.body__header__logo img{ 
+    width: 65px;
     }
 }
