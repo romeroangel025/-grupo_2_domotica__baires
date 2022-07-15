@@ -2,12 +2,12 @@
 
 .body__header{
     background-color: var(--color-azul) ;
-    padding: 10px 0;
+    padding: 20px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
     align-items: center;
-    gap: 10px ;
+    gap: 20px 10px;
     border-bottom: 1px solid gray;
    
 }
@@ -45,8 +45,9 @@
 .body__header__barraDeBusqueda form input{
    border: solid rgba(255, 255, 255, 0.5) 1px;
     border-radius: 7px ;
+}
+.lupita{
     
-
 }
 .body__header__logo{
 
@@ -110,9 +111,13 @@ width: 50px;
     margin: auto;
     border-top: solid 1px rgba(236, 228, 228, 0.5);
 }
+.lupita{width: 22px;
+    height: 22px;
+    border-radius: 5px;}
 .body__header__navegacion--barraDeNavegacion div{
    
     margin:10px;
+    padding: 0px 10px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -123,6 +128,7 @@ width: 50px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    gap:15px
 }
 .body__header__navegacion--barraDeNavegacion li{
     display: block;
@@ -178,6 +184,9 @@ width: 50px;
         margin: auto 40px;
         gap: 15px;
     }
+    .lupita{width: 25px;
+        height: 25px;
+        border-radius: 5px;}
 
     .body__header__utilidades .miCuenta{
         display: flex;
