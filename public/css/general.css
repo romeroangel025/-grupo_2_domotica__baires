@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --color-azul:#2F8F9D;
+
+    --color-azul-claro:#3BACB6;
+
+    --color-celeste:#82DBD8;
+
+    --color-celeste-claro:#B3E8E5;
+   
+    
+    --color-negro: #111;
+    --color-blanco: #fff;
+
+    --font-general: 'Open Sans';
+
+    --font-size-cuerpos: 14px;
+    --font-size-titulos: 34px;
+    --font-size-precios: 14px;
+    --font-size-descuentos: 14px;
+    --font-size-descripciones: 14px;
+}
