@@ -14,36 +14,79 @@
 
     <title>Carrito</title>
   </head>
-  <body class="body__container">
-    <main>
-       <div class="header">
-        <div>
-          <button>x</button>
-        </div>
-        <div>
-          <h1>carrito de compras</h1>
-        </div>
-      <section class="main__productos">
-        <article><img src="" alt="" /></article>
-        <article>
-          <p>Control Remoto Universal 
-            Inteligente Wifi Domotica Smart</p>
+  <body class="body_carrito" >
+    <header class="header_carrito">
+        <h1>X carrito de compras </h1>
+    </header>
+    <main class="carrito_main">
+        <section class="carrito_main_section">
+            <article class="carrito_main_section_article">
+                <div class="carrito_main_section_article_imagen">
+                    <img src="/public/images/" alt="">
+                </div>
+                <div class="carrito_main_section_article_datos">
+                    <div>
+                        <p>Lámpara Led Wifi E27 10w Rgb Luz Fria Luz Calida Smart Life</p>
+                    </div>
+                    <div>
+                        <form action="">
+                        <button class="menos">- </button>
+                        <button class="numero"> 1 </button>
+                        <button class="mas"> +</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="carrito_main_section_article_precio">
+                    <h2>X</h2>
+                    <P>$1800</P>
+                </div>
+            </article>
+            <article class="carrito_main_section_article">
+                <div class="carrito_main_section_article_imagen">
+                    <img src="/imagenes/control.webp" alt="">
+                </div>
+                <div class="carrito_main_section_article_datos">
+                    <div>
+                        <p>Control Remoto Universal Inteligente Wifi Domotica Smart</p>
+                    </div>
+                    <div>
+                        <form action="">
+                        <button class="menos">- </button>
+                        <button class="numero"> 1 </button>
+                        <button class="mas"> +</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="carrito_main_section_article_precio">
+                    <h2>X</h2>
+                    <P>$3000</P>
+                </div>
+            </article>
           
-          
-          <button></button>
-          <button></button>
-          <p></p>
-        </article>
-      </section>
-      <section>
-        <article><img src="" alt="" /></article>
-        <article>
-          <p>Kit Domótica Para Portón Automático Con Sensor De Apertura</p>
-          <button ></button>
-          <button></button>
-          <p></p>
-        </article>
-      </section>  
+        </section>
+        <section class="carrito_main_section">
+            <div class="carrito_main_section_subtotal">
+                <h5>SUBTOTAL:</h5>
+                <h5>$ 4800</h5>
+            </div>
+            <div class="carrito_main_section_total">
+                <h3>TOTAL:</h3>
+                <h3>$ 3000</h3>
+            </div>
+            <div class="carrito_main_section_cuotas">
+                <p>O hasta 3 cuotas de $1000</p>
+            </div>
+
+        </section>
+       
+        <section class="carrito_main_section_compras">
+            <form action="" method="">
+                <button type="submit">iniciar compra </button>
+               <a href="">ver mas productos</a>
+            </form>
+        </section>
     </main>
-  </body>
+    
+</body>
+  
 </html>
