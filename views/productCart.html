@@ -1,17 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Carrito</title>
-</head>
-<body>
+  </head>
+  <body class="body_carrito" >
+    <header class="header_carrito">
+        <h1>X Carrito de compras </h1>
+    </header>
+    <main class="carrito_main">
+        <section class="carrito_main_section">
+            <article class="carrito_main_section_article">
+                <div class="carrito_main_section_article_imagen">
+                    <img src="/public/images/" alt="">
+                </div>
+                <div class="carrito_main_section_article_datos">
+                    <div>
+                        <p>Lámpara Led Wifi E27 10w Rgb Luz Fria Luz Calida Smart Life</p>
+                    </div>
+                    <div>
+                        <form action="">
+                        <button class="menos">- </button>
+                        <button class="numero"> 1 </button>
+                        <button class="mas"> +</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="carrito_main_section_article_precio">
+                    <h2>X</h2>
+                    <P>$1800</P>
+                </div>
+            </article>
+            <article class="carrito_main_section_article">
+                <div class="carrito_main_section_article_imagen">
+                    <img src="/imagenes/control.webp" alt="">
+                </div>
+                <div class="carrito_main_section_article_datos">
+                    <div>
+                        <p>Control Remoto Universal Inteligente Wifi Domotica Smart</p>
+                    </div>
+                    <div>
+                        <form action="">
+                        <button class="menos">- </button>
+                        <button class="numero"> 1 </button>
+                        <button class="mas"> +</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="carrito_main_section_article_precio">
+                    <h2>X</h2>
+                    <P>$3000</P>
+                </div>
+            </article>
+          
+        </section>
+        <section class="carrito_main_section">
+            <div class="carrito_main_section_subtotal">
+                <h5>SUBTOTAL:</h5>
+                <h5>$ 4800</h5>
+            </div>
+            <div class="carrito_main_section_total">
+                <h3>TOTAL:</h3>
+                <h3>$ 4800</h3>
+            </div>
+            <div class="carrito_main_section_cuotas">
+                <p>O hasta 3 cuotas de $1600</p>
+            </div>
+
+        </section>
+       
+        <section class="carrito_main_section_compras">
+            <form action="" method="">
+                <button type="submit">Iniciar compra </button>
+               <a href="">Ver mas productos</a>
+            </form>
+        </section>
+    </main>
     
 </body>
+  
 </html>
