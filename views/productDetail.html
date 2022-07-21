@@ -8,10 +8,85 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1e26533911.js" crossorigin="anonymous"></script> 
 
-    <title>Detalle de producto</title>
+    <title>Detalle Del Producto</title>
+
 </head>
-<body>
+<body class="body__detalle">
+    <header class="body__header">
+        <section class="body__header__navegacion">
+            <nav class="body__header__navegacion--menuBurguer">
+                <div>
+                <a href=""><i class="fa-solid fa-bars"></i></a>
+                </div>
+            </nav>
+        </section class="body__header__navegacion">
+        <nav  class="body__header__navegacion--barraDeNavegacion">
+            <div>
+                <ul>
+                    <li><a href="">Inicio</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="">Iluminacion</a></li>
+                    <li><a href="">Alarmas y Sensores</a></li>
+                    <li><a href="">electronica, audio y video</a></li>
+                </ul>
+            </div>
+            <div><ul>
+                <li><a href="">¿Quienes somos?</a></li>
+                </ul>
+            </div>
+            
+        </nav>
+       
+        <section class="body__header__barraDeBusqueda">
+            <form action="">
+                <input type="text" placeholder="¿Que estas buscando?"><button class="lupita"> <i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </section>
+        <section class="body__header__logo">
+            <div>
+                <img src="/imagenes/logo_1.png" alt="logo">
+            </div>
+        
+           
+        </section>
+        <section class="body__header__utilidades">
+            
+            <div class="miCuenta">
+             <a href="/views/login.html"><i class="fa-solid fa-user"></i></a> 
+             <p>Mi cuenta</p> 
+            </div>
+            <div class="miCarrito" >
+               <a href="/views/productCart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+               <p>Mi carrito</p>  
+            </div>
+
+        </section>
+
+    </header>
+    <main class="detail__main">
+        <section class="detail__main__section general__main__section">
+            <article class="detail__main__section__article">
+                <img src="/imagenes/Lámpara Smart Rgb inteligente Wifi.png" alt="">
+                <div class="detail__main__section--images">
+                    <img src="/imagenes/Lámpara Smart2.png" alt="">
+                    <img src="/imagenes/Caja Lámpara Smart3.png" alt="">
+                    <img src="/imagenes/Lámpara Smart4.png" alt="">
+                    <img src="/imagenes/Lámpara Smart5.png" alt="">
+                </div>
+            </article>
+            <div class="detail__main__section--content">
+                <h2>Lámpara Smart Rgb Inteligente Wifi</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quia, eius autem veniam accusantium
+                    maiores doloribus aliquid possimus quae debitis?</p>
+                <a class="general__button__product " href="">Añadir al carrito</a>
+            </div>
+        </section>
+    </main>
     
 </body>
 </html>

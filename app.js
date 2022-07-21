@@ -7,7 +7,7 @@ const port =3030;
 
 app.use(express.static("public"));
 
-app.get("/",(req,res)=>res.sendFile(path.resolve(__dirname,"views","index.html")))
+app.get("/",(req,res)=>res.sendFile(path.resolve(__dirname,"views","productDetail.html")))
 app.get("/DetalleDelProducto",(req,res)=>res.sendFile(path.resolve(__dirname,"views","productDetail.html")))
 app.get("/CarritoDeCompras",(req,res)=>res.sendFile(path.resolve(__dirname,"views","productCart.html")))
 app.get("/Registro",(req,res)=>res.sendFile(path.resolve(__dirname,"views","register.html")))
