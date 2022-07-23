@@ -108,10 +108,16 @@ width: 50px;
     align-items: center;
 }
 
+@media(min-width:320px){
+    .detail__main__section--images {
+        display: none;
+    } 
+}
+
 @media(min-width:768px){
 
-    .body__header{
-        padding: 20px 5px;
+.body__header{
+    padding: 20px 5px;
     justify-content:row;
     
         gap: 20px;
@@ -204,6 +210,9 @@ width: 50px;
         }
     
 .detail__main__section--images{
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: space-between;
             flex-direction: column;
             gap: 5px;
          }
