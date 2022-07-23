@@ -21,27 +21,29 @@
 .login__form__container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 100%;
   gap: 20px;
 }
 
 .form__label {
   display: flex;
-  
+  justify-content: center;
   font-size: 12px;
   flex-direction: column;
   align-items: flex-start;
   align-items: center;
   width: 90%;
   gap: 18px;
+  
 }
 
 .form__label label{
 align-self: flex-start;
 margin-bottom:-16px;
-
+padding-left: 60px;
+font-weight: 900;
 }
 
 
@@ -55,6 +57,7 @@ margin-bottom:-16px;
 }
 
 .form__label input {
+  max-width: 600px;
   width: 100%;
   padding: 8px;
   border: 1px double var(--color-azul-claro);
@@ -68,6 +71,7 @@ margin-bottom:-16px;
 }
 
 .form__label button {
+  max-width: 250px;
   background-color: var(--color-azul-claro);
   width: 75%;
   padding: 10px;
