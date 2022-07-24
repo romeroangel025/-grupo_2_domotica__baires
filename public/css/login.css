@@ -1,4 +1,4 @@
-.login__form__container {
+Ñ.login__form__container {
   width: 90%;
   font-family: var(--font-general);
 }
@@ -39,12 +39,18 @@
   
 }
 
-.form__label label{
-align-self: flex-start;
-margin-bottom:-16px;
-padding-left: 60px;
-font-weight: 900;
-}
+
+  .form__label label{
+    margin-bottom:-16px;
+    font-weight: 900;
+    font-size: 1rem;
+    }
+    
+
+
+
+
+
 
 
 
@@ -62,9 +68,14 @@ font-weight: 900;
   padding: 8px;
   border: 1px double var(--color-azul-claro);
   border-radius: 20px;
+  border-color:var(--color-azul);
+  outline: 0 none;
+  box-shadow: 1px 1px 1px 1px var(--color-azul);
+
 }
 
 .form__label a {
+  
   font-size:12px;
   color: var(--color-negro);
 
@@ -90,4 +101,19 @@ display:flex;
 width: 100%;
 justify-content: center;
 flex-wrap: wrap;
+}
+
+@media (min-width: 767px){
+
+
+ 
+  .form__label label{
+    margin-bottom:-16px;
+    font-weight: 900;
+    font-size: 1rem;
+    }
+    
+
+
+
 }
