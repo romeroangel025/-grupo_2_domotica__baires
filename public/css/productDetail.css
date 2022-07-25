@@ -143,6 +143,12 @@ h6{
     gap: 20px;
 
 }
+
+.detalle_main_section_cuotas {
+    padding-left: 5px;
+
+}
+
 .detalle_main_section_caracteristicas-formulario{
     display: flex;
     flex-wrap: wrap;
