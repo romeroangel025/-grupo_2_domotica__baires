@@ -83,19 +83,19 @@ width: 50px;
     margin: 0;
     padding: 0;
 }
-h1{
+/* h1{
     text-align: center;
     padding: 15px;
     background-color: aqua;
-}
-h4{
+} */
+.main_h4{
     margin: 10px 16px;
     color: rgba(128, 128, 128, 0.9);
 }
 .unoo{
     display: none;
 }
-h6{
+.main_h6{
     text-align: center;
     padding: 15px;
     font-size: 14px;
