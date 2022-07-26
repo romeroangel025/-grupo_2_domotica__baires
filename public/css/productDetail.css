@@ -499,11 +499,18 @@ margin: 10px;
     width: 65px;
     }
 
-    .unoo{display:block;
-    padding: 15px;
-font-size: 18px;}
-    .doos{display: none;}
-    .tres{display: none;}
+    .unoo{
+        display:block;
+        padding: 15px;
+        font-size: 18px;
+        color: grey;
+}
+    .main_h4{
+        display: none;
+    }
+    .main_h6{
+        display: none;
+    }
     .detalle_main_article{
         width: 98%;
         flex-direction:row;
