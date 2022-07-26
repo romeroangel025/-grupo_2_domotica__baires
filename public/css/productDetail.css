@@ -143,6 +143,12 @@ h6{
     gap: 20px;
 
 }
+
+.detalle_main_section_cuotas {
+    padding-left: 5px;
+
+}
+
 .detalle_main_section_caracteristicas-formulario{
     display: flex;
     flex-wrap: wrap;
@@ -222,6 +228,72 @@ h6{
 
 
 }
+
+.index__footer{
+    background-color: var(--color-azul);
+    font-display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.footer__seccion{
+
+}
+.footer__seccion div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.footer__seccion ul{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.footer__seccion li{
+    text-decoration:none;
+    list-style: none;    flex-direction: column;
+    flex-wrap: wrap;
+}
+.footer__seccion a{
+    text-decoration: none;
+}
+.footer__seccion h3{
+    padding: 5px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+}
+.foter__redes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+}
+
+.footer__seccion li{
+
+padding:5px;
+text-decoration: none;
+
+}
+.footer__redes ul{
+    width: 55%;
+    height:50px;
+    margin-top: 10px 5px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.descripcion-final p{
+    font-size: 0.8rem;
+    
+    margin: 10px;
+    padding: 10px 5px 20px;
+}
+
+
 @media (min-width: 768px){
     .body__header{
         padding: 20px 5px;
@@ -351,15 +423,15 @@ h6{
         .detalle_main_section_caracteristicas p{
             font-size: 26px;
             padding: 10px;
-            
-
         }
         
         .detalle_main_section_caracteristicas h5{
             font-size: 20px;
-            padding: 10;
+            padding: 15px;
 
         }
+
+
         .detalle_main_section_caracteristicas_botones div{
             width: 40%;
             height: 40px;
@@ -381,6 +453,21 @@ h6{
         font-size: 18px;
     }
 }
+
+.footer_principal{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap ;
+    justify-content:space-around;
+    border-bottom:solid 1px rgba(236, 228, 228, 0.5);;
+
+}
+
+.footer__seccion {
+justify-content: space-around;
+margin: 10px;   
+}
+
 @media (min-width: 1024px){
     .body__header__logo{
         margin: auto 40px;
@@ -492,4 +579,9 @@ width: 28%;}
 .detalle_main_section_caracteristicas .comprar{
     font-size: 22px;
 }
+
+.descripcion-final{
+    display: flex;
+    justify-content: space-between;
+}  
 }
