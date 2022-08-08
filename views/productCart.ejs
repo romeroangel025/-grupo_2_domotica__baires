@@ -2,9 +2,7 @@
 <html lang="en">
     <%- include('./partials/head') %>
   <body class="body_carrito" >
-    <header class="header_carrito">
-        <h1>X Carrito de compras </h1>
-    </header>
+    <%- include('./partials/header') %>
     <main class="carrito_main">
         <section class="carrito_main_section">
             <article class="carrito_main_section_article">
@@ -24,7 +22,7 @@
                     </div>
                 </div>
                 <div class="carrito_main_section_article_precio">
-                    <h2>X</h2>
+                    <h2><i class="fa-regular fa-trash-can"></i></h2>
                     <P>$1800</P>
                 </div>
             </article>
@@ -45,7 +43,7 @@
                     </div>
                 </div>
                 <div class="carrito_main_section_article_precio">
-                    <h2>X</h2>
+                    <h2><i class="fa-regular fa-trash-can"></i></h2>
                     <P>$3000</P>
                 </div>
             </article>
@@ -73,6 +71,7 @@
             </form>
         </section>
     </main>
+    <%- include('./partials/footer') %>
     
 </body>
   
