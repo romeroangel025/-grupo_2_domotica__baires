@@ -1,61 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <%- include('./partials/head') %>
+
 <body class="body__detalle">
-    <header class="body__header">
-        <section class="body__header__navegacion">
-            <nav class="body__header__navegacion--menuBurguer">
-                <div>
-                <a href=""><i class="fa-solid fa-bars"></i></a>
-                </div>
-            </nav>
-        </section class="body__header__navegacion">
-        <nav  class="body__header__navegacion--barraDeNavegacion">
-            <div>
-                <ul>
-                    <li><a href="">Inicio</a></li>
-                </ul>
-            </div>
-            <div>
-                <ul>
-                    <li><a href="">Iluminacion</a></li>
-                    <li><a href="">Alarmas y Sensores</a></li>
-                    <li><a href="">electronica, audio y video</a></li>
-                </ul>
-            </div>
-            <div><ul>
-                <li><a href="">¿Quienes somos?</a></li>
-                </ul>
-            </div>
-            
-        </nav>
-       
-        <section class="body__header__barraDeBusqueda">
-            <form action="">
-                <input type="text" placeholder="¿Que estas buscando?"><button class="lupita"> <i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </section>
-        <section class="body__header__logo">
-            <div>
-                <img src="/imagenes/logo_1.png" alt="logo">
-            </div>
-        
-           
-        </section>
-        <section class="body__header__utilidades">
-            
-            <div class="miCuenta">
-             <a href="/views/login.html"><i class="fa-solid fa-user"></i></a> 
-             <p>Mi cuenta</p> 
-            </div>
-            <div class="miCarrito" >
-               <a href="/views/productCart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-               <p>Mi carrito</p>  
-            </div>
 
-        </section>
-
-    </header>
+    <%- include('./partials/header') %>
+    
     <main class="detalle_main">
         <h4 class="unoo">Inicio> Iluminación> Producto></h4>
         <article class="detalle_main_article">
@@ -134,64 +85,7 @@
 
     </main>
 
-    <footer class="index__footer">
-        <article class=footer_principal>
-            <section class="footer__seccion" >
-                <div>
-                    <h3>Categorias</h3>
-                </div>
-                <div>
-                    <ul>
-                        <li><a href="">Inicio</a></li>
-                        <li><a href="">Iluminacion</a></li>
-                        <li><a href="">Alarmas y Sensores</a></li>
-                        <li> <a href="">Electronica, Audio y Video</a></li>
-                        <li><a href="">¿Quienes somos?</a></li>
-                    </ul>
-                </div>
-            </section>
-    
-            <section class="footer__seccion" >
-                <div>
-                    <h3>Contacto</h3>
-                </div>
-                <div>
-                    <ul>
-                        <li><a href=""><i class="fa-brands fa-whatsapp"></i> 15-1324-5768</a></li>
-                        <li><a href=""><i class="fa-solid fa-phone"></i> 4240-9876</a></li>
-                        <li><a href=""><i class="fa-solid fa-at"></i> domoticabaires@gmail.com</a></li>
-                        <li><a href=""><i class="fa-solid fa-location-pin"></i> San Miguel, Buenos Aires</a></li>
-                        
-                    </ul>
-                </div>
-            </section>
-            <section class="footer__seccion" >
-                <div class="footer__redes" class="ultimooo">
-                    <div>
-                        <h3>Sigamos Conectados</h3>
-                    </div>
-                    <div>
-                        <ul class="foter__redes--redes">
-                            <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-    
-            </section>
-        </article>
-
-        <article class="descripcion-final">
-            <p>Copyrigth Domótica Baires - 2022.
-                Todos los derechos reservados
-                Defensa de las y los consumidores.Para reclamos
-                <strong><a href="">Ingrese aquí.</a></strong> </p>
-            <p>Desarrollado por Grupo <strong>2</strong></p>
-        </article>
-        
-    </footer>
+    <%- include('./partials/footer') %>
     
 </body>
 </html>
