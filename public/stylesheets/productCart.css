@@ -1,0 +1,162 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header_carrito{
+  height: 60px;
+  background-color:#2f8f9d;
+  color: white;
+  text-align: center;
+  padding: 10px;
+
+}
+.carrito_main{
+
+}
+.carrito_main_section{ margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+
+
+}
+.carrito_main_section_article{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  border: 1px solid rgba(128,128,128,0.5);
+  margin-bottom: 10px;
+
+
+}
+.carrito_main_section_article_imagen{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 22%;
+
+}
+.carrito_main_section_article_imagen img{
+  width:100%;
+}
+.carrito_main_section_article_datos{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+  width: 60%;
+
+  padding: 5px;
+}
+.carrito_main_section_article_datos p{
+  font-size: 15px;
+}
+.carrito_main_section_article_datos form{
+  display: flex;
+  justify-content: space-around;
+  width: 80px;
+  height: 25px;
+  padding: 2px;
+border-radius: 5px;
+  background-color:#2f8f9d;
+}
+.carrito_main_section_article_datos form button{
+  width: 15px;
+  border: none;
+  background-color:#2f8f9d;
+  color: white;
+}
+.carrito_main_section_article_datos div{
+
+  background-color: white;
+  
+}
+.carrito_main_section_article_precio{
+  width: 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.carrito_main_section_subtotal{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  border: 1px solid rgba(128,128,128,0.5);
+  margin-bottom: 5px;
+}
+.carrito_main_section_subtotal h5{
+  padding: 5px;
+
+}
+
+.carrito_main_section_total{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  border: 1px solid rgba(128,128,128,0.5);
+  margin-bottom: 5px;
+}
+.carrito_main_section_total h3{
+  padding: 5px;
+}
+
+.carrito_main_section_cuotas{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 100%;
+  border: 1px solid rgba(128,128,128,0.5);
+  margin-bottom: 5px;
+}
+.carrito_main_section_cuotas p{
+  margin: 5px;
+}
+
+
+.carrito_main_section_compras{
+  width: 50%;
+  margin: auto;
+
+}
+.carrito_main_section_compras form{
+  display: flex;
+flex-direction: column;
+margin: auto;
+justify-content: center;
+align-items: center;
+}
+.carrito_main_section_compras form button{
+  background-color: #2f8f9d;
+  color: white;
+  width: 100%;
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 16px;
+
+}
+.carrito_main_section_compras form a{
+  text-decoration: none;
+  color: black;
+  padding: 8px;
+}
+
+@media(min-width:768px) {
+  .body_carrito{
+      width: 600px;
+  }
+  .body_carrito p{font-size: 17;}
+  .body_carrito h5{
+      font-size: 16px;
+  }
+  .body_carrito h3{
+      font-size: 21px;
+  }
+  
+}
