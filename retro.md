@@ -1,32 +1,38 @@
 # Retrospectiva Sprint 3:
 
-Empezar a hacer:
+# Empezar a hacer:
 
 •   Repasar contenidos vistos.
 •   Llevar a la práctica lo incorporado.
 •   Hacer reuniones de apoyo si se requiere.
-•   Organizarse en días fijos para daylis.
+•   Pactar reuniones en días y horarios fijos.
+•   Implementar nuevos conocimientos.
 
-Hacer más:
+
+# Hacer más:
 
 •   Reuniones por meet u otros medios.
 •   Comunicación mediante whatsApp.
 •   Designar tareas en trello.
+•   Revisones del trabajo de cada uno.
 •   Mejoras en el proyecto.
 
-Seguir haciendo:
+# Seguir haciendo:
 
 •   Colaborar en las tareas.
 •   Escuchar y debatir.
 •   Mantener la comunicación.
 •   Reuniones por meet u otros medios.
+•   Ser comprometidos.
 
-Hacer menos:
-
-•   Atrasarse en PG o Prácticos algunos integrantes.
-•   No practicar.
-
-Dejar de hacer:
+# Hacer menos:
 
 •   Atrasarse en PG o Prácticos algunos integrantes.
 •   No practicar.
+•   Administrar mejor el tiempo.
+
+# Dejar de hacer:
+
+•   Atrasarse en PG o Prácticos algunos integrantes.
+•   No practicar.
+•   Complicar cosas innecesariamente.
