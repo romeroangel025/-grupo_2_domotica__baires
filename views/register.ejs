@@ -2,68 +2,11 @@
 <html lang="en">
     <%- include('./partials/head') %>
 <body>
-    <body class="body__index">
-        <header class="body__header">
-            <section class="body__header__navegacion">
-                <nav class="body__header__navegacion--menuBurguer">
-                    <div>
-                    <a href=""><i class="fa-solid fa-bars"></i></a>
-                    </div>
-                </nav>
-            </section class="body__header__navegacion">
-            <nav  class="body__header__navegacion--barraDeNavegacion">
-                <div>
-                    <ul>
-                        <li><a href="">Inicio</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><a href="">Iluminacion</a></li>
-                        <li><a href="">Alarmas y Sensores</a></li>
-                        <li><a href="">electronica, audio y video</a></li>
-                    </ul>
-                </div>
-                
-                <div><ul>
-                    <li><a href="">¿Quienes somos?</a></li>
-                    </ul>
-                </div>
-                    
-                    
-                
-            </nav>
-           
-            <section class="body__header__barraDeBusqueda">
-                <form action="">
-                    <input type="text" placeholder="¿Que estas buscando?"><button class="lupita"> <i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-            </section>
-            <section class="body__header__logo">
-                <div>
-                    <img src="/imagenes/logo_1.png" alt="logo">
-                </div>
-            
-               
-            </section>
-            <section class="body__header__utilidades">
-                
-                <div class="miCuenta">
-                 <a href="/views/login.html"><i class="fa-solid fa-user"></i></a> 
-                 <p>Mi cuenta</p> 
-                </div>
-                <div class="miCarrito" >
-                   <a href="/views/productCart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-                   <p>Mi carrito</p>  
-                </div>
     
-            </section>
-    
-        </header>
+        <!-- Header -->
+    <%- include('./partials/header') %>
          
-
-
-        <main>
+ <main>
             
            
             <main class="login__form__container">
@@ -81,7 +24,7 @@
                 
                 <section class="login__form__container">
                          
-                            <h2>Inicia Sesion</h2>
+                            <h2>Registrate</h2>
                            
                 
                     <form class="form__label" action="/InicioDeSesion" method="POST">
@@ -105,10 +48,10 @@
                 
                 
                 
-         <button>Captcha</button>
+                     <button>Captcha</button>
                 
                 
-                        <button type="submit">Iniciar Sesion</button>
+                        <button type="submit">Registrarse</button>
                 
                 
                 
@@ -117,8 +60,8 @@
                        
                 <section class="login__footer__container">
                     <section>
-                        <h5><a href=""></a>¿No tenes cuenta aún?</h5>
-                        <h5><a href=""></a>Crear cuenta</h5>
+                        <a href="/users/login"><h5>¿Tenes cuenta? ingresá</h5></a>
+                       
                     </section>
                    
                 </section>

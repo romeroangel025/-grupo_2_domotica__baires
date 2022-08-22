@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head') %>
+  <body>
+    <!-- Header -->
+    <%- include('./partials/header') %>
+    <main class=>
+        <section class="login__form__container">
+            <h1>Editar productos</h1>
+            <div>
+                
+            <a href="/products/productAdd"><p>¿Desea crear un producto?</p></a>
+            </div>
+            <form class="form__label" action="" method="">
+                <label for="nombre">Nombre del producto</label>
+                <input type="text" name="nombre" />
+
+                <label for="descripcion">Descripción del producto</label>
+                <input type="text" name="descripcion" />
+
+                <label for="categoria">Categoria</label>
+                <select class="form_select" name="categoria" id="categoria">
+                    <option>Selecciona una opción</option>
+                    <option value="teclas inalmábricas">Teclas inalámbricas</option>
+                    <option value="Controles remotos">Controles remotos smart</option>
+                    <option value="detector">Detectores</option>
+                    <option value="sensor">Sensores</option>
+                    <option value="Camara">Camaras</option>
+                    <option value="cerradura">Cerraduras</option>
+                    <option value="modulo">Modulos</option>
+                    <option value="controlador">Controladores</option>
+                    <option value="iluminacion">Iluminacion</option>
+                    <option value="alarmas">Alarmas</option>
+                  </select>
+
+                <label for="color">Color</label>
+                <input type="text" name="color" />
+
+                <label for="precio">Precio</label>
+                <input type="number" name="precio" />
+
+                <label for="imagen">Suba la imagen del producto</label>
+                <input type="file" name="imagen" />
+                <button type="submit">Edite su producto</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Header -->
+    <%- include('./partials/footer') %>
+  </body>
+</html>
