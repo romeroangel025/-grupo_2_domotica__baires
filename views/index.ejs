@@ -27,7 +27,7 @@
     <section class="index_main_section">
         <% oferta.forEach(({nombre,imagen,descripcion,precio,descuento,id}) => { %>
         <article class="index_main_section_article">
-            <a href="/detail/<%= id %> ">
+            <a href="/products/detail/<%= id %>">
                 <div class="index_main_section_article_div-imagen">
                     <img src="/imagenes/imageProducts/<%= imagen %>"  alt="ce">
                 </div>
@@ -40,7 +40,7 @@
             </div>
             <div class="index_main_section_article_div-button">
                 <button type="submit" class="comprar">Comprar</button>
-                <a href="/products/detail"><button type="menu" class="ver">Ver</button></a>
+                <a href="/products/detail/<%= id %>"><button type="menu" class="ver">Ver</button></a>
             </div>
         </article>
         <% }) %>
