@@ -23,136 +23,53 @@
     </section>
     <main class="index_main" index_main>
         <h2>Productos destacados</h2>
-        <section class="index_main_section">
-            <article class="index_main_section_article">
-                <a href="/DetalleDelProducto">
-                    <div class="index_main_section_article_div-imagen">
-                        <img src="/imagenes/protector-heladera.jpg" alt="ce">
-                    </div>
-                </a>
-                
-                <div class="index_main_section_article_div-datos">
-                    <h3>$2.359,00</h3>
-                    <p>Protector De Tensión Heladeras Freezer Cava Pr3 Stand By</p>
-                    <h5> <i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de $786,33</h5>
-                </div>
-                <div class="index_main_section_article_div-button">
-                    <button type="submit" class="comprar">Comprar</button>
-                    <a href="/products/detail"><button type="menu" class="ver">Ver</button></a>
-                </div>
-            </article>
 
-            <article class="index_main_section_article">
+    <section class="index_main_section">
+        <% oferta.forEach(({nombre,imagen,descripcion,precio,descuento,id}) => { %>
+        <article class="index_main_section_article">
+            <a href="/DetalleDelProducto/<%= id %> ">
                 <div class="index_main_section_article_div-imagen">
-                    <img src="/imagenes/camara de seguridad.png" alt="ce">
+                    <img src="/imagenes/imageProducts/<%= imagen %>"  alt="ce">
                 </div>
-                <div class="index_main_section_article_div-datos">
-                    <h3>$6.659,00</h3>
-                    <p>Cámara Wi-Fi Smart Full HD Etheos</p>
-                    <h5> <i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de $2.219,67</h5>
-                </div>
-                <div class="index_main_section_article_div-button">
-                    <button type="submit" class="comprar">Comprar</button>
-                    <a href="/products/detail"><button type="menu" class="ver">Ver</button></a>
-                </div>
-            </article>
-
-            <article class="index_main_section_article">
-                <div class="index_main_section_article_div-imagen">
-                    <img src="/imagenes/extractor de aire.jpg" alt="extractor de aire">
-                </div>
-                <div class="index_main_section_article_div-datos">
-                    <h3>$14.139,00</h3>
-                    <p>Extractor de Aire 64W Cocina Baño Satelital 10 cm / 4"</p>
-                    <h5> <i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de $4.713,00</h5>
-                </div>
-                <div class="index_main_section_article_div-button">
-                    <button type="submit" class="comprar">Comprar</button>
-                    <a href="/products/detail"><button type="menu" class="ver">Ver</button></a>
-                </div>
-            </article>
-
-            <article class="index_main_section_article ultimooo" 
-         >
-                <div class="index_main_section_article_div-imagen">
-                    <img src="/imagenes/detector de movimiento.png" alt="detector de movimiento">
-                </div>
-                <div class="index_main_section_article_div-datos">
-                    <h3> $6.019,00</h3>
-                    <p>Detector de Movimiento Exterior Sica</p>
-                    <h5> <i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de $2.006,33</h5>
-                </div>
-                <div class="index_main_section_article_div-button">
-                    <button type="submit" class="comprar">Comprar</button>
-                    <a href="/products/detail"><button type="menu" class="ver">Ver</button></a>
-                </div>
-            </article>
+            </a>
             
-        </section>
+            <div class="index_main_section_article_div-datos">
+                <h3>$<%= toThousand(precio) %> </h3>
+                <p><%= nombre %> </p>
+                <h5> <i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de  <%= toThousand((precio / 3).toFixed(0)) %> </h5>
+            </div>
+            <div class="index_main_section_article_div-button">
+                <button type="submit" class="comprar">Comprar</button>
+                <a href="/products/detail"><button type="menu" class="ver">Ver</button></a>
+            </div>
+        </article>
+        <% }) %>
+    </section>
+
+  
 
         <h2>Oferta de la semana</h2>
         <section class="index_main_section">
-            <article class="index_main_section_article">
-                <div class="index_main_section_article_div-imagen">
-                    <img src="/imagenes/protector-heladera.jpg" alt="ce">
-                </div>
-                <div class="index_main_section_article_div-datos">
-                    <h3>$2.359,00</h3>
-                    <p>Protector De Tensión Heladeras Freezer Cava Pr3 Stand By</p>
-                    <h5> <i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de $786,33</h5>
-                </div>
-                <div class="index_main_section_article_div-button">
-                    <button type="submit" class="comprar">Comprar</button>
-                    <a href="/products/detail"><button type="menu" class="ver">Ver</button></a>
-                </div>
-            </article>
-
-            <article class="index_main_section_article">
-                <div class="index_main_section_article_div-imagen">
-                    <img src="/imagenes/camara de seguridad.png" alt="ce">
-                </div>
-                <div class="index_main_section_article_div-datos">
-                    <h3>$6.659,00</h3>
-                    <p>Cámara Wi-Fi Smart Full HD Etheos</p>
-                    <h5> <i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de $2.219,67</h5>
-                </div>
-                <div class="index_main_section_article_div-button">
-                    <button type="submit" class="comprar">Comprar</button>
-                    <a href="/products/detail"><button type="menu" class="ver">Ver</button></a>
-                </div>
-            </article>
-
-            <article class="index_main_section_article">
-                <div class="index_main_section_article_div-imagen">
-                    <img src="/imagenes/extractor de aire.jpg" alt="extractor de aire">
-                </div>
-                <div class="index_main_section_article_div-datos">
-                    <h3>$14.139,00</h3>
-                    <p>Extractor de Aire 64W Cocina Baño Satelital 10 cm / 4"</p>
-                    <h5> <i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de $4.713,00</h5>
-                </div>
-                <div class="index_main_section_article_div-button">
-                    <button type="submit" class="comprar">Comprar</button>
-                    <a href="/products/detail"><button type="menu" class="ver">Ver</button></a>
-                </div>
-            </article>
-
-            <article class="index_main_section_article ultimooo">
-                <div class="index_main_section_article_div-imagen">
-                    <img src="/imagenes/detector de movimiento.png" alt="detector de movimiento">
-                </div>
-                <div class="index_main_section_article_div-datos">
-                    <h3> $6.019,00</h3>
-                    <p>Detector de Movimiento Exterior Sica</p>
-                    <h5> <i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de $2.006,33</h5>
-                </div>
-                <div class="index_main_section_article_div-button">
-                    <button type="submit" class="comprar">Comprar</button>
-                    <a href="/products/detail"><button type="menu" class="ver">Ver</button></a>
-                </div>
-            </article>
-            
-            
+      
+            <% destacado.forEach(({nombre,imagen,descripcion,precio,descuento,id}) => { %>
+                <article class="index_main_section_article">
+                    <a href="/DetalleDelProducto/<%= id %> ">
+                        <div class="index_main_section_article_div-imagen">
+                            <img src="/imagenes/imageProducts/<%= imagen %>"  alt="ce">
+                        </div>
+                    </a>
+                    
+                    <div class="index_main_section_article_div-datos">
+                        <h3>$<%= toThousand(precio) %> </h3>
+                        <p><%= nombre %> </p>
+                        <h5> <i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de <%= toThousand((precio / 3).toFixed(0)) %> </h5>
+                    </div>
+                    <div class="index_main_section_article_div-button">
+                        <button type="submit" class="comprar">Comprar</button>
+                        <a href="/products/detail"><button type="menu" class="ver">Ver</button></a>
+                    </div>
+                </article>
+                <% }) %>
           
            
         </section>
