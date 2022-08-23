@@ -11,7 +11,7 @@
                 
             <a href="/products/productEdit"><p>¿Desea editar un producto?</p></a>
             </div>
-            <form class="form__label" action="" method="">
+            <form class="form__label" action="/products/store"  method="POST">
                 <label for="nombre">Nombre del producto</label>
                 <input type="text" name="nombre" />
 
@@ -31,11 +31,11 @@
                     <option value="controlador">Controladores</option>
                   </select>
 
-                <label for="color">Color</label>
-                <input type="text" name="color" />
-
                 <label for="precio">Precio</label>
                 <input type="number" name="precio" />
+
+                <label for="precio">descuento</label>
+                <input type="number" name="descuento" />
 
                 <label for="imagen">Suba la imagen del producto</label>
                 <input type="file" name="imagen" />

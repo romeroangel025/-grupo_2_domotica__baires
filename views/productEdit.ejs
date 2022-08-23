@@ -11,33 +11,33 @@
                 
             <a href="/products/productAdd"><p>¿Desea crear un producto?</p></a>
             </div>
-            <form class="form__label" action="" method="">
+            <form class="form__label" action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
                 <label for="nombre">Nombre del producto</label>
-                <input type="text" name="nombre" />
+                <input type="text" name="nombre"  value="<%= product.nombre %> " />
 
                 <label for="descripcion">Descripción del producto</label>
-                <input type="text" name="descripcion" />
+                <input type="text" name="descripcion" value="<%= product.descripcion%> "/>
 
                 <label for="categoria">Categoria</label>
                 <select class="form_select" name="categoria" id="categoria">
                     <option>Selecciona una opción</option>
-                    <option value="teclas inalmábricas">Teclas inalámbricas</option>
-                    <option value="Controles remotos">Controles remotos smart</option>
-                    <option value="detector">Detectores</option>
-                    <option value="sensor">Sensores</option>
-                    <option value="Camara">Camaras</option>
-                    <option value="cerradura">Cerraduras</option>
-                    <option value="modulo">Modulos</option>
-                    <option value="controlador">Controladores</option>
-                    <option value="iluminacion">Iluminacion</option>
-                    <option value="alarmas">Alarmas</option>
+                    <option value="teclas inalambricas" <%= product.categoria === 'teclas inalambricas' && 'selected' %> >Teclas inalámbricas</option>
+                    <option value="Controles remotos" <%= product.categoria === 'Controles remoto' && 'selected' %> >Controles remotos smart</option>
+                    <option value="detector" <%= product.categoria === 'detector' && 'selected' %> >Detectores</option>
+                    <option value="sensor" <%= product.categoria === 'sensor' && 'selected' %> >Sensores</option>
+                    <option value="Camara" <%= product.categoria === 'Camara' && 'selected' %> >Camaras</option>
+                    <option value="Cerradura"  <%= product.categoria === 'Cerradura' && 'selected' %> >Cerraduras</option>
+                    <option value="modulo" <%= product.categoria === 'modulo' && 'selected' %> >Modulos</option>
+                    <option value="controlador" <%= product.categoria === 'controlador' && 'selected' %> >Controladores</option>
+                    <option value="iluminacion" <%= product.categoria === 'iluminacion' && 'selected' %> >Iluminacion</option>
+                    <option value="alarmas" <%= product.categoria === 'alarmas' && 'selected' %> >Alarmas</option>
                   </select>
 
-                <label for="color">Color</label>
-                <input type="text" name="color" />
-
                 <label for="precio">Precio</label>
-                <input type="number" name="precio" />
+                <input type="number" name="precio" value=" <%= product.precio %> " />
+
+                <label for="precio">descuento</label>
+                <input type="number" name="descuento"  value=" <%= product.descuento %> "/>
 
                 <label for="imagen">Suba la imagen del producto</label>
                 <input type="file" name="imagen" />
