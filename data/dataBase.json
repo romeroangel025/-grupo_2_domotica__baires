@@ -4,8 +4,8 @@
         "nombre": "Protector De Tensión Heladeras Freezer Cava Pr3 Stand By",
         "imagen": "protector-heladera.jpg",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        "precio": "6548",
-        "descuento ": "20%",
+        "precio": 6548,
+        "descuento ": 20,
         "categoria": "oferta"
     },
     {
@@ -13,8 +13,8 @@
         "nombre": "Cámara Wi-Fi Smart Full HD Etheos",
         "imagen": "camara de seguridad.png",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        "precio": "3543",
-        "descuento ": "15%",
+        "precio": 3543,
+        "descuento ": 15,
         "categoria": "oferta"
     },
     {
@@ -22,8 +22,8 @@
         "nombre": "Extractor de Aire 64W Cocina Baño Satelital 10 cm / 4",
         "imagen": "extractor de aire.jpg",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        "precio": "6844",
-        "descuento ": "15%",
+        "precio": 6844,
+        "descuento ": 15,
         "categoria": "carrito"
     },
     {
@@ -31,8 +31,8 @@
         "nombre": "Detector de Movimiento Exterior Sica",
         "imagen": "detector de movimiento.png",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        "precio": "5645",
-        "descuento ": "5%",
+        "precio": 5645,
+        "descuento ": 5,
         "categoria": "oferta"
     },
     {
@@ -40,8 +40,8 @@
         "nombre": "Lámpara Smart Rgb Inteligente Wifi",
         "imagen": "Caja Lámpara Smart3.png",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        "precio": "45644",
-        "descuento ": "20%",
+        "precio": 45644,
+        "descuento ": 20,
         "categoria": "oferta"
     },
     {
@@ -49,8 +49,8 @@
         "nombre": "Smart Switch WiFi Máx.2.200W",
         "imagen": "smart_switch.webp",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        "precio": "5654",
-        "descuento ": "15%",
+        "precio": 654,
+        "descuento ": 15,
         "categoria": "destacado"
     },
     {
@@ -58,8 +58,8 @@
         "nombre": "Control Remoto RF Universal 433MHz",
         "imagen": "control.webp",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        "precio": "4687",
-        "descuento ": "25%",
+        "precio": 4687,
+        "descuento ": 25,
         "categoria": "carrito"
     },
     {
@@ -67,8 +67,8 @@
         "nombre": "Control Remoto IR Universal 433MHz + Sensor de Temperatura y Humedad",
         "imagen": "Control_remoto_universal.jpg",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        "precio": "7864",
-        "descuento ": "30%",
+        "precio": 7864,
+        "descuento ": 30,
         "categoria": "destacado"
     },
     {
@@ -76,8 +76,8 @@
         "nombre": "Sensor Magnético Wi-Fi de Apertura",
         "imagen": "sensor_magnetico.jpg",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        "precio": "13456",
-        "descuento ": "10%",
+        "precio": 13456,
+        "descuento ": 10,
         "categoria": "destacado"
     },
     {
@@ -85,8 +85,8 @@
         "nombre": "Detector Wi-Fi de Inundaciones",
         "imagen": "detector_inundaciones.jpg",
         "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        "precio": "1210",
-        "descuento ": "15%",
+        "precio": 1210,
+        "descuento ": 15,
         "categoria": "destacado"
     }
 ]
