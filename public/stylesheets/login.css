@@ -79,6 +79,19 @@
   box-shadow: 1px 1px 1px 1px var(--color-azul);
 
 }
+
+.form__label textarea {
+  max-width: 600px;
+  width: 100%;
+  padding: 8px;
+  border: 1px double var(--color-azul-claro);
+  border-radius: 20px;
+  border-color:var(--color-azul);
+  outline: 0 none;
+  box-shadow: 1px 1px 1px 1px var(--color-azul);
+
+}
+
 .form_label select{
   max-width: 600px;
   width: 100%;

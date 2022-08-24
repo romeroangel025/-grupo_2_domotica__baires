@@ -12,11 +12,12 @@
             <a href="/products/productAdd"><p>¿Desea crear un producto?</p></a>
             </div>
             <form class="form__label" action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
+
                 <label for="nombre">Nombre del producto</label>
                 <input type="text" name="nombre"  value="<%= product.nombre %> " />
 
                 <label for="descripcion">Descripción del producto</label>
-                <input type="text" name="descripcion" value="<%= product.descripcion%> "/>
+                <textarea name="descripcion" id="description" class="form-input"><%= product.descripcion %></textarea>
 
                 <label for="categoria">Categoria</label>
                 <select class="form_select" name="categoria" id="categoria">
@@ -34,7 +35,7 @@
                   </select>
 
                 <label for="precio">Precio</label>
-                <input type="number" name="precio" value=" <%= product.precio %> " />
+                <input type="number" name="precio" value="<%= product.precio %> "  />
 
                 <label for="precio">descuento</label>
                 <input type="number" name="descuento"  value=" <%= product.descuento %> "/>
@@ -42,7 +43,14 @@
                 <label for="imagen">Suba la imagen del producto</label>
                 <input type="file" name="imagen" />
                 <button type="submit">Edite su producto</button>
+              
             </form>
+
+           
+            <form action="/products/delete/<%= product.id %>?_method=DELETE " method="POST">
+							<button type="submit" class="action-button delete">ELIMINAR</button>
+						</form>
+
         </section>
     </main>
 
