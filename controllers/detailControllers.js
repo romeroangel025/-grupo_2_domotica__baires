@@ -2,11 +2,11 @@ const products = require('../data/dataBase.json');
 
 module.exports = {
     detail: (req, res) => {
+      let product = productos.find(producto => producto.id === +req.params.id)
 
-      const product = products.find(product => product.id === +req.params.id)
       return res.render("productDetail", {
-        title: "Detalle",
-        product
+        title: "detalle",
+        producto
       });
     }
   }

@@ -12,7 +12,7 @@
         <article class="detalle_main_article">
             <section class="detalle_main_section_imagenPrincipal">
                 <div class="detalle_main_section_div-imagen">
-                    <a href=""><img src="/imagenes/imageProducts/default-image.png" alt=""></a>
+                    <a href=""><img src="/imagenes/imageProducts/<%= producto.imagen %>" alt=""></a>
                 </div>
             </section>
             <h6 class="main_h6">  1 / 5 >   </h6>
@@ -31,16 +31,16 @@
                     <img src="/imagenes/imageProducts/default-image.png" alt="">
                 </div>
             </section>
-            <h4 class="main_h4">Inicio> Iluminación> Producto></h4>
+            <h4 class="main_h4"> Inicio > <%= producto.categoria %> > Producto></h4>
             <section class="detalle_main_section_caracteristicas">
                 <div>
-                    <h2>  </h2>
+                    <h2> <%= product.nombre %>  </h2>
                 </div>
                 <div>
-                    <p> </p>
+                    <p> Contado <%= producto.precio %>  </p>
                 </div>
                 <div class="detalle_main_section_cuotas">
-                    <h5><i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de </h5>
+                    <h5><i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de <%= producto.precio / 3 %> </h5>
                 </div>
                 <div class="detalle_main_section_caracteristicas_botones">
                     <div >
