@@ -148,9 +148,14 @@ align-items: center;
 }
 
 @media(min-width:768px) {
-  .body_carrito{
-      width: 600px;
+  .carrito_main{
+    width: 650px;
+    border: 1px solid black;
+    margin:  30px auto;
+    padding: 20px;
+  
   }
+  
   .body_carrito p{font-size: 17;}
   .body_carrito h5{
       font-size: 16px;
