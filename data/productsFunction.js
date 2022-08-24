@@ -11,6 +11,8 @@ const storeProducts =(products)=>{
         path.join(__dirname, "dataBase.json"),
         JSON.stringify(products, null, 3),
         "utf-8");
+
+        
 }
 
 
