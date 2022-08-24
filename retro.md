@@ -16,7 +16,6 @@
 •   Designar tareas en trello.
 •   Revisones del trabajo de cada uno.
 •   Mejoras en el proyecto.
-•   
 
 
 # Seguir haciendo:
@@ -26,11 +25,13 @@
 •   Mantener la comunicación.
 •   Reuniones por meet u otros medios.
 •   Ser comprometidos.
+•   Implementar las tareas con mas tiempo.
 
 # Hacer menos:
 
 •   Atrasarse en PG o Prácticos algunos integrantes.
 •   No practicar.
+•   Dejar las tareas del sprint a contratiempo.
 
 # Dejar de hacer:
 
