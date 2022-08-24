@@ -16,6 +16,8 @@
 •   Designar tareas en trello.
 •   Revisones del trabajo de cada uno.
 •   Mejoras en el proyecto.
+•   
+
 
 # Seguir haciendo:
 
@@ -29,7 +31,6 @@
 
 •   Atrasarse en PG o Prácticos algunos integrantes.
 •   No practicar.
-•   Administrar mejor el tiempo.
 
 # Dejar de hacer:
 
