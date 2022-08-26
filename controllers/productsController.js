@@ -1,14 +1,23 @@
 const fs = require('fs');
 const path = require('path');
 const { loadProducts,storeProducts } = require('../data/productsFunction.js');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");////
+
 
 const productsFilePath = path.join(__dirname, '../data/DataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 module.exports = {
+////
+	index: (req, res) => {
+		const products = loadProducts()
 
-	
+		return res.render('productlist', {title: 'Lista de productos' ,products, toThousand })
+		// Do the magic
+	},
+
+/////
     
     add:(req, res) => {
       return res.render("productAdd", {
@@ -37,7 +46,7 @@ module.exports = {
 		let productsNew = [...products, newProduct];
 	
 		storeProducts(productsNew);
-		return res.redirect("/");
+		return res.redirect("/products");
 	},
     edit:(req, res) => {
 

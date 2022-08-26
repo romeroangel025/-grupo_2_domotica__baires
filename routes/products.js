@@ -1,10 +1,13 @@
 var express = require('express');
 
 var router = express.Router();
-const {add,edit,store,destroy,update} = require('../controllers/productsController');
+const {add,edit,store,destroy,update,index} = require('../controllers/productsController');
 const {detail} = require('../controllers/detailControllers')
 
 
+
+
+router.get('/', index); 
 /* GET users listing. */
 router.get('/detail/:id', detail );
 

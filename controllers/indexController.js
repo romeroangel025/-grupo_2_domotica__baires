@@ -9,10 +9,8 @@ module.exports = {
 
     return res.render("index", {
       title: "Home",oferta,
-      destacado,toThousand
-            
-
-    
+      destacado,toThousand    
     });
-  },
+  }
+
 };

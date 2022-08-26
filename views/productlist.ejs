@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+
+<body>
+    <%- include('./partials/header') %>
+    <main class="index_main" index_main>
+        <h2>Lista de Productos</h2>
+
+    <section class="index_main_section">
+        <% products.forEach(({nombre,imagen,descripcion,precio,descuento,id}) => { %>
+        <article class="index_main_section_article">
+            <a href="/products/detail/<%= id %>">
+                <div class="index_main_section_article_div-imagen">
+                    <img src="/imagenes/imageProducts/<%= imagen %>"  alt="ce">
+                </div>
+            </a>
+            
+            <div class="index_main_section_article_div-datos">
+                <h3>$<%= toThousand(precio) %> </h3>
+                <p><%= nombre %> </p>
+                <h5> <i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de  <%= toThousand((precio / 3).toFixed(0)) %> </h5>
+            </div>
+            <div class="index_main_section_article_div-button">
+                <button type="submit" class="comprar">Comprar</button>
+                <a href="/products/detail/<%= id %>"><button type="menu" class="ver">Ver</button></a>
+            </div>
+        </article>
+        <% }) %>
+    </section>
+            
+    </main>
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+    
+</body>
+</html>
