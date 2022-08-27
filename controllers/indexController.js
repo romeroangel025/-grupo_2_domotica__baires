@@ -11,6 +11,19 @@ module.exports = {
       title: "Home",oferta,
       destacado,toThousand    
     });
-  }
+  },
+  search:(req,res) => {
+    let busqueda =  req.query.busqueda
 
+    let result = products.filter (product => product.nombre.toLowerCase().includes(busqueda.toLowerCase()))
+    return res.render('results',{
+      title : 'Resultado de Busqueda',
+      products: result , 
+      busqueda,
+      toThousand
+
+    })
+
+  }
+	
 };
