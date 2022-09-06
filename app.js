@@ -4,9 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
-const session = require('express-session');
+//const session = require('express-session');
 
-const localsUserCheck = require('./middlewares/localsUserCheck')
+//const localsUserCheck = require('./middlewares/localsUserCheck')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -15,7 +15,7 @@ let carritoRouter = require('./routes/carrito');
 
 var app = express();
 
-/* app.use(express.static("public")); */
+app.use(express.static("public"));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,13 +27,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
-app.use(session({
+/* app.use(session({
   secret:'domotica',
   resave:false,
   saveUninitialized:true
-}));
+})); */
 
-app.use('localsUserCheck');
+//app.use('localsUserCheck');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
