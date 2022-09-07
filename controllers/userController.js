@@ -20,7 +20,7 @@ let newUser = {
   email : email.trim(),
   password : bcryptjs.hashSync(password,12),
   rol : 'user',
-  file:req.file.filename
+  avatar :req.file.filename
   
 }
 let usersModify = [...users, newUser];
