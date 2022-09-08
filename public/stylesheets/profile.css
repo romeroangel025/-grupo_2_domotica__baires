@@ -1,0 +1,19 @@
+.main__container{
+    display: flex;
+
+}
+
+.container__avatar{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 15px;
+width: 33%vh;
+border: 1px black;
+}
+
+.container__info__profile{
+display: flex;
+width: 33%vh;
+border: 1px black;
+}

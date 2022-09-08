@@ -1,10 +1,16 @@
 const {check, body} = require('express-validator');
 const {loadUsers} = require('../data/usersFunction')
-
+const users=loadUsers();
 
 module.exports = [
     
     check('name')
+        .notEmpty().withMessage('El nombre es obligatorio').bail()
+        .isAlpha('es-ES').withMessage('No se permite esos caracteres').bail()
+        .isLength({
+            min : 2
+        }).withMessage('Como mínimo 2 caracteres'),
+        check('surname')
         .notEmpty().withMessage('El nombre es obligatorio').bail()
         .isAlpha('es-ES').withMessage('No se permite esos caracteres').bail()
         .isLength({
@@ -38,13 +44,14 @@ module.exports = [
                 return true
             }
         }).withMessage('Las contraseñas no coinciden'),
-        body('file')
+       /*  body('file')
+        .notEmpty().withMessage('Agrega una imagen de perfil').bail()
         .custom((value,{req}) => {
             if(req.files[0]){
                 return true
             }else {
                 return false
             }
-        }).withMessage('Debes agregar una imagen')
+        }).withMessage('Debes agregar una imagen') */
 
 ]
