@@ -12,6 +12,16 @@
     
    
 }
+.body__header2{
+    background-color:#39b54a;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-items: center;
+    gap: 20px 10px;
+    border-bottom: 1px solid gray;
+}
 .body__header p,li,a {
     color: rgba(255, 255, 255,0.8);
 
