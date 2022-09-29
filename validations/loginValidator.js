@@ -2,6 +2,8 @@ const {check, body} = require('express-validator');
 const {loadUsers} = require('../data/usersFunction')
 const users=loadUsers();
 
+const bcryptjs = require('bcryptjs');//
+
 module.exports = [
     check('email')
         .notEmpty().withMessage('El email es obligatorio').bail()

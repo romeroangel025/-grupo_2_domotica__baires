@@ -1,4 +1,4 @@
-<header class="body__header">
+<header class="<%= locals.userLogin && userLogin.rol ==="admin"? "body__header2" : "body__header" %>" >
     <section class="body__header__navegacion">
         <nav class="body__header__navegacion--menuBurguer">
             <div>
@@ -54,6 +54,10 @@
            <a href="/productCart/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
            <p>Mi carrito</p>  
         </div>
+        <div class="miCarrito" >
+            <a href="/users/logout"><p>SALIR</p> </a>
+             
+         </div>
 
     </section>
 

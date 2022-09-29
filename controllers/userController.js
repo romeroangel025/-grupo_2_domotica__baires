@@ -37,8 +37,7 @@ module.exports = {
     }
 
     
-   
-    
+  
   },
   processLogin:(req,res)=>{
 
@@ -46,8 +45,10 @@ module.exports = {
 
     if(errors.isEmpty()){
 
-     // let {id,name,username, rol, avatar} = loadUsers().find(user => user.email === req.body.email);
+     let {id,name,username, rol, avatar} = loadUsers().find(user => user.email === req.body.email);
+   
      return res.redirect("/users/profile");
+
 
 
 
@@ -76,5 +77,11 @@ module.exports = {
     return res.render("profile",{
       title:"perfil"
     })
-  }
+  },
+  logout:(req,res) => {
+    //primero destrullo la session y luego lo dirijimos al HOME.
+    req.session.destroy()
+    return res.send('aca estoy')
+    res.redirect('/')
+}
 };

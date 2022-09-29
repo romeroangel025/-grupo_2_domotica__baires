@@ -16,5 +16,15 @@
       "password": "$2a$12$ZDAjJI5557WPaLmGY3APeeFXOIx8XJNCSMdrmnhI/DQyrlbC4sZQ.",
       "rol": "user",
       "avatar": "avatar-1662601479863.png"
+   },
+   {
+      "id": 3,
+      "name": "Juan",
+      "surname": "garcia",
+      "tel": "42306677",
+      "email": "administrador@administrador.com",
+      "password": "$2a$12$epdv/WsM0Xi2dkrFW62uEO.4cYhqCpRCWluydooVsh0436ey6/O6S",
+      "rol":"admin",
+      "avatar": "avatar-1664487556946.png"
    }
 ]
