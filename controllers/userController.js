@@ -21,13 +21,13 @@ module.exports = {
         email: email.trim(),
         password: bcryptjs.hashSync(password, 12),
         rol: "user",
-        avatar: req.file.filename,
+        avatar : req.file? req.file.filename : "userDefault.png"
       };
       let usersModify = [...users, newUser];
   
       storeUsers(usersModify);
   
-      return res.redirect("/users/login");
+      return res.redirect("/");
     }else{
       return res.render('register',{
         title: 'Register',
@@ -45,8 +45,27 @@ module.exports = {
 
     if(errors.isEmpty()){
 
-     let {id,name,username, rol, avatar} = loadUsers().find(user => user.email === req.body.email);
+     let {id,name,surname, rol, avatar} = loadUsers().find(user => user.email === req.body.email);
+    
+     req.session.userLogin ={
+      id,
+      name,
+      surname,
+      rol,
+      avatar
+  };
+
+  if(req.body.remember){
+    res.cookie('domotica',req.session.userLogin,{
+        maxAge : 1000 * 60
+    })
+}
+    
+    
    
+    
+    
+    
      return res.redirect("/users/profile");
 
 
@@ -69,19 +88,25 @@ module.exports = {
     });
   },
   login: (req, res) => {
+   
+
     return res.render("login", {
       title: "login",
     });
   },
   profile: (req,res)=>{
+
+    let user = loadUsers().find(user =>user.id === req.session.userLogin.id)
+
+
     return res.render("profile",{
-      title:"perfil"
+      title:"perfil",user
     })
   },
   logout:(req,res) => {
     //primero destrullo la session y luego lo dirijimos al HOME.
     req.session.destroy()
-    return res.send('aca estoy')
+    res.cookie('domotica',null,{maxAge: -1});
     res.redirect('/')
 }
 };

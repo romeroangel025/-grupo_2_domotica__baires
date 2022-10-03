@@ -10,23 +10,23 @@
         <section class="sectorA">
           <article class="container__avatar">
             <div>
-              <img src="/imagenes/imageProducts/avatar.jpg" alt="">
+              <img src="/imagenes/imageUsers/<% user.avatar %> " alt="">
             </div>
           </article>
   
           <article class="container_info_profile">
   
             <div>
-              <p>Nombre : </p>
+              <p>Nombre : <%= user.name %> </p>
             </div>
             <div>
-              <p>Apellido :</p>
+              <p>Apellido : <%= user.surname %></p>
             </div>
             <div>
-              <p>Email :</p>
+              <p>Email : <%= user.email %></p>
             </div>
             <div>
-              <p>Telefono :</p>
+              <p>Telefono : <%= user.tel %></p>
             </div>   
           </article>
         </section>

@@ -46,18 +46,30 @@
     </section>
     <section class="body__header__utilidades">
         
-        <div class="miCuenta">
-         <a href="/users/login"><i class="fa-solid fa-user"></i></a> 
-         <p>Mi cuenta</p> 
-        </div>
-        <div class="miCarrito" >
-           <a href="/productCart/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-           <p>Mi carrito</p>  
-        </div>
-        <div class="miCarrito" >
-            <a href="/users/logout"><p>SALIR</p> </a>
-             
-         </div>
+       
+
+         <% if (locals.userLogin) { %>
+            <div class="miCuenta">
+                <a href="/users/login"><i class="fa-solid fa-user"></i></a> 
+                <p>Mi cuenta</p> 
+               </div>
+              
+
+            <div class="miCarrito" >
+                <a href="/productCart/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+                <p>Mi carrito</p>  
+             </div>
+             <div class="miCarrito" >
+                 <a href="/users/logout"><p>SALIR</p> </a>
+                  
+              </div>
+
+        <% }else{ %>
+            <div class="miCuenta">
+                <a href="/users/login"><i class="fa-solid fa-user"></i></a> 
+                <p>Mi cuenta</p> 
+               </div>
+        <% } %>
 
     </section>
 

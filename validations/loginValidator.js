@@ -1,6 +1,8 @@
 const {check, body} = require('express-validator');
-const {loadUsers} = require('../data/usersFunction')
-const users=loadUsers();
+
+const { loadUsers} = require("../data/usersFunction");
+const users = loadUsers();
+
 
 const bcryptjs = require('bcryptjs');//
 

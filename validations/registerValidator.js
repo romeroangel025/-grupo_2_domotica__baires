@@ -44,7 +44,7 @@ module.exports = [
                 return true
             }
         }).withMessage('Las contraseñas no coinciden'),
-       /*  body('file')
+        /* body('avatar')
         .notEmpty().withMessage('Agrega una imagen de perfil').bail()
         .custom((value,{req}) => {
             if(req.files[0]){
@@ -52,6 +52,6 @@ module.exports = [
             }else {
                 return false
             }
-        }).withMessage('Debes agregar una imagen') */
-
+        }).withMessage('Debes agregar una imagen')
+ */
 ]

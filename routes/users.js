@@ -14,7 +14,7 @@ router.get('/login', login);
 router.post('/login',loginValidator,processLogin);
 router.get('/register', register);
 router.post('/register',upload.single('avatar'),registerValidator,processRegister)
-router.get('/profile', profile);
-router.get('/logout',userSessionCheck, logout)
+router.get('/profile',userSessionCheck,profile);
+router.get('/logout', logout)
 
 module.exports = router;
