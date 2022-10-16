@@ -2,6 +2,7 @@
 const products = require('../data/dataBase.json')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const removeAccents = str =>  str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+const db = require("../database/models")
 /* 
     let busqueda =  removeAccents(req.query.busqueda);
 
