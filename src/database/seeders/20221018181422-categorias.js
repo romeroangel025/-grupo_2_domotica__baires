@@ -2,27 +2,34 @@
 const categories = [
   {
     title: 'Oferta',
-    createdAt : new Date()
+    createdAt : new Date(),
+    updatedAt : new Date()
   },
   {
     title: 'Destacado',
-    createdAt : new Date()
+    createdAt : new Date(),
+    updatedAt : new Date()
+
   },
   {
     title: 'Carrito',
-    createdAt : new Date()
+    createdAt : new Date(),
+    updatedAt : new Date()
   },
   {
     title: 'Sensores y alarmas',
-    createdAt : new Date()
+    createdAt : new Date(),
+    updatedAt : new Date()
   },
   {
     title: 'Iluminacion',
-    createdAt : new Date()
+    createdAt : new Date(),
+    updatedAt : new Date()
   },
   {
     title: 'Electronica, audio y video',
-    createdAt : new Date()
+    createdAt : new Date(),
+    updatedAt : new Date()
   }
   ]
 /** @type {import('sequelize-cli').Migration} */
