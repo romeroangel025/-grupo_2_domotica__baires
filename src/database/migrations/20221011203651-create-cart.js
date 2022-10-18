@@ -10,17 +10,30 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       orders_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references :{ //es references con "S" al final.
+          model:{
+            tableName: 'Orders'
+          },
+          key:'id'
+
+        }
       },
       products_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references :{ //es references con "S" al final.
+          model:{
+            tableName: 'Products'
+          },
+          key:'id'
+
+        }
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
     });

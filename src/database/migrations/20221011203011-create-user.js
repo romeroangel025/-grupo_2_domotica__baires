@@ -27,12 +27,14 @@ module.exports = {
       tel: {
         type: Sequelize.INTEGER
       },
+      password:{
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
     });

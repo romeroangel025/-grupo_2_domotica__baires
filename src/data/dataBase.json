@@ -5,7 +5,7 @@
       "imagen": "protector-heladera.jpg",
       "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       "precio": 6548,
-      "descuento ": 20,
+     "discount": 20,
       "categoria": "oferta"
    },
    {
@@ -14,9 +14,9 @@
       "imagen": "camara de seguridad.png",
       "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       "precio": 12000,
-      "descuento ": 15,
-      "categoria": "sensor",
-      "descuento": 50
+     "discount": 15,
+      "categoria": "sensor"
+    
    },
    {
       "id": 3,
@@ -24,7 +24,7 @@
       "imagen": "extractor de aire.jpg",
       "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       "precio": 6844,
-      "descuento ": 15,
+     "discount": 15,
       "categoria": "carrito"
    },
    {
@@ -33,7 +33,7 @@
       "imagen": "detector de movimiento.png",
       "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       "precio": 5645,
-      "descuento ": 5,
+     "discount": 5,
       "categoria": "oferta"
    },
    {
@@ -42,7 +42,7 @@
       "imagen": "Caja Lámpara Smart3.png",
       "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       "precio": 45644,
-      "descuento ": 20,
+     "discount": 20,
       "categoria": "oferta"
    },
    {
@@ -51,7 +51,7 @@
       "imagen": "smart_switch.webp",
       "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       "precio": 654,
-      "descuento ": 15,
+     "discount": 15,
       "categoria": "destacado"
    },
    {
@@ -60,7 +60,7 @@
       "imagen": "control.webp",
       "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       "precio": 4687,
-      "descuento ": 25,
+     "discount": 25,
       "categoria": "carrito"
    },
    {
@@ -69,7 +69,7 @@
       "imagen": "Control_remoto_universal.jpg",
       "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       "precio": 7864,
-      "descuento ": 30,
+     "discount": 30,
       "categoria": "destacado"
    },
    {
@@ -78,7 +78,7 @@
       "imagen": "sensor_magnetico.jpg",
       "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       "precio": 13456,
-      "descuento ": 10,
+     "discount": 10,
       "categoria": "destacado"
    },
    {
@@ -87,7 +87,7 @@
       "imagen": "detector_inundaciones.jpg",
       "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       "precio": 1210,
-      "descuento ": 15,
+     "discount": 15,
       "categoria": "destacado"
    }
 ]

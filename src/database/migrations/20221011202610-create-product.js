@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       discount: {
         type: Sequelize.STRING
@@ -22,17 +22,30 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       category_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references :{ //es references con "S" al final.
+          model:{
+            tableName: 'Categories'
+          },
+          key:'id'
+
+        }
       },
       image_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references :{ //es references con "S" al final.
+          model:{
+            tableName: 'Images'
+          },
+          key:'id'
+
+        }
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
     });
