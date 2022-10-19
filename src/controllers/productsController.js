@@ -1,3 +1,4 @@
+const db = require('../database/models');
 const fs = require('fs');
 const path = require('path');
 const { loadProducts,storeProducts } = require('../data/productsFunction.js');
@@ -11,26 +12,48 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 module.exports = {
 ////
 	index: (req, res) => {
-		const products = loadProducts()
+		/* const products = loadProducts()
 
-		return res.render('productlist', {title: 'Lista de productos' ,products, toThousand })
+		return res.render('productlist', {title: 'Lista de productos' ,products, toThousand }) */
 		// Do the magic
+		db.Product.findAll({
+			include : ['images']
+		})
+			.then(products =>
+				res.render('productlist', {
+				title: 'Lista de productos',
+				products,
+				toThousand
+			}))
+			
 	},
 
 /////
     
     add:(req, res) => {
-      return res.render("productAdd", {
+   /*    return res.render("productAdd", {
         title: "añadir producto"
       
-      });
+      }); */
+
+	  db.Category.findAll({
+		attributes : ['id','title'],
+		order : ['title']
+	})
+		.then(categories => {
+			return res.render('productAdd', {
+				title: "añadir producto",
+				categories
+			})
+		})
+		.catch(error => console.log(error))
 
 
     },
     // Create -  Method to store
 	store: (req, res) => {
 		// Do the magic
-		const { id } = req.params;
+		/* const { id } = req.params;
 		let { nombre, precio, descuento, descripcion, categoria} = req.body;
 		//const imagen = req.files["image"] ;
 		let newProduct = {
@@ -46,7 +69,23 @@ module.exports = {
 		let productsNew = [...products, newProduct];
 	
 		storeProducts(productsNew);
-		return res.redirect("/products");
+		return res.redirect("/products"); */
+
+		db.Product.create({
+			...req.body/* ,
+			title : req.body.title.trim(),
+			description : req.body.description.trim() */
+		})
+			.then(product => {
+				
+					let image = req.file? req.file.filename : "default-image.png"
+					db.Image.create(image,{
+						validate : true
+					}).then( (result) => console.log(result) )
+			
+				return res.redirect('/products')
+			})
+			.catch(error => console(error))
 	},
     edit:(req, res) => {
 

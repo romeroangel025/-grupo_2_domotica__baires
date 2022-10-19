@@ -8,18 +8,19 @@
         <h2>Lista de Productos</h2>
 
     <section class="index_main_section">
-        <% products.forEach(({nombre,imagen,descripcion,precio,descuento,id}) => { %>
+        <% products.forEach(({title,images,description,price,discount,id}) => { %>
         <article class="index_main_section_article">
             <a href="/products/detail/<%= id %>">
                 <div class="index_main_section_article_div-imagen">
-                    <img src="/imagenes/imageProducts/<%= imagen %>"  alt="ce">
+                    <img src="/imagenes/imageProducts/<%= images[0].name %>"  alt="ce">
                 </div>
             </a>
             
             <div class="index_main_section_article_div-datos">
-                <h3>$<%= toThousand(precio) %> </h3>
-                <p><%= nombre %> </p>
-                <h5> <i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de  <%= toThousand((precio / 3).toFixed(0)) %> </h5>
+                
+                <h3>$<%= toThousand(price) %> </h3>
+                <p><%= title %> </p>
+                <h5> <i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de  <%= toThousand((price / 3).toFixed(0)) %> </h5>
             </div>
             <div class="index_main_section_article_div-button">
                 <button type="submit" class="comprar">Comprar</button>
