@@ -31,16 +31,7 @@ module.exports = {
 
         }
       },
-      image_id: {
-        type: Sequelize.INTEGER,
-        references :{ //es references con "S" al final.
-          model:{
-            tableName: 'Images'
-          },
-          key:'id'
-
-        }
-      },
+    
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

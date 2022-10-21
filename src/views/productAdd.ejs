@@ -1,58 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partials/head') %>
+<%- include('./partials/head') %>
+
   <body>
     <!-- Header -->
     <%- include('./partials/header') %>
-    <main class=>
+      <main class=>
         <section class="login__form__container">
-            <h1>Crear productos</h1>
-            <div>
-                
-            <a href="/products/productEdit"><p>¿Desea editar un producto?</p></a>
-            </div>
-            <form class="form__label" action="/products/store"  method="POST">
-                <label for="nombre">Nombre del producto</label>
-                <input type="text" name="title" />
+          <h1>Crear productos</h1>
+          <div>
 
-               
-                <label for="descripcion">Descripción del producto</label>
-                <textarea name="descripcion" id="description" ></textarea>
+            <a href="/products/productEdit">
+              <p>¿Desea editar un producto?</p>
+            </a>
+          </div>
+          <form class="form__label" action="/products/store" enctype="multipart/form-data" method="POST">
+            <label for="nombre">Nombre del producto</label>
+            <input type="text" name="title" />
 
-                <label for="categoria">Categoria</label>
-              <!--   <select class="form_select" name="categoria" id="categoria">
-                   
-                  <option>Selecciona una opción</option>
-                    <option value='Oferta'>Teclas inalámbricas</option>
-                    <option value='Destacado'>Controles remotos smart</option>
-                    <option value='Carrito'>Detectores</option>
-                    <option value='Sensores y alarmas'>Sensores</option>
-                    <option value='Iluminacion'>Camaras</option>
-                    <option value='Electronica, audio y video'>Cerraduras</option>
-                    
-                  </select> -->
 
-                  <select class="form_select" name="categoryId" id="category" class="form-input">
-                    <option value="" hidden selected>Elegí la categoría</option>
-                    <% categories.forEach(({id,title}) => { %>
-                     <option value="<%= id %>"><%= title %></option>
-                    <% }) %>
-                  </select>
+            <label for="descripcion">Descripción del producto</label>
+            <textarea name="description" id="description"></textarea>
 
-                <label for="precio">Precio</label>
-                <input type="number" name="precio" />
+            <label for="categoria">Categoria</label>
 
-                <label for="precio">Descuento</label>
-                <input type="number" name="descuento" />
+            <select class="form_select" name="category_id" id="category" class="form-input">
+              <option value="" hidden selected>Elegí la categoría</option>
+              <% categories.forEach(({id,title})=> { %>
+                <option value="<%= id %>">
+                  <%= title %>
+                </option>
+                <% }) %>
+            </select>
 
-                <label for="imagen">Suba la imagen del producto</label>
-                <input type="file" name="imagen" />
-                <button type="submit">Cree su producto</button>
-            </form>
+            <label for="precio">Precio</label>
+            <input type="number" name="price" />
+
+            <label for="precio">Descuento</label>
+            <input type="number" name="discount" />
+
+            <label for="imagen">Suba la imagen del producto</label>
+            <input type="file" name="imagenes" multiple accept="image/*"/>
+            <button type="submit">Cree su producto</button>
+          </form>
         </section>
-    </main>
+      </main>
 
-    <!-- Header -->
-    <%- include('./partials/footer') %>
+      <!-- Header -->
+      <%- include('./partials/footer') %>
   </body>
+
 </html>

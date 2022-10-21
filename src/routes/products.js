@@ -19,7 +19,7 @@ router.get('/detail/:id', detail );
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/productAdd',adminUserCheck, add);
-router.post('/store', uploadProducts.single("imagen"),store); 
+router.post('/store', uploadProducts.array("imagenes"),store); 
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id',adminUserCheck,edit); 

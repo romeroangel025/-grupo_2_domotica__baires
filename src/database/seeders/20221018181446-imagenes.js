@@ -5,8 +5,9 @@ const imagesDB = require('../../data/image.json')
 
 
 const images = imagesDB.map(({imagen}, index) => {
-  return{
+  return {
    name: imagen,
+   'product_id':index + 1,
    createdAt : new Date()
   }
 })
