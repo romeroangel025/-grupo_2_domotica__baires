@@ -14,34 +14,30 @@
             <form class="form__label" action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
 
                 <label for="nombre">Nombre del producto</label>
-                <input type="text" name="nombre"  value="<%= product.nombre %> " />
+                <input type="text" name="title"  value="<%= product.title %> " />
 
                 <label for="descripcion">Descripción del producto</label>
-                <textarea name="descripcion" id="description" class="form-input"><%= product.descripcion %></textarea>
+                <textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
 
                 <label for="categoria">Categoria</label>
-                <select class="form_select" name="categoria" id="categoria">
-                    <option>Selecciona una opción</option>
-                    <option value="teclas inalambricas" <%= product.categoria === 'teclas inalambricas' && 'selected' %> >Teclas inalámbricas</option>
-                    <option value="Controles remotos" <%= product.categoria === 'Controles remoto' && 'selected' %> >Controles remotos smart</option>
-                    <option value="detector" <%= product.categoria === 'detector' && 'selected' %> >Detectores</option>
-                    <option value="sensor" <%= product.categoria === 'sensor' && 'selected' %> >Sensores</option>
-                    <option value="Camara" <%= product.categoria === 'Camara' && 'selected' %> >Camaras</option>
-                    <option value="Cerradura"  <%= product.categoria === 'Cerradura' && 'selected' %> >Cerraduras</option>
-                    <option value="modulo" <%= product.categoria === 'modulo' && 'selected' %> >Modulos</option>
-                    <option value="controlador" <%= product.categoria === 'controlador' && 'selected' %> >Controladores</option>
-                    <option value="iluminacion" <%= product.categoria === 'iluminacion' && 'selected' %> >Iluminacion</option>
-                    <option value="alarmas" <%= product.categoria === 'alarmas' && 'selected' %> >Alarmas</option>
-                  </select>
+                <select class="form_select" name="category_id" id="category" class="form-input">
+                  <option value="" hidden selected>Elegí la categoría</option>
+                  <% categories.forEach(({id,title})=> { %>
+                    <option value="<%= id %>">
+                      <option value="<%= id %>" <%= id === product.category_id && 'selected' %>><%= title %></option>
+                      <%= title %>
+                    </option>
+                    <% }) %>
+                </select>
 
                 <label for="precio">Precio</label>
-                <input type="number" name="precio" value="<%= product.precio %> "  />
+                <input type="number" name="price"  value="<%= product.price %>" >
 
                 <label for="descuento">Descuento</label>
-                <input type="number" name="descuento"  value="<%= product.descuento %> "/>
+                <input type="number" name="discount"  value="<%= product.discount %>" >
 
                 <label for="imagen">Suba la imagen del producto</label>
-                <input type="file" name="imagen" />
+                <input type="file" name="imagenes" />
                 <button type="submit">Edite su producto</button>
               
             </form>

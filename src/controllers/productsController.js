@@ -85,21 +85,42 @@ module.exports = {
           return res.redirect("/products");
         });
       })
-      .catch((error) => console(error));
+      .catch((error) => console.log(error));
   },
+  
   edit: (req, res) => {
-    const product = products.find((product) => product.id === +req.params.id);
+    /* const product = products.find((product) => product.id === +req.params.id);
 
     return res.render("productEdit", {
       title: "editar producto",
       product,
     });
+ */
+    let categories = db.Category.findAll({
+      attributes: ["id", "title"],
+      order: ["title"],
+    })
+
+    
+
+		let product = db.Product.findByPk(req.params.id);
+
+		Promise.all([categories,product])
+			.then(([categories,product]) => {
+       // return res.send(product)
+				return res.render('productEdit',{
+          title: "editar producto",
+					product,
+					categories
+				})
+			})
+			.catch(error => console.log(error));
   },
   // Update - Method to update
   update: (req, res) => {
-    //do the magic
+   
 
-    const { id } = req.params;
+   /*  const { id } = req.params;
     let { nombre, precio, descuento, descripcion, categoria } = req.body;
 
     const productModify = products.map((product) => {
@@ -118,7 +139,21 @@ module.exports = {
     });
 
     storeProducts(productModify);
-    return res.redirect("/products/detail/" + id);
+    return res.redirect("/products/detail/" + id); */
+    db.Product.update(
+			{
+				...req.body,
+				name : req.body.title.trim(),
+				description : req.body.description.trim()
+			},
+			{
+				where : {
+					id : req.params.id
+				}
+			}
+		)
+			.then( () => res.redirect("/products/detail/" + id) )
+			.catch(error => console.log(error))
   },
   // Delete - Delete one product from DB
   destroy: (req, res) => {

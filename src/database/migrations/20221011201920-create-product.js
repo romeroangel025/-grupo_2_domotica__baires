@@ -16,7 +16,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       discount: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       price: {
         type: Sequelize.INTEGER
