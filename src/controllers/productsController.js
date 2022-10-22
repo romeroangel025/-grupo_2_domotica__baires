@@ -152,12 +152,12 @@ module.exports = {
 				}
 			}
 		)
-			.then( () => res.redirect("/products/detail/" + id) )
+			.then( () => res.redirect("/products/detail/" + req.params.id) )
 			.catch(error => console.log(error))
   },
   // Delete - Delete one product from DB
   destroy: (req, res) => {
-    const { id } = req.params;
+    /* const { id } = req.params;
     const products = JSON.parse(
       fs.readFileSync(path.join(__dirname, "..", "data", "DataBase.json"))
     );
@@ -166,5 +166,14 @@ module.exports = {
 
     storeProducts(productFilter);
     return res.redirect("/");
-  },
+ */
+    db.Product.destroy({
+			where : {
+				id : req.params.id
+			}
+		})
+			.then( () => res.redirect('/'))
+			.catch( error => console.log(error));
+
+  }
 };

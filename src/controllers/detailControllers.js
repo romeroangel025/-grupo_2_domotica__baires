@@ -1,12 +1,11 @@
-const db = require('../database/models');
-const fs = require('fs');
-const path = require('path');
-const { loadProducts,storeProducts } = require('../data/productsFunction');
-
+const db = require("../database/models");
+const fs = require("fs");
+const path = require("path");
+const { loadProducts, storeProducts } = require("../data/productsFunction");
 
 module.exports = {
- detail: (req, res) => {   
-  /* 
+  detail: (req, res) => {
+    /* 
       const products=loadProducts();
 
       let producto = products.find(producto => producto.id === +req.params.id)
@@ -19,23 +18,19 @@ module.exports = {
     let categories = db.Category.findAll({
       attributes: ["id", "title"],
       order: ["title"],
-    })
+    });
 
-    let product = db.Product.findByPk(req.params.id);
+    let product = db.Product.findByPk(req.params.id, {
+      include: ["images"],
+    });
 
-
-    db.Product.findByPk(req.params.id,{
-			include : ['images']
-		})
-    Promise.all([categories,product])
-    .then(([categories,product]) => {
-     // return res.send(product)
-      return res.render('productEdit',{
+    Promise.all([categories, product]).then(([categories, product]) => {
+      // return res.send(product)
+      return res.render("productDetail", {
         title: "editar producto",
         product,
-        categories
-      })
-    })
-
-  }
-}   
+        categories,
+      });
+    });
+  },
+};
