@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head') %>
+  <body>
+    <!-- Header -->
+    <%- include('./partials/header') %>
+    <main class=>
+        <section class="login__form__container">
+            <h1>Editar productos</h1>
+            <div>
+                
+            <a href="/products/productAdd"><p>¿Desea crear un producto?</p></a>
+            </div>
+            <form class="form__label" action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
+
+                <label for="nombre">Nombre del producto</label>
+                <input type="text" name="title"  value="<%= product.title %> " />
+
+                <label for="descripcion">Descripción del producto</label>
+                <textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
+
+                <label for="categoria">Categoria</label>
+                <select class="form_select" name="category_id" id="category" class="form-input">
+                  <option value="" hidden selected>Elegí la categoría</option>
+                  <% categories.forEach(({id,title})=> { %>
+                    <option value="<%= id %>">
+                      <option value="<%= id %>" <%= id === product.category_id && 'selected' %>><%= title %></option>
+                      <%= title %>
+                    </option>
+                    <% }) %>
+                </select>
+
+                <label for="precio">Precio</label>
+                <input type="number" name="price"  value="<%= product.price %>" >
+
+                <label for="descuento">Descuento</label>
+                <input type="number" name="discount"  value="<%= product.discount %>" >
+
+                <label for="imagen">Suba la imagen del producto</label>
+                <input type="file" name="imagenes" />
+                <button type="submit">Edite su producto</button>
+              
+            </form>
+
+           
+            <form action="/products/delete/<%= product.id %>?_method=DELETE " method="POST">
+							<button type="submit" class="action-button delete">ELIMINAR</button>
+						</form>
+
+        </section>
+    </main>
+
+    <!-- Header -->
+    <%- include('./partials/footer') %>
+  </body>
+</html>

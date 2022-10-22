@@ -1,0 +1,20 @@
+[
+   {
+      "name": "Juan",
+      "surname": "garcia",
+      "tel": "42306677",
+      "email": "administrador@administrador.com",
+      "password": "$2a$12$epdv/WsM0Xi2dkrFW62uEO.4cYhqCpRCWluydooVsh0436ey6/O6S",
+      "rol": "admin",
+      "avatar": "avatar-1664487556946.png"
+   },
+   {
+      "name": "angel",
+      "surname": "romero",
+      "tel": "1124000186",
+      "email": "admin@hotmail.com",
+      "password": "$2a$12$WdbJaWgxvJNbF3M0J5f3BOYcj1pF.xB1KGEPKefYlZNpDxFifsARe",
+      "rol": "user",
+      "avatar": "userDefault.png"
+   }
+]

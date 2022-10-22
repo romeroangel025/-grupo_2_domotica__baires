@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+
+  <body>
+    <!-- Header -->
+    <%- include('./partials/header') %>
+      <main class=>
+        <section class="login__form__container">
+          <h1>Crear productos</h1>
+          <div>
+
+            <a href="/products/productEdit">
+              <p>¿Desea editar un producto?</p>
+            </a>
+          </div>
+          <form class="form__label" action="/products/store" enctype="multipart/form-data" method="POST">
+            <label for="nombre">Nombre del producto</label>
+            <input type="text" name="title" />
+
+
+            <label for="descripcion">Descripción del producto</label>
+            <textarea name="description" id="description"></textarea>
+
+            <label for="categoria">Categoria</label>
+
+            <select class="form_select" name="category_id" id="category" class="form-input">
+              <option value="" hidden selected>Elegí la categoría</option>
+              <% categories.forEach(({id,title})=> { %>
+                <option value="<%= id %>">
+                  <%= title %>
+                </option>
+                <% }) %>
+            </select>
+
+            <label for="precio">Precio</label>
+            <input type="number" name="price" />
+
+            <label for="precio">Descuento</label>
+            <input type="number" name="discount" />
+
+            <label for="imagen">Suba la imagen del producto</label>
+            <input type="file" name="imagenes" multiple accept="image/*"/>
+            <button type="submit">Cree su producto</button>
+          </form>
+        </section>
+      </main>
+
+      <!-- Header -->
+      <%- include('./partials/footer') %>
+  </body>
+
+</html>

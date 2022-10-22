@@ -1,0 +1,372 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.body__header{
+  background-color: var(--color-azul) ;
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  align-items: center;
+  gap: 20px 10px;
+  border-bottom: 1px solid gray;
+  
+ 
+}
+.body__header p,li,a {
+  color: rgba(255, 255, 255,0.8);
+
+}
+.body__header__navegacion{
+
+}
+.body__header__navegacion a{
+      text-decoration: none;
+      color: white;
+  }
+
+.body__header__navegacion--menuBurguer{
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  padding: 5px;
+
+}
+
+.body__header__navegacion--barraDeNavegacion{
+  display: none;
+
+
+}
+.body__header__barraDeBusqueda{
+  order: 1;
+}
+.body__header__barraDeBusqueda form{
+  margin: auto 60px;
+}
+.body__header__barraDeBusqueda form input{
+ border: solid rgba(255, 255, 255, 0.5) 1px;
+  border-radius: 7px ;
+}
+.lupita{
+  
+}
+.body__header__logo{
+
+}
+.body__header__logo img{ 
+width: 50px;
+}
+.body__header__utilidades{
+  display: flex;
+  justify-content: center;
+
+}
+.body__header__utilidades i{
+  color: white;
+  font-size: 25px;
+  justify-content: center;
+  
+
+
+}
+.body__header__utilidades p{
+  text-align: center;
+}
+
+
+.body__header__utilidades .miCuenta{
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.body__header__utilidades .miCarrito{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*.header_carrito{
+  height: 60px;
+  background-color:#2f8f9d;
+  color: white;
+  text-align: center;
+  padding: 10px;
+
+}*/
+
+.carrito_main{
+
+}
+.carrito_main_section{ margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+
+
+}
+.carrito_main_section_article{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  border: 1px solid rgba(128,128,128,0.5);
+  margin-bottom: 10px;
+
+
+}
+.carrito_main_section_article_imagen{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 22%;
+
+}
+.carrito_main_section_article_imagen img{
+  width:100%;
+}
+.carrito_main_section_article_datos{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+  width: 60%;
+
+  padding: 5px;
+}
+.carrito_main_section_article_datos p{
+  font-size: 15px;
+}
+.carrito_main_section_article_datos form{
+  display: flex;
+  justify-content: space-around;
+  width: 80px;
+  height: 25px;
+  padding: 2px;
+border-radius: 5px;
+  background-color:#2f8f9d;
+}
+.carrito_main_section_article_datos form button{
+  width: 15px;
+  border: none;
+  background-color:#2f8f9d;
+  color: white;
+}
+.carrito_main_section_article_datos div{
+
+  background-color: white;
+  
+}
+.carrito_main_section_article_precio{
+  width: 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.carrito_main_section_subtotal{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  border: 1px solid rgba(128,128,128,0.5);
+  margin-bottom: 5px;
+}
+.carrito_main_section_subtotal h5{
+  padding: 5px;
+
+}
+
+.carrito_main_section_total{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  border: 1px solid rgba(128,128,128,0.5);
+  margin-bottom: 5px;
+}
+.carrito_main_section_total h3{
+  padding: 5px;
+}
+
+.carrito_main_section_cuotas{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 100%;
+  border: 1px solid rgba(128,128,128,0.5);
+  margin-bottom: 5px;
+}
+.carrito_main_section_cuotas p{
+  margin: 5px;
+}
+
+
+.carrito_main_section_compras{
+  width: 50%;
+  margin: auto;
+
+}
+.carrito_main_section_compras form{
+  display: flex;
+flex-direction: column;
+margin: auto;
+justify-content: center;
+align-items: center;
+}
+.carrito_main_section_compras form button{
+  background-color: #2f8f9d;
+  color: white;
+  width: 100%;
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 16px;
+
+}
+.carrito_main_section_compras form a{
+  text-decoration: none;
+  color: black;
+  padding: 8px;
+}
+
+@media(min-width:768px){
+  .carrito_main{
+    width: 650px;
+    border: 1px solid black;
+    margin:  30px auto;
+    padding: 20px;
+  
+  }
+  .body__header{
+      padding: 20px 5px;
+  justify-content:row;
+  
+      gap: 20px;
+      margin:0;
+      
+}
+.body__header__navegacion--menuBurguer{
+  display: none;
+}
+.body__header__navegacion--barraDeNavegacion{
+  order: 2;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content:space-between;
+  gap: 10px;
+  margin: auto;
+  border-top: solid 1px rgba(236, 228, 228, 0.5);
+}
+.lupita{width: 22px;
+  height: 22px;
+  border-radius: 5px;}
+.body__header__navegacion--barraDeNavegacion div{
+ 
+  margin:10px;
+  padding: 0px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.body__header__navegacion--barraDeNavegacion ul{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap:15px
+}
+.body__header__navegacion--barraDeNavegacion li{
+  display: block;
+  padding: 5px;
+}
+.body__header__navegacion--barraDeNavegacion li a{
+  text-decoration: none;}
+
+  .body__header__barraDeBusqueda{
+      order: 0;
+      margin: auto;
+  }
+  .body__header__barraDeBusqueda form input{
+      width: 210px;
+      height: 25px;
+      border: solid rgba(255, 255, 255, 0.5) 1px;
+      border-radius: 8px ;
+
+}
+  .body__header__logo{
+      order:-1 ;
+      margin: auto;
+  }
+  .body__header__utilidades{
+      
+      order: 1;
+      margin: auto;
+  }
+  .body__header__utilidades i{
+      font-size: 30px;
+  }
+    
+  .body__header__utilidades .miCuenta{
+      display:flex;
+  }
+  .body__header__utilidades .miCarrito{
+      display: none;
+  }
+  .body__header__logo img{ 
+      width: 60px;
+      }
+  .body_carrito{
+        
+    }
+  .body_carrito p{font-size: 17;}
+  .body_carrito h5{
+        font-size: 16px;
+    }
+  .body_carrito h3{
+        font-size: 21px;
+    }
+
+}
+
+@media(min-width:1024px){
+  .body__header__logo{
+      margin: auto 40px;
+  }
+  .body__header__utilidades{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin: auto 40px;
+      gap: 15px;
+  }
+  .lupita{width: 25px;
+      height: 25px;
+      border-radius: 5px;}
+
+  .body__header__utilidades .miCuenta{
+      display: flex;
+  }
+  .body__header__utilidades .miCarrito{
+      display: flex;
+  }
+  .body__header__barraDeBusqueda form input{
+      width: 260px;
+      height: 30px;
+      border: solid rgba(255, 255, 255, 0.5) 1px;
+      border-radius: 9px ;
+
+}
+.body__header__logo img{ 
+  width: 65px;
+  }
+}

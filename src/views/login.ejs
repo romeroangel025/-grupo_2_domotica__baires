@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head') %>
+  <body>
+    <!-- Header -->
+    <%- include('./partials/header') %>
+
+    <main class="login__form__container">
+      <section class="login__nav__container">
+        <h5><a href="#"></a>Inicio ></h5>
+
+        <h5><a href="#"></a>Mi Cuenta ></h5>
+
+        <h5><a href="#"></a>Login</h5>
+      </section>
+
+      <section class="login__form__container">
+        <h2>Inicia Sesion</h2>
+
+        <form class="form__label" action="" method="POST">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Ej:juanito@hotmail.com"
+            id="email"
+          />
+          <p><%= locals.errors && errors.email ? errors.email.msg : null%></p>
+
+          <label for="password">Contraseña:</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Ej:nonono1234"
+            id="password"
+          />
+          <p><%= locals.password && errors.password ? errors.password.msg : null%></p>
+
+          <a href="">¿Olvidaste tu contraseña?</a>
+
+          <input type="checkbox" id="recordame" name="remember"><label for="recordame">Recordame</label>
+
+          <button type="submit">Iniciar Sesion</button>
+        </form>
+
+        <section class="login__footer__container">
+          <section>
+            <a href="/users/register"><h5>¿No tenes cuenta aún? Crear cuenta</h5></a>
+            
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <!-- Header -->
+    <%- include('./partials/footer') %>
+  </body>
+</html>

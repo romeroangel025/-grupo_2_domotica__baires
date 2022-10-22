@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+  <body class="body_carrito" >
+    <%- include('./partials/header') %>
+    <main class="carrito_main">
+        <section class="carrito_main_section">
+            <% carrito.forEach(({imagen,nombre,precio}) => { %>
+                <article class="carrito_main_section_article">
+                    <div class="carrito_main_section_article_imagen">
+                        <img src="/imagenes/imageProducts/<%= imagen %>" alt="">
+                    </div>
+                    <div class="carrito_main_section_article_datos">
+                        <div>
+                            <p><%= nombre %></p>
+                        </div>
+                        <div>
+                            <form action="">
+                            <button class="menos">- </button>
+                            <button class="numero"> 1 </button>
+                            <button class="mas"> +</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="carrito_main_section_article_precio">
+                        <h2><i class="fa-regular fa-trash-can"></i></h2>
+                        <P>$<%= precio %></P>
+                    </div>
+                </article>
+            <% }) %>
+            
+           
+          
+        </section>
+        <section class="carrito_main_section">
+            <div class="carrito_main_section_subtotal">
+                <h5>SUBTOTAL:</h5>
+                <h5>$ 11531</h5>
+            </div>
+            <div class="carrito_main_section_total">
+                <h3>TOTAL:</h3>
+                <h3>$11531 </h3>
+            </div>
+            <div class="carrito_main_section_cuotas">
+                <p>O hasta 3 cuotas de $3846.66</p>
+            </div>
+
+        </section>
+       
+        <section class="carrito_main_section_compras">
+            <form action="" method="">
+                <button type="submit">Iniciar compra </button>
+               <a href="">Ver mas productos</a>
+            </form>
+        </section>
+    </main>
+    <%- include('./partials/footer') %>
+    
+</body>
+  
+</html>
