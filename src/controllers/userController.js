@@ -5,30 +5,7 @@ const { hashSync, compare, hash } = require("bcryptjs");
 
 module.exports = {
   processRegister: (req, res) => {
-    // return res.send(req.body);
-
-    //let errors = validationResult(req);
-
-    /* if(errors.isEmpty()){
-      const { name, email, tel, password,surname } = req.body;
-
-      let users = loadUsers();
-  
-      let newUser = {
-        id: users.length > 0 ? users[users.length - 1].id + 1 : 1,
-        name: name.trim(),
-        surname: surname.trim(),
-        tel: tel.trim(),
-        email: email.trim(),
-        password: bcryptjs.hashSync(password, 12),
-        rol: "user",
-        avatar : req.file? req.file.filename : "userDefault.png"
-      };
-      let usersModify = [...users, newUser];
-  
-      storeUsers(usersModify);
-  
-      return res.redirect("/"); */
+    
       let errors = validationResult(req);
       if (errors.isEmpty()) {
         const { name,surname,email,tel,password,avatar } = req.body;
@@ -49,7 +26,7 @@ module.exports = {
           })
           .catch((error) => console.log(error));
     }else{
-      return res.send(req.body)
+      
       return res.render('register',{
         title: 'Register',
         errors : errors.mapped(),
