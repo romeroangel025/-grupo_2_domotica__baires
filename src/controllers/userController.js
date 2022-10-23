@@ -1,14 +1,15 @@
+const db = require("../database/models");
 const { loadUsers, storeUsers } = require("../data/usersFunction");
 const { validationResult } = require("express-validator");
-const bcryptjs = require("bcryptjs");
+const { hashSync, compare, hash } = require("bcryptjs");
 
 module.exports = {
   processRegister: (req, res) => {
     // return res.send(req.body);
 
-    let errors = validationResult(req);
+    //let errors = validationResult(req);
 
-    if(errors.isEmpty()){
+    /* if(errors.isEmpty()){
       const { name, email, tel, password,surname } = req.body;
 
       let users = loadUsers();
@@ -27,8 +28,28 @@ module.exports = {
   
       storeUsers(usersModify);
   
-      return res.redirect("/");
+      return res.redirect("/"); */
+      let errors = validationResult(req);
+      if (errors.isEmpty()) {
+        const { name,surname,email,tel,password,avatar } = req.body;
+  
+        db.User.create({
+          name: name.trim(),
+          surname: surname.trim(),
+          email: email.trim(),
+          tel,
+          password:hashSync(password, 10),
+          rol: "user",
+          avatar : req.file? req.file.filename : "userDefault.png",
+          createdAt: new Date(),
+          updateAt: new Date(),
+        })
+          .then(() => {
+            res.redirect("/");
+          })
+          .catch((error) => console.log(error));
     }else{
+      return res.send(req.body)
       return res.render('register',{
         title: 'Register',
         errors : errors.mapped(),
