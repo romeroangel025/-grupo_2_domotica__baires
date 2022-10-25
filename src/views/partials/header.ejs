@@ -1,75 +1,83 @@
-<header class=<%=locals.userLogin && userLogin.rol ==="admin" ? "body__header2" : "body__header" %> >
+<header class=<%=locals.userLogin && userLogin.rol==="admin" ? "body__header2" : "body__header" %> >
     <section class="body__header__navegacion">
         <nav class="body__header__navegacion--menuBurguer">
             <div>
-            <a href=""><i class="fa-solid fa-bars"></i></a>
+                <a href=""><i class="fa-solid fa-bars"></i></a>
             </div>
         </nav>
     </section class="body__header__navegacion">
-    <nav  class="body__header__navegacion--barraDeNavegacion">
+    <nav class="body__header__navegacion--barraDeNavegacion">
         <div>
             <ul>
                 <li><a href="/">Inicio</a></li>
               <!--   <li><a href="/products/edit">Editar</a></li> -->
+              <% if (locals.userLogin) { %>
                 <li><a href="/products/productAdd">Crear</a></li>
+              <% } %>
+               
             </ul>
         </div>
-        <div>
-            <ul>
-                <li><a href="">Iluminacion</a></li>
-                <li><a href="">Alarmas y Sensores</a></li>
-                <li><a href="">electronica, audio y video</a></li>
-            </ul>
-        </div>
-        <div><ul>
-            <li><a href="/products">lista de productos</a></li>
-            <li><a href="">¿Quienes somos?</a></li>
-            </ul>
-        </div>
-            
-            
-        
+
+                <div>
+                    <ul>
+                        <li><a href="">Iluminacion</a></li>
+                        <li><a href="">Alarmas y Sensores</a></li>
+                        <li><a href="">electronica, audio y video</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="/products">lista de productos</a></li>
+                        <li><a href="">¿Quienes somos?</a></li>
+                    </ul>
+                </div>
+
+
+
     </nav>
-   <!-- search -->
+    <!-- search -->
     <section class="body__header__barraDeBusqueda">
         <form action="/search" method="GET">
-            <input type="text" name="busqueda" placeholder="¿Que estas buscando?"><button class="lupita"> <i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" name="busqueda" placeholder="¿Que estas buscando?"><button class="lupita"> <i
+                    class="fa-solid fa-magnifying-glass"></i></button>
         </form>
     </section>
     <!-- logo -->
     <section class="body__header__logo">
         <div>
-           <a href="/"><img src="/imagenes/logo_1.png" alt="logo"></a> 
+            <a href="/"><img src="/imagenes/logo_1.png" alt="logo"></a>
         </div>
-    
-       
+
+
     </section>
     <section class="body__header__utilidades">
-        
-       
 
-         <% if (locals.userLogin) { %>
+
+
+        <% if (locals.userLogin) { %>
             <div class="miCuenta">
-                <a href="/users/profile"><i class="fa-solid fa-user"></i></a> 
-                <p>Mi cuenta</p> 
-               </div>
-              
+                <a href="/users/profile"><i class="fa-solid fa-user"></i></a>
+                <p>Mi cuenta</p>
+            </div>
 
-            <div class="miCarrito" >
+
+            <div class="miCarrito">
                 <a href="/productCart/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-                <p>Mi carrito</p>  
-             </div>
-             <div class="miCarrito" >
-                 <a href="/users/logout"><p>SALIR</p> </a>
-                  
-              </div>
+                <p>Mi carrito</p>
+            </div>
+            <div class="miCarrito">
+                <a href="/users/logout">
+                    <p>SALIR</p>
+                </a>
 
-        <% }else{ %>
-            <div class="miCuenta">
-                <a href="/users/login"><i class="fa-solid fa-user"></i></a> 
-                <p>Mi cuenta</p> 
-               </div>
-        <% } %>
+            </div>
+
+            <% }else{ %>
+                <div class="miCuenta">
+                    <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+                    <p>Mi cuenta</p>
+                </div>
+                <% } %>
 
     </section>
 
