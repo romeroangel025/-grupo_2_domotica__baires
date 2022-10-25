@@ -50,6 +50,7 @@ module.exports = {
             rol,
             avatar,
           };
+          console.table(req.session.userLogin);
           if (req.body.remember) {
             res.cookie("domotica", req.session.userLogin, {
               maxAge: 1000 * 60,
