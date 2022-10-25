@@ -20,8 +20,22 @@ module.exports = {
         createdAt: new Date(),
         updateAt: new Date(),
       })
-        .then(() => {
-          res.redirect("/");
+        .then((user) => {
+          const { id, name, surname, rol, avatar } = user;
+          req.session.userLogin = {
+            id,
+            name,
+            surname,
+            rol,
+            avatar,
+          };
+         // console.table(req.session.userLogin);
+          if (req.body.remember) {
+            res.cookie("domotica", req.session.userLogin, {
+              maxAge: 1000 * 60,
+            });
+          }
+          res.redirect("/users/profile");
         })
         .catch((error) => console.log(error));
     } else {
