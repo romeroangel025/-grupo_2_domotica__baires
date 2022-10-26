@@ -56,11 +56,12 @@ module.exports = {
         },
       })
         .then((user) => {
-          const { id, name, surname, rol, avatar } = user;
+          const { id, name ,surname,email,rol, avatar } = user;
           req.session.userLogin = {
             id,
             name,
             surname,
+            email,
             rol,
             avatar,
           };
