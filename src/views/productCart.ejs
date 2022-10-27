@@ -5,14 +5,14 @@
     <%- include('./partials/header') %>
     <main class="carrito_main">
         <section class="carrito_main_section">
-            <% carrito.forEach(({imagen,nombre,precio}) => { %>
+            <% carrito.forEach(({title,images,description,price,discount,id}) => { %>
                 <article class="carrito_main_section_article">
                     <div class="carrito_main_section_article_imagen">
-                        <img src="/imagenes/imageProducts/<%= imagen %>" alt="">
+                        <img src="/imagenes/imageProducts/<%= images[0].name %>" alt="">
                     </div>
                     <div class="carrito_main_section_article_datos">
                         <div>
-                            <p><%= nombre %></p>
+                            <p><%= title %></p>
                         </div>
                         <div>
                             <form action="">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="carrito_main_section_article_precio">
                         <h2><i class="fa-regular fa-trash-can"></i></h2>
-                        <P>$<%= precio %></P>
+                        <P>$<%= price %></P>
                     </div>
                 </article>
             <% }) %>

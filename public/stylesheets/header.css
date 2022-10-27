@@ -168,8 +168,10 @@ width: 50px;
         order: 1;
         margin: auto;
     }
-    .body__header__utilidades i{
+    .body__header__utilidades i,img{
         font-size: 30px;
+        width: 30px;
+        height: auto;
     }
       
     .body__header__utilidades .miCuenta{
