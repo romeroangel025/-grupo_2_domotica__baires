@@ -40,7 +40,7 @@
                     <p> Contado <%= product.price %>  </p>
                 </div>
                 <div class="detalle_main_section_cuotas">
-                    <h5><i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de <%= product.price / 3 %> </h5>
+                    <h5><i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de <%= toThousand((product.price / 3).toFixed(2)) %> </h5>
                 </div>
                 <div class="detalle_main_section_caracteristicas_botones">
                     <div >
@@ -55,10 +55,18 @@
                     </div>
                 </div>
                 <div>
-                    <button type="button" class="comprar">Comprar</button>
+                    
+                    <% if (locals.userLogin&&(locals.userLogin.rol==="user")) { %>
+                        <button type="button" class="comprar">Comprar</button>
+                    <% } %>
+
+                   
                     
                 </div>
-                <a href="/products/edit/<%= product.id %>"><button>editar</button></a>
+                <% if (locals.userLogin&&(locals.userLogin.rol==="admin")) { %>
+                    <a href="/products/edit/<%= product.id %>"><button>editar</button></a>
+                <% } %>
+               
             </section>
 
         </article>

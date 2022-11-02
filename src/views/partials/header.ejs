@@ -11,7 +11,7 @@
             <ul>
                 <li><a href="/">Inicio</a></li>
               <!--   <li><a href="/products/edit">Editar</a></li> -->
-              <% if (locals.userLogin) { %>
+              <% if (locals.userLogin&&(locals.userLogin.rol==="admin")) { %>
                 <li><a href="/products/productAdd">Crear</a></li>
               <% } %>
                
