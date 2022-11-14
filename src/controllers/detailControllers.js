@@ -1,6 +1,7 @@
 const db = require("../database/models");
 const fs = require("fs");
 const path = require("path");
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
   detail: (req, res) => {
@@ -18,6 +19,7 @@ module.exports = {
         title: "editar producto",
         product,
         categories,
+        toThousand
       });
     });
   },
