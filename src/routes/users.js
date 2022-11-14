@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const {login,register,processRegister,processLogin,profile,logout}=require('../controllers/userController')
+const {login,register,processRegister,processLogin,profile,logout,profileEdit}=require('../controllers/userController')
 
 
 // ************ Middlewares Require ************
@@ -16,5 +16,6 @@ router.get('/register', register);
 router.post('/register',upload.single('avatar'),registerValidator,processRegister)
 router.get('/profile',userSessionCheck,profile);
 router.get('/logout', logout)
+router.get('/profileEdit', profileEdit)
 
 module.exports = router;

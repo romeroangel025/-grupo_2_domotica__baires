@@ -108,4 +108,8 @@ module.exports = {
     res.cookie("domotica", null, { maxAge: -1 });
     res.redirect("/");
   },
-};
+  profileEdit:(req,res)=> {
+    return res.render("profileEdit", {
+      title: "Editar perfil",
+    });
+  }};
