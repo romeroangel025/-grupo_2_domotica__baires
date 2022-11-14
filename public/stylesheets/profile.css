@@ -63,6 +63,9 @@ background-color: var(--color-celeste-claro);
 margin: 15px 40px;
 border: solid 1px lightseagreen;
 }
+.botooon:hover{
+    background-color: var(--color-azul);
+}
 
 
 
