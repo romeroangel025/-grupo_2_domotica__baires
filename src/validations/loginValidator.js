@@ -1,12 +1,11 @@
 const db = require('../database/models')
 const {check, body} = require('express-validator');
-const users = require('../data/db').loadUsers();
 const bcryptjs = require('bcryptjs');//
 
 module.exports = [
     check('email')
         .notEmpty().withMessage('El email es obligatorio').bail()
-        .isEmail().withMessage('De ser un email válido'),
+        .isEmail().withMessage('Debe ser un email válido'),
     body('password')
         .notEmpty().withMessage('La contraseña es obligatoria').bail()
         .custom((value, { req }) => {
