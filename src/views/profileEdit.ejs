@@ -10,34 +10,42 @@
         <section class="sectorA">
           <article class="container__avatar">
             <div>
-              <img src="/imagenes/imageUsers/<%= user.avatar %> " alt="">
+              <img src="/imagenes/imageUsers/userDefault.png " alt="">
             </div>
+            <figure>
+             <h5>Selecicona una imagen:</h5>
+             <br>
+              <input type="file">
+            </figure>
           </article>
   
-          <article class="container_info_profile">
-  
+          <form class="container_info_profile">
             <div>
-              <p>Nombre : <%= user.name %> </p>
+              <label for="">Nombre:</label>
+              <input type="text" />
             </div>
             <div>
-              <p>Apellido : <%= user.surname %></p>
+              <label for="">Apellido:</label>
+              <input type="text" />
             </div>
             <div>
-              <p>Email : <%= user.email %></p>
+              <label for="">Email:</label>
+              <input type="email" name="" id="" />
             </div>
             <div>
-              <p>Telefono : <%= user.tel %></p>
-            </div>   
+              <label for="">Telefono:</label>
+              <input type="number" name="" id="">
+            </div>
             <div>
-              <a href="/users/profileEdit"><button class="botooon">EDITAR</button></a>
+              <button type="submit" class="botooon"><h4>Aceptar Cambios</h4></button>
 
             </div>
-          </article>
+          </form>
         </section>
         
 
 
-        <section class="container_info_profile2">
+        <section class="container_info_profile2 rrr">
           <div><h3>Mis productos:</h3></div>
           <div>
             <p>Producto1 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, labore, illo minus tempora nihil ea voluptatum quos quibusdam vel, voluptates a minima necessitatibus aliquam itaque ab vitae laboriosam doloribus! Praesentium!</p>
@@ -56,20 +64,5 @@
       <!-- Header -->
       <%- include('./partials/footer') %>
   </body>
-  <div>
-      <label for="">Nombre</label>
-      <input type="text" />
-    </div>
-    <div>
-      <label for="">Apellido</label>
-      <input type="text" />
-    </div>
-    <div>
-      <label for="">Email</label>
-      <input type="email" name="" id="" />
-    </div>
-    <div>
-      <label for="">Telefono</label>
-      <input type="number" name="" id="">
-    </div>
+
 </html>
