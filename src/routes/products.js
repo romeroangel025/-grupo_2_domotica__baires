@@ -8,6 +8,8 @@ const {detail} = require('../controllers/detailControllers')
 const adminUserCheck =require('../middlewares/adminUserCheck')//area valida para administradores
 
 const uploadProducts = require('../middlewares/uploadFilesProducts');
+const productsAddValidator = require('../validations/productsAddValidator');
+const productsEditValidator = require('../validations/productsEditValidator');
 
 
 
@@ -19,11 +21,11 @@ router.get('/detail/:id', detail );
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/productAdd',adminUserCheck, add);
-router.post('/store', uploadProducts.array("imagenes"),store); 
+router.post('/store', uploadProducts.array("imagenes"),productsAddValidator,store); 
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id',adminUserCheck,edit); 
-router.put('/edit/:id',update); 
+router.put('/edit/:id',productsEditValidator,update); 
 
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/delete/:id', destroy); 

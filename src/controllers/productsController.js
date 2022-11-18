@@ -2,7 +2,7 @@ const db = require("../database/models");
 const fs = require("fs");
 const path = require("path");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); ////
-
+const { validationResult } = require("express-validator");
 const productsFilePath = path.join(__dirname, "../data/DataBase.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
@@ -37,26 +37,46 @@ module.exports = {
   },
   // Create -  Method to store
   store: (req, res) => {
-    db.Product.create({
-      ...req.body,
-      title: req.body.title.trim(),
-      description: req.body.description.trim(),
-    })
-      .then((product) => {
-        const images = req.files?.map((file) => {
-          return {
-            name: file.filename,
-            product_id: product.id,
-            /* createAt:new Date() */
-          };
-        }) || [{ name: "default-image.png", product_id: product.id }];
 
-        /*  let image = req.files ? req.files.filename : "default-image.png"; */
-        db.Image.bulkCreate(images).then(() => {
-          return res.redirect("/products");
-        });
-      })
-      .catch((error) => console.log(error));
+    let errors = validationResult(req);
+   /* return res.send(errors) */
+if (errors.isEmpty()) {
+  db.Product.create({
+    ...req.body,
+    title: req.body.title.trim(),
+    description: req.body.description.trim(),
+  })
+    .then((product) => {
+      const images = req.files?.map((file) => {
+        return {
+          name: file.filename,
+          product_id: product.id,
+          /* createAt:new Date() */
+        };
+      }) || [{ name: "default-image.png", product_id: product.id }];
+
+      /*  let image = req.files ? req.files.filename : "default-image.png"; */
+      db.Image.bulkCreate(images).then(() => {
+        return res.redirect("/products");
+      });
+    })
+    .catch((error) => console.log(error));
+} else {
+  db.Category.findAll({
+    attributes: ["id", "title"],
+    order: ["title"],
+  })
+    .then((categories) => {
+      return res.render("productAdd", {
+        title: "añadir producto",
+        categories,
+        errors: errors.mapped(),
+        old: req.body,
+      });
+    })
+    .catch((error) => console.log(error));
+}
+   
   },
 
   edit: (req, res) => {
@@ -79,20 +99,46 @@ module.exports = {
   },
   // Update - Method to update
   update: (req, res) => {
-    db.Product.update(
-      {
-        ...req.body,
-        name: req.body.title.trim(),
-        description: req.body.description.trim(),
+
+    let errors = validationResult(req);
+
+if (errors.isEmpty()) {
+  db.Product.update(
+    {
+      ...req.body,
+      name: req.body.title.trim(),
+      description: req.body.description.trim(),
+    },
+    {
+      where: {
+        id: req.params.id,
       },
-      {
-        where: {
-          id: req.params.id,
-        },
-      }
-    )
-      .then(() => res.redirect("/products/detail/" + req.params.id))
-      .catch((error) => console.log(error));
+    }
+  )
+    .then(() => res.redirect("/products/detail/" + req.params.id))
+    .catch((error) => console.log(error));
+} else {
+  let categories = db.Category.findAll({
+    attributes: ["id", "title"],
+    order: ["title"],
+  });
+
+  let product = db.Product.findByPk(req.params.id);
+
+  Promise.all([categories, product])
+    .then(([categories, product]) => {
+      return res.render("productEdit", {
+        title: "editar producto",
+        product,
+        categories,
+        errors: errors.mapped(),
+        old: req.body,
+      });
+    })
+    .catch((error) => console.log(error));
+}
+
+   
   },
   // Delete - Delete one product from DB
   destroy: (req, res) => {

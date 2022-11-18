@@ -16,11 +16,13 @@
           </div>
           <form class="form__label" action="/products/store" enctype="multipart/form-data" method="POST">
             <label for="nombre">Nombre del producto</label>
-            <input type="text" name="title" />
-
+            <input type="text" name="title" value="<%= locals.old && old.title ? old.title : null %>" />
+            <p><%= locals.errors && errors.title ? errors.title.msg : null%></p>
 
             <label for="descripcion">Descripción del producto</label>
-            <textarea name="description" id="description"></textarea>
+            <textarea name="description" id="description" value="<%= locals.old && old.title ? old.title : null %>" ></textarea>
+
+            <p><%= locals.errors && errors.description ? errors.description.msg : null%></p>
 
             <label for="categoria">Categoria</label>
 
@@ -32,12 +34,15 @@
                 </option>
                 <% }) %>
             </select>
+           <p> <%= locals.errors && errors.category ? errors.category.msg : null %> </p>
 
             <label for="precio">Precio</label>
-            <input type="number" name="price" />
+            <input type="number" name="price" value="<%= locals.old && old.price ? old.price : null %>" />
+            <p><%= locals.errors && errors.price ? errors.price.msg : null%></p>
 
-            <label for="precio">Descuento</label>
-            <input type="number" name="discount" />
+            <label for="discount">Descuento</label>
+            <input type="number" name="discount" value="<%= locals.old && old.discount ? old.discount : null %>" />
+            <p><%= locals.errors && errors.discount ? errors.discount.msg : null%></p>
 
             <label for="imagen">Suba la imagen del producto</label>
             <input type="file" name="imagenes" multiple accept="image/*"/>

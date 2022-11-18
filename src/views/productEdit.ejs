@@ -15,9 +15,11 @@
 
                 <label for="nombre">Nombre del producto</label>
                 <input type="text" name="title"  value="<%= product.title %> " />
+                <p><%= locals.errors && errors.title ? errors.title.msg : null%></p>
 
                 <label for="descripcion">Descripción del producto</label>
                 <textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
+                <p><%= locals.errors && errors.description ? errors.description.msg : null%></p>
 
                 <label for="categoria">Categoria</label>
                 <select class="form_select" name="category_id" id="category" class="form-input">
@@ -32,9 +34,11 @@
 
                 <label for="precio">Precio</label>
                 <input type="number" name="price"  value="<%= product.price %>" >
+                <p><%= locals.errors && errors.price ? errors.price.msg : null%></p>
 
                 <label for="descuento">Descuento</label>
                 <input type="number" name="discount"  value="<%= product.discount %>" >
+                <p><%= locals.errors && errors.discount ? errors.discount.msg : null%></p>
 
                 <label for="imagen">Suba la imagen del producto</label>
                 <input type="file" name="imagenes" />

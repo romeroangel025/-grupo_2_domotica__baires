@@ -9,6 +9,7 @@ module.exports = [
         .isLength({
             min: 2
         }).withMessage('Como mínimo 2 caracteres'),
+
     check('surname')
         .notEmpty()
         .withMessage("El apellido es obligatorio")
@@ -20,22 +21,21 @@ module.exports = [
             min: 2,
         })
         .withMessage("Como mínimo 2 caracteres"),
-    body('email')
+
+    body("email")
         .notEmpty().withMessage('El email es obligatorio').bail()
-        .isEmail().withMessage('De ser un email válido').bail(),
-
-
-    body("email").custom((value) => {
-        return db.User.findOne({
-            where: {
-                email: value,
-            },
-        }).then((user) => {
-            if (user) {
-                return Promise.reject("Este email ya está registrado");
-            }
-        });
-    }),
+        .isEmail().withMessage('De ser un email válido').bail()
+        .custom((value) => {
+            return db.User.findOne({
+                where: {
+                    email: value,
+                },
+            }).then((user) => {
+                if (user) {
+                    return Promise.reject("Este email ya está registrado");
+                }
+            });
+        }),
 
 
 
