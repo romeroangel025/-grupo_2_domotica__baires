@@ -52,12 +52,20 @@
 }
 .body__header__barraDeBusqueda form{
     margin: auto 60px;
+    position: relative;
+    
 }
 .body__header__barraDeBusqueda form input{
    border: solid rgba(255, 255, 255, 0.5) 1px;
     border-radius: 7px ;
+    position: relative;
 }
 .lupita{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+right: 8px;
+top: 2px;
     
 }
 .body__header__logo{
@@ -75,12 +83,19 @@ width: 50px;
     color: white;
     font-size: 25px;
     justify-content: center;
+    margin: 5px;
     
-  
-
+}
+.body__header__utilidades img{
+    width: 35px;
+    height: 35px;
+    justify-content: center;
+    border-radius: 10px;
+    
 }
 .body__header__utilidades p{
     text-align: center;
+    font-size: 12px;
 }
 
 
@@ -125,6 +140,9 @@ width: 50px;
 .lupita{width: 22px;
     height: 22px;
     border-radius: 5px;}
+.lupita:hover{
+        cursor: pointer;
+    } 
 .body__header__navegacion--barraDeNavegacion div{
    
     margin:10px;
@@ -157,6 +175,7 @@ width: 50px;
         height: 25px;
         border: solid rgba(255, 255, 255, 0.5) 1px;
         border-radius: 8px ;
+        padding: 1px 5px 1px 15px;
 
 }
     .body__header__logo{
@@ -173,6 +192,10 @@ width: 50px;
         width: 30px;
         height: auto;
     }
+    .body__header__utilidades p{
+        text-align: center;
+        font-size: 14px;
+    }
       
     .body__header__utilidades .miCuenta{
         display:flex;
@@ -183,6 +206,15 @@ width: 50px;
     .body__header__logo img{ 
         width: 60px;
         }
+    .aa1{
+        width: 150px;
+    }
+    .aa2{
+        
+    }
+    .aa3{
+        width: 150px;
+    }
 
 }
 
