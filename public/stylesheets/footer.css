@@ -5,6 +5,13 @@
     flex-wrap: wrap;
 }
 
+.index__footer2{
+    background-color: #7D3C98 ;
+    font-display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
 .footer__seccion{
 
 }

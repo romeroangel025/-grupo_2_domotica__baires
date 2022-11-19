@@ -10,31 +10,34 @@
         <section class="sectorA">
           <article class="container__avatar">
             <div>
-              <img src="/imagenes/imageUsers/userDefault.png " alt="">
+              <img src="/imagenes/imageUsers/<%= user.avatar %> " alt="">
             </div>
-            <figure>
-             <h5>Selecicona una imagen:</h5>
-             <br>
-              <input type="file">
-            </figure>
+           
           </article>
   
-          <form class="container_info_profile">
+          <form class="container_info_profile" action="/users/profileEdit?_method=PUT"  enctype="multipart/form-data" method="POST">
+            
+            <figure>
+              <h5>Selecicona una imagen:</h5>
+              <br>
+               <input type="file" name="avatar" >
+             </figure>
+            
             <div>
               <label for="">Nombre:</label>
-              <input type="text" />
+              <input type="text" name="name"  value="<%= user.name %>" />
             </div>
             <div>
               <label for="">Apellido:</label>
-              <input type="text" />
+              <input type="text" name="surname"  value="<%= user.surname %>" />
             </div>
             <div>
               <label for="">Email:</label>
-              <input type="email" name="" id="" />
+              <input type="email" name="email" id=""  value="<%= user.email %>" />
             </div>
             <div>
               <label for="">Telefono:</label>
-              <input type="number" name="" id="">
+              <input type="number" name="tel" id=""  value="<%= user.tel %>">
             </div>
             <div>
               <button type="submit" class="botooon"><h4>Aceptar Cambios</h4></button>

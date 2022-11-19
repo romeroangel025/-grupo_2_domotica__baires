@@ -7,7 +7,7 @@ module.exports=[
     .withMessage("El nombre de producto es obligatorio").bail()
     .isLength({
         min: 3,
-        max: 12
+        max: 60
     }).withMessage("El nombre debe tener entre 3 y 12 caracteres"),
 
 check("category_id")

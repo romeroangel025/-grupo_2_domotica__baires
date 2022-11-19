@@ -29,7 +29,7 @@ module.exports = {
             rol,
             avatar,
           };
-         // console.table(req.session.userLogin);
+          // console.table(req.session.userLogin);
           if (req.body.remember) {
             res.cookie("domotica", req.session.userLogin, {
               maxAge: 1000 * 60,
@@ -56,7 +56,7 @@ module.exports = {
         },
       })
         .then((user) => {
-          const { id, name ,surname,email,rol, avatar } = user;
+          const { id, name, surname, email, rol, avatar } = user;
           req.session.userLogin = {
             id,
             name,
@@ -65,7 +65,7 @@ module.exports = {
             rol,
             avatar,
           };
-         // console.table(req.session.userLogin);
+          // console.table(req.session.userLogin);
           if (req.body.remember) {
             res.cookie("domotica", req.session.userLogin, {
               maxAge: 1000 * 60,
@@ -87,11 +87,13 @@ module.exports = {
       title: "register",
     });
   },
+
   login: (req, res) => {
     return res.render("login", {
       title: "login",
     });
   },
+
   profile: (req, res) => {
     db.User.findByPk(req.session.userLogin.id)
       .then((user) => {
@@ -102,14 +104,78 @@ module.exports = {
       })
       .catch((error) => console.log(error));
   },
+
+  profileEdit: (req, res) => {
+    db.User.findByPk(req.session.userLogin.id)
+      .then((user) => {
+        return res.render("profileEdit", {
+          title: "Editar Perfil",
+          user,
+        });
+      })
+      .catch((error) => console.log(error));
+  },
+
+
+  profileEditUpdate: (req, res) => {
+ 
+    const { name, surname, email, tel } = req.body;
+
+
+   db.User.update(
+      {
+        name: name.trim(),
+        surname: surname.trim(),
+        email: email.trim(),
+        tel,
+        rol: "user",
+        avatar: req.file ? req.file.filename : req.session.userLogin.avatar,
+        createdAt: new Date(),
+        updateAt: new Date(),
+      },
+      {
+        where: {
+          id: req.session.userLogin.id,
+        },
+      }
+    )
+      .then((user) => {
+
+
+
+
+        req.session.userLogin = {
+          ...req.session.userLogin,
+          name,
+          surname,
+          avatar:user.avatar
+        };
+        // console.table(req.session.userLogin);
+        if (req.cookies.domotica) {
+          res.cookie("domotica", req.session.userLogin, {
+            maxAge: 1000 * 60,
+          })
+
+      res.redirect("/users/profileEdit")
+        }
+      
+      }
+      )
+      .catch((error) => console.log(error));
+
+
+  },
+
+
+
+
   logout: (req, res) => {
     //primero destrullo la session y luego lo dirijimos al HOME.
     req.session.destroy();
     res.cookie("domotica", null, { maxAge: -1 });
     res.redirect("/");
   },
-  profileEdit:(req,res)=> {
-    return res.render("profileEdit", {
-      title: "Editar perfil",
-    });
-  }};
+
+
+
+};
