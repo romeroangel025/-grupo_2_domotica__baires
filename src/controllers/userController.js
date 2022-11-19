@@ -129,7 +129,7 @@ module.exports = {
         email: email.trim(),
         tel,
         rol: "user",
-        avatar: req.file ? req.file.filename : req.session.userLogin.avatar,
+        avatar: req.file ? req.file.filename : "userDefault.png",
         createdAt: new Date(),
         updateAt: new Date(),
       },
@@ -139,7 +139,7 @@ module.exports = {
         },
       }
     )
-      .then((user) => {
+      .then(() => {
 
 
 
@@ -148,7 +148,9 @@ module.exports = {
           ...req.session.userLogin,
           name,
           surname,
-          avatar:user.avatar
+          tel,
+          email,//no se como traer la imagen del usuario para actualizar el icono de perfil 
+
         };
         // console.table(req.session.userLogin);
         if (req.cookies.domotica) {
@@ -156,7 +158,7 @@ module.exports = {
             maxAge: 1000 * 60,
           })
 
-      res.redirect("/users/profileEdit")
+      res.redirect("/users/profile")
         }
       
       }
