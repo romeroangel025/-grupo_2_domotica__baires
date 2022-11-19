@@ -140,6 +140,9 @@ width: 50px;
 .lupita{width: 22px;
     height: 22px;
     border-radius: 5px;}
+.lupita:hover{
+        cursor: pointer;
+    } 
 .body__header__navegacion--barraDeNavegacion div{
    
     margin:10px;
@@ -203,6 +206,15 @@ width: 50px;
     .body__header__logo img{ 
         width: 60px;
         }
+    .aa1{
+        width: 150px;
+    }
+    .aa2{
+        
+    }
+    .aa3{
+        width: 150px;
+    }
 
 }
 

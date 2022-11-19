@@ -81,7 +81,10 @@ border: solid 1px lightseagreen;
         margin: auto;
         width: 50%;
         border: 1px solid var(--color-azul);
+        box-shadow: 5px 5px 10px rgb(100, 100, 100);
+
     }
+
 .rrr{
     display: none;
 }
@@ -89,6 +92,8 @@ border: solid 1px lightseagreen;
         width: 47%;
         border: 1px solid var(--color-azul);
         padding: 15px;
+        box-shadow: 5px 5px 10px rgb(100, 100, 100);
+
 
     }
     .container_info_profile2 div {

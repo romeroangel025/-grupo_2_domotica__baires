@@ -7,30 +7,30 @@
         </nav>
     </section class="body__header__navegacion">
     <nav class="body__header__navegacion--barraDeNavegacion">
-        <div>
+        <div class="aa1">
             <ul>
                 <li><a href="/">Inicio</a></li>
-              <!--   <li><a href="/products/edit">Editar</a></li> -->
-              <% if (locals.userLogin&&(locals.userLogin.rol==="admin")) { %>
-                <li><a href="/products/productAdd">Crear</a></li>
-              <% } %>
-               
+                <!--   <li><a href="/products/edit">Editar</a></li> -->
+                <% if (locals.userLogin&&(locals.userLogin.rol==="admin" )) { %>
+                    <li><a href="/products/productAdd">Crear</a></li>
+                    <% } %>
+
             </ul>
         </div>
 
-                <div>
-                    <ul>
-                        <li><a href="">Iluminacion</a></li>
-                        <li><a href="">Alarmas y Sensores</a></li>
-                        <li><a href="">electronica, audio y video</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><a href="/products">lista de productos</a></li>
-                        <li><a href="">¿Quienes somos?</a></li>
-                    </ul>
-                </div>
+        <div class="aa2">
+            <ul>
+                <li><a href="">Iluminacion</a></li>
+                <li><a href="">Alarmas y Sensores</a></li>
+                <li><a href="">electronica, audio y video</a></li>
+            </ul>
+        </div>
+        <div class="aa3">
+            <ul>
+                <li><a href="/products">lista de productos</a></li>
+<!--                 <li><a href="">¿Quienes somos?</a></li>
+ -->            </ul>
+        </div>
 
 
 
@@ -67,7 +67,7 @@
             </div>
             <div class="miCarrito">
                 <a href="/users/logout">
-                    <i class="fa-solid fa-arrow-right"></i> 
+                    <i class="fa-solid fa-arrow-right"></i>
                 </a>
                 <p>Salir</p>
 
