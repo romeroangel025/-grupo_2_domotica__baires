@@ -24,14 +24,14 @@ module.exports = [
 
     body("email")
         .notEmpty().withMessage('El email es obligatorio').bail()
-        .isEmail().withMessage('De ser un email válido').bail()
+        .isEmail().withMessage('Debe ser un email válido').bail()
         .custom((value) => {
             return db.User.findOne({
                 where: {
                     email: value,
                 },
             }).then((user) => {
-                if (user) {
+                if (user||(user.email)) {
                     return Promise.reject("Este email ya está registrado");
                 }
             });

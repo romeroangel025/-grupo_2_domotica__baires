@@ -7,7 +7,8 @@ const {login,register,processRegister,processLogin,profile,logout,profileEdit, p
 const upload = require('../middlewares/uploadFiles.js');
 const registerValidator = require('../validations/registerValidator');
 const loginValidator = require('../validations/loginValidator');
-const userSessionCheck = require('../middlewares/userSessionCheck')
+const userSessionCheck = require('../middlewares/userSessionCheck');
+const profileEditValidation = require('../validations/profileEditValidation');
 
 /* GET users listing. */
 router.get('/login', login);
@@ -17,7 +18,7 @@ router.post('/register',upload.single('avatar'),registerValidator,processRegiste
 router.get('/profile',userSessionCheck,profile);
 router.get('/logout', logout)
 router.get('/profileEdit', profileEdit)
-router.put('/profileEdit',upload.single('avatar'),profileEditUpdate)
+router.put('/profileEdit',upload.single('avatar'),profileEditValidation,profileEditUpdate)
 
 
 module.exports = router;

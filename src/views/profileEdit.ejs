@@ -26,18 +26,22 @@
             <div>
               <label for="">Nombre:</label>
               <input type="text" name="name"  value="<%= user.name %>" />
+              <p><%= locals.errors && errors.name ? errors.name.msg : null%></p>
             </div>
             <div>
               <label for="">Apellido:</label>
               <input type="text" name="surname"  value="<%= user.surname %>" />
+              <p><%= locals.errors && errors.surname ? errors.surname.msg : null%></p>
             </div>
             <div>
               <label for="">Email:</label>
               <input type="email" name="email" id=""  value="<%= user.email %>" />
+              <p><%= locals.errors && errors.email ? errors.email.msg : null%></p>
             </div>
             <div>
               <label for="">Telefono:</label>
               <input type="number" name="tel" id=""  value="<%= user.tel %>">
+              <p><%= locals.errors && errors.tel ? errors.tel.msg : null%></p>
             </div>
             <div>
               <button type="submit" class="botooon"><h4>Aceptar Cambios</h4></button>

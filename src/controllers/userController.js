@@ -118,52 +118,78 @@ module.exports = {
 
 
   profileEditUpdate: (req, res) => {
- 
+
     const { name, surname, email, tel } = req.body;
-
-
-   db.User.update(
-      {
-        name: name.trim(),
-        surname: surname.trim(),
-        email: email.trim(),
-        tel,
-        rol: "user",
-        avatar: req.file ? req.file.filename : "userDefault.png",
-        createdAt: new Date(),
-        updateAt: new Date(),
-      },
-      {
-        where: {
-          id: req.session.userLogin.id,
-        },
-      }
-    )
-      .then(() => {
-
-
-
-
-        req.session.userLogin = {
-          ...req.session.userLogin,
-          name,
-          surname,
+    let errors = validationResult(req);
+/* return res.send(errors) */
+    if (errors.isEmpty()) {
+      db.User.update(
+        {
+          name: name.trim(),
+          surname: surname.trim(),
+          email: email.trim(),
           tel,
-          email,//no se como traer la imagen del usuario para actualizar el icono de perfil 
-
-        };
-        // console.table(req.session.userLogin);
-        if (req.cookies.domotica) {
-          res.cookie("domotica", req.session.userLogin, {
-            maxAge: 1000 * 60,
-          })
-
-      res.redirect("/users/profile")
+          rol: "user",
+          avatar: req.file ? req.file.filename : "userDefault.png",
+          createdAt: new Date(),
+          updateAt: new Date(),
+        },
+        {
+          where: {
+            id: req.session.userLogin.id,
+          },
         }
-      
-      }
       )
-      .catch((error) => console.log(error));
+        .then(() => {
+
+
+
+
+          req.session.userLogin = {
+            ...req.session.userLogin,
+            name,
+            surname,
+            tel,
+            email,//no se como traer la imagen del usuario para actualizar el icono de perfil 
+
+          };
+          // console.table(req.session.userLogin);
+          if (req.cookies.domotica) {
+            res.cookie("domotica", req.session.userLogin, {
+              maxAge: 1000 * 60,
+            })
+
+            res.redirect("/users/profile")
+          }
+
+        }
+        )
+        .catch((error) => console.log(error));
+
+    } else {
+
+
+      db.User.findByPk(req.session.userLogin.id)
+        .then((user) => {
+          return res.render("profileEdit", {
+            title: "Editar Perfil",
+            user,
+            old: req.body,
+            errors: errors.mapped(),
+          });
+        })
+        .catch((error) => console.log(error));
+
+
+    }
+
+
+
+
+
+
+
+
 
 
   },
