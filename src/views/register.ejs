@@ -32,10 +32,17 @@
                         <label for="name">Nombre:</label>
                         <input type="text" name="name" placeholder="Ej:juanito" id="name" value="<%= locals.old && old.name ? old.name : null %>">
                         <p><%= locals.errors && errors.name ? errors.name.msg : null%></p>
+                        <p id="errorNombre">  <%= locals.errors && errors.name ? errors.name.msg : null %> </p>
+                        
+
+
+
+
 
                         <label for="surname">Apellido:</label>
                         <input type="text" name="surname" placeholder="Ej:Perez" id="surname" value="<%= locals.old && old.surname ? old.surname : null %>">
                         <p><%= locals.errors && errors.surname ? errors.surname.msg : null%></p>
+                        <p id="errorApellido">  <%= locals.errors && errors.name ? errors.name.msg : null %> </p>
 
                         <label for="email">Email:</label>
                         <input type="email" name="email" placeholder="Ej:juanitoPerez@hotmail.com" id="email" value="<%= locals.old && old.email ? old.email : null %>">
@@ -146,7 +153,7 @@
             </article>
             
         </footer>
-        
+          <script src="/javascript/usersRegister.js"></script>
     </body>  
 </body>
 </html>
