@@ -47,18 +47,24 @@
                         <label for="email">Email:</label>
                         <input type="email" name="email" placeholder="Ej:juanitoPerez@hotmail.com" id="email" value="<%= locals.old && old.email ? old.email : null %>">
                         <p> <%= locals.errors && errors.email ? errors.email.msg : null%></p>
+                        <p id="errorEmail">  <%= locals.errors && errors.name ? errors.name.msg : null %> </p>
+
 
                         <label for="tel">Telefono:</label>
-                        <input type="tel" name="tel" placeholder="Ej:1123456789" id="tel" value="<%= locals.old && old.tel ? old.tel : null %>" >
+                        <input type="number" name="tel" placeholder="Ej:1123456789" id="tel" value="<%= locals.old && old.tel ? old.tel : null %>" >
                         <p><%= locals.errors && errors.tel ? errors.tel.msg : null%> </p>
+                        <p id="errortel">  <%= locals.errors && errors.name ? errors.name.msg : null %> </p>
 
                         <label for="password">Contraseña:</label>
                         <input type="password" name="password" placeholder="Ej:nonono1234" id="password">
                         <p><%= locals.errors && errors.password ? errors.password.msg : null%></p>
+                        <p id="errorpassword">  <%= locals.errors && errors.name ? errors.name.msg : null %> </p>
+
 
                         <label for="password2">Confirmar Contraseña:</label>
                         <input type="password2" name="password2" placeholder="Ej:nonono1234" id="password2">
                         <p><%= locals.errors && errors.password2 ? errors.password2.msg : null%></p>
+                        <p id="errorpassword2">  <%= locals.errors && errors.name ? errors.name.msg : null %> </p>
 
                         <label for="avatar">Suba su avatar</label>
                         <input type="file" name="avatar"  id="avatar" >

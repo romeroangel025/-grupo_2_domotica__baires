@@ -3,8 +3,10 @@ const $ = (element) => document.getElementById(element);
 console.log("userRegister success!");
 console.log("maxi");
   
-const exRegAlfa = /^[ÁÉÍÓÚA-Z][a-záéíóú]+(\s+[ÁÉÍÓÚA-Z]?[a-záéíóú]+)*$/;
-
+/*const exRegAlfa = /^[ÁÉÍÓÚA-Z][a-záéíóú]+(\s+[ÁÉÍÓÚA-Z]?[a-záéíóú]+)*$/;//ESTA ESTA MAL
+const exRegEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+const   exRegtel = ;
+const exRegPass =      ;*/
 const msgError = (element, msg, { target }) => {
   $(element).innerText = msg;
   target.classList.add("form__label input-invalid"); // aca tenes que poner una clase para que esten rojos los input
@@ -61,5 +63,98 @@ $("surname").addEventListener("blur", function (e) {
   $("surname").addEventListener("focus", function ({ target }) {
     cleanField("errorApellido", target);
   });
+
+
+
+  
+$("email").addEventListener("blur", function (e) {
+    switch (true) {
+      case !this.value.trim():
+        msgError("errorEmail", "El Email es obligatorio", e); 
+           
+        break;
+      case !exRegEmail.test(this.value):
+        msgError("errorEmail","El email tiene un formato invalido")
+        break;
+       default:
+        validField("errorEmail",e)
+        break;
+    }
+  });
+  
+  $("email").addEventListener("focus", function ({ target }) {
+    cleanField("errorEmail", target);
+  });
+
+
+
+
+  $("tel").addEventListener("blur", function (e) {
+    switch (true) {
+      case !this.value.trim():
+        msgError("errortel", "El tel es obligatorio", e); 
+           
+        break;
+      case !exRegtel.test(this.value):
+        msgError("errortel","El tel tiene un formato invalido")
+        break;
+       default:
+        validField("errortel",e)
+        break;
+    }
+  });
+  
+  $("tel").addEventListener("focus", function ({ target }) {
+    cleanField("errortel", target);
+  });
+
+
+
+  $("password").addEventListener("blur", function (e) {
+    switch (true) {
+      case !this.value.trim():
+        msgError("errorpassword", "El password es obligatorio", e); 
+           
+        break;
+      case !exRegPass.test(this.value):
+        msgError("errorpassword","El password tiene un formato invalido")
+        break;
+       default:
+        validField("errorpassword",e)
+        break;
+    }
+  });
+  
+  $("password2").addEventListener("focus", function ({ target }) {
+    cleanField("errorpassword", target);
+  });
+
+  $("password2").addEventListener("blur", function (e) {
+    switch (true) {
+      case !this.value.trim():
+        msgError("errorpassword2", "El password es obligatorio", e); 
+           
+        break;
+      case !exRegPass.test(this.value):
+        msgError("errorpassword2","El password tiene un formato invalido")
+        break;
+       default:
+        validField("errorpassword2",e)
+        break;
+    }
+  });
+  
+  $("password2").addEventListener("focus", function ({ target }) {
+    cleanField("errorpassword2", target);
+  });
+
+
+
+
+
+
+
+
+
 
 
