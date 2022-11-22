@@ -1,0 +1,37 @@
+.nadvarH{
+background-color:#09363d;
+width: 100%;
+height: 100%;
+padding: 10px;
+position: fixed;
+left: -450px;
+top: 0px;
+
+}
+
+.nadvarH ul, li{
+    list-style: none;
+    text-decoration: none;
+    text-align: left;
+    font-size: 20px;
+    margin-top: 5px;
+    padding: 1px 0px;
+}
+.nadvarH div{
+    margin: 20px 0px;
+}
+.mostrar {
+    left: 0px;
+   transition: all 1s;
+   z-index: 50;
+  }
+#salir{
+    transition: all 1s;
+  
+
+}
+.bbbt{
+position: absolute;
+    top: 3px;
+    right: 3px;
+}

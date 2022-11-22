@@ -1,8 +1,43 @@
 <header class=<%=locals.userLogin && userLogin.rol==="admin" ? "body__header2" : "body__header" %> >
     <section class="body__header__navegacion">
         <nav class="body__header__navegacion--menuBurguer">
-            <div>
-                <a href=""><i class="fa-solid fa-bars"></i></a>
+           
+            
+                <nav class="nadvarH">
+                    <div class="">
+                        <ul>
+                            <li><a href="/">Inicio</a></li>
+                            <!--   <li><a href="/products/edit">Editar</a></li> -->
+                            <% if (locals.userLogin&&(locals.userLogin.rol==="admin" )) { %>
+                                <li><a href="/products/productAdd">Crear</a></li>
+                                <% } %>
+            
+                        </ul>
+                    </div>
+            
+                    <div class="">
+                        
+                        <ul>
+                            <li><a href="">Iluminacion</a></li>
+                            <li><a href="">Alarmas y Sensores</a></li>
+                            <li><a href="">electronica, audio y video</a></li>
+                        </ul>
+                    </div>
+                    <div class="">
+                        <ul>
+                            <li><a href="/products">Lista de productos</a></li>
+                <!--                 <li><a href="">¿Quienes somos?</a></li>
+                -->            </ul>
+                    </div>
+                    <div >
+                        <button class="bbbt" id="salirH">Cerrar</button>
+                    </div>
+            
+            
+            
+                </nav>
+            
+              <button class="menuH"> <i class="fa-solid fa-bars"></i></button> 
             </div>
         </nav>
     </section class="body__header__navegacion">
@@ -22,12 +57,12 @@
             <ul>
                 <li><a href="">Iluminacion</a></li>
                 <li><a href="">Alarmas y Sensores</a></li>
-                <li><a href="">electronica, audio y video</a></li>
+                <li><a href="">Electronica, Audio y Video</a></li>
             </ul>
         </div>
         <div class="aa3">
             <ul>
-                <li><a href="/products">lista de productos</a></li>
+                <li><a href="/products">Lista de Productos</a></li>
 <!--                 <li><a href="">¿Quienes somos?</a></li>
  -->            </ul>
         </div>
@@ -35,6 +70,9 @@
 
 
     </nav>
+
+
+
     <!-- search -->
     <section class="body__header__barraDeBusqueda">
         <form action="/search" method="GET">
@@ -81,5 +119,5 @@
                 <% } %>
 
     </section>
-
+<script src="/javascript/header.js"></script>
 </header>

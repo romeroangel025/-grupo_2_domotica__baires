@@ -26,5 +26,7 @@
 
 @import './search.css';
 
-@import './profile.css' ;     
+@import './menuBurguer.css';
+
+@import './profile.css';
 

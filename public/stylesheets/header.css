@@ -35,12 +35,22 @@
     }
 
 .body__header__navegacion--menuBurguer{
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
-    color: white;
+    color: transparent;
     padding: 5px;
+    width: 40%;
 
 }
+.menuH{
+    color: black;
+    width: 35px;
+    height: 35px;
+    font-size: 30px;
+    background-color: transparent;
+    border: none;
+}
+
 
 .body__header__navegacion--barraDeNavegacion{
     display: none;
@@ -161,10 +171,10 @@ width: 50px;
 }
 .body__header__navegacion--barraDeNavegacion li{
     display: block;
-    padding: 5px;
 }
 .body__header__navegacion--barraDeNavegacion li a{
-    text-decoration: none;}
+    text-decoration: none;
+font-size: 16px;}
 
     .body__header__barraDeBusqueda{
         order: 0;
@@ -207,7 +217,7 @@ width: 50px;
         width: 60px;
         }
     .aa1{
-        width: 150px;
+        
     }
     .aa2{
         
@@ -248,5 +258,14 @@ width: 50px;
 }
 .body__header__logo img{ 
     width: 65px;
+    }
+    .aa1{
+        width: 200px;
+    }
+    .aa2{
+        
+    }
+    .aa3{
+        width: 200px;
     }
 }
