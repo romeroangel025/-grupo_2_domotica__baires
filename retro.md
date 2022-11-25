@@ -1,4 +1,4 @@
-# Retrospectiva Sprint 5:
+# Retrospectiva Sprint 7:
 
 # Empezar a hacer:
 
