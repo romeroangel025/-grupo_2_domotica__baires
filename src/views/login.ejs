@@ -37,8 +37,9 @@
           <p><%= locals.password && errors.password ? errors.password.msg : null%></p>
 
           <a href="">¿Olvidaste tu contraseña?</a>
-
-          <input type="checkbox" id="recordame" name="remember"><label for="recordame">Recordame</label>
+          
+          <label for="recordame">Recordame</label>
+          <input class="form__label_input_checkbox" type="checkbox" id="recordame" name="remember">
 
           <button type="submit">Iniciar Sesion</button>
         </form>
