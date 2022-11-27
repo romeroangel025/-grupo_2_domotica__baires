@@ -6,7 +6,7 @@ const router = express.Router();
 //const { uploadImageAvatar } = require("../middlewares");
 
 // ************ Controller Require ************
-const { register, login, getUserAuthenticated } = require("../APIs/");
+const { register, login, getUserAuthenticated } = require("../../controllers/APIs/apisAuthController");
 //const { checkToken } = require("../middlewares/checkToken");
 
 

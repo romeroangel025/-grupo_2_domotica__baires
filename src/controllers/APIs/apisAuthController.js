@@ -1,4 +1,4 @@
-const db = require("../database/models");
+const db = require("../../database/models");
 const { compareSync } = require("bcryptjs");
 module.exports = {
 // register controller
@@ -13,7 +13,7 @@ try {
         });
     }
     
-await db.User.create({
+/* await db.User.create({
     name:name.trim(),
     surname:surname.trim(),
     email:email.trim(),
@@ -21,7 +21,7 @@ await db.User.create({
     rol:""
     avatar:""
     tel:""
-})
+}) */
 
 
 
