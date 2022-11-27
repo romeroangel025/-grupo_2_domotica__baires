@@ -1,1 +1,5 @@
-console.log('productAdd connected success!')
+console.log('productAdd connected success!');
+
+const formProductAdd = $('formProductAdd');
+
+console.log(formProductAdd);
