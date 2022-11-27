@@ -14,7 +14,7 @@
               <p>¿Desea editar un producto?</p>
             </a>
           </div>
-          <form class="form__label" action="/products/store" enctype="multipart/form-data" method="POST">
+          <form class="form__label" action="/products/store" enctype="multipart/form-data" method="POST" id="formProductAdd">
             <label for="nombre">Nombre del producto</label>
             <input type="text" name="title" value="<%= locals.old && old.title ? old.title : null %>" />
             <p><%= locals.errors && errors.title ? errors.title.msg : null%></p>
@@ -51,8 +51,14 @@
         </section>
       </main>
 
-      <!-- Header -->
+      <!-- footer -->
       <%- include('./partials/footer') %>
+
+      <%- include('./partials/script') %>
+
+<script src="/javascript/productAdd.js"></script>
+
+
   </body>
 
 </html>
