@@ -16,7 +16,7 @@ module.exports = {
         tel,
         password: hashSync(password, 10),
         rol: "user",
-        avatar: req.file ? req.file.filename : "userDefault.png",
+        avatar: req.file?.filename || "userDefault.png",
         createdAt: new Date(),
         updateAt: new Date(),
       })

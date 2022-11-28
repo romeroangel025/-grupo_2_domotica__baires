@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 // ************ Middleware Require ************
-//const { uploadImageAvatar } = require("../middlewares");
+const { uploadImageAvatar } = require("../../middlewares/uploadFilesFunc");
 
 // ************ Controller Require ************
 const { register, login, getUserAuthenticated } = require("../../controllers/APIs/apisAuthController");
@@ -12,7 +12,7 @@ const { register, login, getUserAuthenticated } = require("../../controllers/API
 
 router
   /* POST REGISTER */
-  .post("/register", register)
+  .post("/register",uploadImageAvatar.single("avatar"), register)
 
   /* POST LOGIN */
   //.post("/login", login)
