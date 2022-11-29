@@ -2,11 +2,14 @@ const $ = (element) => document.getElementById(element);
 
 console.log("userRegister success!");
 console.log("maxi");
-  
-/*const exRegAlfa = /^[ÁÉÍÓÚA-Z][a-záéíóú]+(\s+[ÁÉÍÓÚA-Z]?[a-záéíóú]+)*$/;//ESTA ESTA MAL
+
+
+const exRegAlfa = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/;
 const exRegEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-const   exRegtel = ;
-const exRegPass =      ;*/
+const exRegPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,12}/;
+
+
+
 const msgError = (element, msg, { target }) => {
   $(element).innerText = msg;
   target.classList.add("form__label input-invalid"); // aca tenes que poner una clase para que esten rojos los input
@@ -27,7 +30,7 @@ $("name").addEventListener("blur", function (e) {
       msgError("errorNombre", "El nombre es obligatorio", e); 
           /*console.log("userRegister success!");*/
       break;
-    case !this.value.trim().length < 2:
+    case this.value.trim().length < 2:
       msgError("errorNombre", "El nombre debe tener como minimo dos caracteres", e);
       break;
       case !exRegAlfa.test(this.value):
@@ -49,7 +52,7 @@ $("surname").addEventListener("blur", function (e) {
         msgError("errorApellido", "El Apellido es obligatorio", e); 
             /*console.log("userRegister success!");*/
         break;
-      case !this.value.trim().length < 2:
+      case this.value.trim().length < 2:
         msgError("errorApellido", "El Apellido debe tener como minimo dos caracteres", e);
         break;
         case !exRegAlfa.test(this.value):
@@ -73,7 +76,7 @@ $("email").addEventListener("blur", function (e) {
         msgError("errorEmail", "El Email es obligatorio", e); 
            
         break;
-      case !exRegEmail.test(this.value):
+      case exRegEmail.test(this.value):
         msgError("errorEmail","El email tiene un formato invalido")
         break;
        default:
@@ -125,7 +128,7 @@ $("email").addEventListener("blur", function (e) {
     }
   });
   
-  $("password2").addEventListener("focus", function ({ target }) {
+  $("password").addEventListener("focus", function ({ target }) {
     cleanField("errorpassword", target);
   });
 
