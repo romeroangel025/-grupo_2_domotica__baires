@@ -15,7 +15,7 @@ router
   .post("/register",uploadImageAvatar.single("avatar"), register)
 
   /* POST LOGIN */
-  //.post("/login", login)
+  .post("/login", login)
 
   /* POST LOGIN */
   //.get("/me/:token?", getUserAuthenticated);
