@@ -87,12 +87,28 @@ if (errors.isEmpty()) {
 
     let product = db.Product.findByPk(req.params.id);
 
-    Promise.all([categories, product])
-      .then(([categories, product]) => {
+    const images = req.files?.map((file) => {
+      return {
+        name: file.filename,
+        product_id: product.id,
+        /* createAt:new Date() */
+      };
+    }) || [{ name: "default-image.png", product_id: product.id }];
+
+    /*  let image = req.files ? req.files.filename : "default-image.png"; */
+   let imagesEdit = db.Image.bulkCreate(images).then(() => {
+      return images
+    });
+
+
+
+    Promise.all([categories, product,imagesEdit])
+      .then(([categories, product,imagesEdit]) => {
         return res.render("productEdit", {
           title: "editar producto",
           product,
           categories,
+          imagesEdit
         });
       })
       .catch((error) => console.log(error));
@@ -108,6 +124,7 @@ if (errors.isEmpty()) {
       ...req.body,
       name: req.body.title.trim(),
       description: req.body.description.trim(),
+
     },
     {
       where: {
