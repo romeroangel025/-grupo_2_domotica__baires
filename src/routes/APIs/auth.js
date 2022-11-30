@@ -18,6 +18,6 @@ router
   .post("/login", login)
 
   /* POST LOGIN */
-  //.get("/me/:token?", getUserAuthenticated);
+  .get("/me/:token?", getUserAuthenticated);
 
 module.exports = router;
