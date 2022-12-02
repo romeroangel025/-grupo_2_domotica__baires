@@ -110,7 +110,7 @@ width: 50px;
 
 
 .body__header__utilidades .miCuenta{
-    display: none;
+    display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
