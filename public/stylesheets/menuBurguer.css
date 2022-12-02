@@ -1,5 +1,5 @@
 .nadvarH{
-background-color:#09363d;
+background-color: #2F8F9D;
 width: 100%;
 height: 100%;
 padding: 10px;
@@ -9,13 +9,19 @@ top: 0px;
 
 }
 
-.nadvarH ul, li{
+.nadvarH ul{
     list-style: none;
     text-decoration: none;
     text-align: left;
     font-size: 20px;
     margin-top: 5px;
     padding: 1px 0px;
+}
+.nadvarH li{
+    height: 40px;
+    border-bottom: 1px solid #3BACB6;
+    padding: 5px;
+
 }
 .nadvarH div{
     margin: 20px 0px;
