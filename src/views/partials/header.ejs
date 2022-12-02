@@ -25,11 +25,40 @@
                 <!--                 <li><a href="">¿Quienes somos?</a></li>
                 -->            </ul>
                     </div>
+                    <section class="utilidades-h">
+                        <% if (locals.userLogin) { %>
+                                   
+                            <div class="icono-h">
+                                <a href="/users/profile"><img src="/imagenes/imageUsers/<%= locals.userLogin.avatar %> " alt=""></a>
+                                
+                                <a href="/users/profile"><p>Mi cuenta</p></a>
+                                
+                            </div>
+                            <div class="icono-h">
+                                <a href="/users/logout">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <a href="/users/logout">
+                                    <p>Salir</p>
+                                </a>
+                              
+                
+                            </div>
+                
+                            <% }else{ %>
+                                <div class="icono-h">
+                                    
+                                    <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+                                    <a href="/users/login"><p> Mi cuenta</p></a>
+                                    
+                                </div>
+                                <% } %>
+                    </section>
                     <div >
-                        <button class="bbbt" id="salirH">Cerrar</button>
+                        <button class="bbbt" id="salirH"><i class="fa-solid fa-square-xmark"></i></button>
                     </div>
             
-            
+                    
             
                 </nav>
             
@@ -99,7 +128,7 @@
                 <a href="/productCart/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
                 <p>Mi carrito</p>
             </div>
-            <div class="miCarrito">
+            <div class="icono_salir">
                 <a href="/users/logout">
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
