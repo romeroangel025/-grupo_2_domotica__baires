@@ -92,13 +92,13 @@ module.exports = {
             }
 
 
-            const token = await sign({ id, rol }, "domotica", { expiresIn: "4h" })
+            const token = await sign({ id, rol }, "domotica16", { expiresIn: "4h" })
 
             return res.status(200).json({
                 ok: true,
                 status: 200,
                 token,
-                urlData: `${req.protocol}://${req.get("host")}/auth/me/${token}`
+                urlData: `${req.protocol}://${req.get("host")}/APIs/auth/me/${token}`
 
             })
 
@@ -116,10 +116,35 @@ module.exports = {
     },
     getUserAuthenticated: async (req, res) => {
 
-
         try {
+           const {id} = req.userToken  
+           const data = await db.User.findByPk(id/* ,{
+            include:[{
+              attributes:{
+                exclude:["password","rol"]
+              }
+            }]
+           } */);
+           
+        
+           res.status(200).json({
+            ok:true,
+            status:200,
+            data
+           })
+           
+
+
+
             
+            //{id,rol}
         } catch (error) {
+
+            res.status(500).json({
+                ok:false,
+                status:500,
+                msg: error.message || "Error en el servidor"
+               })
 
         }
 

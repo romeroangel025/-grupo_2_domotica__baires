@@ -7,7 +7,7 @@ const { uploadImageAvatar } = require("../../middlewares/uploadFilesFunc");
 
 // ************ Controller Require ************
 const { register, login, getUserAuthenticated } = require("../../controllers/APIs/apisAuthController");
-//const { checkToken } = require("../middlewares/checkToken");
+const checkToken = require("../../middlewares/checkToken");
 
 
 router
@@ -18,6 +18,6 @@ router
   .post("/login", login)
 
   /* POST LOGIN */
-  .get("/me/:token?", getUserAuthenticated);
+  .get("/me/:token?", checkToken ,getUserAuthenticated);
 
 module.exports = router;
