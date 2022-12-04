@@ -5,7 +5,9 @@ const { hashSync, compare, hash } = require("bcryptjs");
 
 module.exports = {
   processRegister: (req, res) => {
+    
     let errors = validationResult(req);
+   
     if (errors.isEmpty()) {
       const { name, surname, email, tel, password, avatar } = req.body;
 

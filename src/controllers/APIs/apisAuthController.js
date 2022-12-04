@@ -118,15 +118,25 @@ module.exports = {
 
         try {
            const {id} = req.userToken  
-           const data = await db.User.findByPk(id/* ,{
-            include:[{
-              attributes:{
-                exclude:["password","rol"]
+           const data = await db.User.findByPk(id,
+            {
+                attributes: [{
+    attributes: [    
+    "id",
+    "name",
+    "surname",
+    "email",
+    "rol",
+    "avatar",
+    "tel",
+    "createdAt"],
+    /* [[literal(`CONCAT("${req.protocol}://${req.get("host")}${req.baseUrl}/image")`)]] */
+  }]
+               
               }
-            }]
-           } */);
+           );
            
-        
+        rl
            res.status(200).json({
             ok:true,
             status:200,
