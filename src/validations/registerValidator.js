@@ -14,15 +14,14 @@ module.exports = [
         .notEmpty()
         .withMessage("El apellido es obligatorio")
         .bail()
-        .matches(/^[ÁÉÍÓÚA-Z][a-záéíóú]+(\s+[ÁÉÍÓÚA-Z]?[a-záéíóú]+)*$/)
-        .withMessage("Solo letras")
+       
         .bail()
         .isLength({
             min: 2,
         })
         .withMessage("Como mínimo 2 caracteres"),
 
-    body("email")
+    /* body("email")
         .notEmpty().withMessage('El email es obligatorio').bail()
         .isEmail().withMessage('Debe ser un email válido').bail()
         .custom((value) => {
@@ -36,8 +35,22 @@ module.exports = [
                 }
             });
         }),
+ */
 
-
+        check("email")
+    .notEmpty().withMessage('El email es obligatorio').bail()
+    .isEmail().withMessage('Debe ser un email válido').bail()
+    .custom((value) => {
+      return db.User.findOne({
+        where: {
+          email: value
+        }
+      }).then((user) => {
+        if(user) {
+          return Promise.reject('El email ya existe')
+        }
+      })     
+    }).withMessage('El email ya se encuentra registrado'),
 
     check('tel')
         .notEmpty().withMessage('EL numero de telefono es obligatorio').bail()

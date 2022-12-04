@@ -15,12 +15,21 @@ if(!token){
 
 }
 
-const decoded = verify(token,"domotica16");
+const decoded =  verify(token,"domotica16");
 
 req.userToken = decoded //{id,rol}
 
+next()
 
 } catch (error) {
+
+    return res.status(403).json({
+        ok:false,
+        status:403,
+        msg:"El token es invalido"
+    })
+
+ 
     
 }
 
