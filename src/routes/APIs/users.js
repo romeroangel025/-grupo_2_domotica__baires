@@ -22,6 +22,6 @@ router
   .delete("/:id?", checkToken, remove)
 
   /* PREVIEW IMAGE */
-  .get("/image/:img", checkToken, image);
+  .get("/image/:img", image);
 
 module.exports = router;

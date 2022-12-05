@@ -15,9 +15,9 @@ module.exports = [
 check('surname')
     .notEmpty()
     .withMessage("El apellido es obligatorio")
-    .bail()
-    .matches(/^[ÁÉÍÓÚA-Z][a-záéíóú]+(\s+[ÁÉÍÓÚA-Z]?[a-záéíóú]+)*$/)
-    .withMessage("Solo letras")
+     .bail()
+    /*  .matches(/^\s+[ÁÉÍÓÚA-Z]?[a-záéíóú]/)
+    .withMessage("Solo letras")  */
     .bail()
     .isLength({
         min: 2,

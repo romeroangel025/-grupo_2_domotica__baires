@@ -1,6 +1,7 @@
 const db = require("../../database/models");
 const { compareSync, hashSync, hash, setRandomFallback } = require("bcryptjs");
-const { sign } = require("jsonwebtoken")
+const { sign } = require("jsonwebtoken");
+const { literal } = require("sequelize");
 
 module.exports = {
     // register controller
@@ -117,26 +118,18 @@ module.exports = {
     getUserAuthenticated: async (req, res) => {
 
         try {
+
+            const options =  {
+             attributes :{
+                    exclude:["deletedAt","password"],
+                    include:[[literal(`CONCAT( '${req.protocol}://${req.get("host")}/APIs/users/image/',avatar )`),'avatar']]
+                }
+                }
+
            const {id} = req.userToken  
-           const data = await db.User.findByPk(id,
-            {
-                attributes: [{
-    attributes: [    
-    "id",
-    "name",
-    "surname",
-    "email",
-    "rol",
-    "avatar",
-    "tel",
-    "createdAt"],
-    /* [[literal(`CONCAT("${req.protocol}://${req.get("host")}${req.baseUrl}/image")`)]] */
-  }]
-               
-              }
-           );
+           const data = await db.User.findByPk(id,options);
            
-        rl
+       
            res.status(200).json({
             ok:true,
             status:200,
