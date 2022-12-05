@@ -24,6 +24,10 @@ check('surname')
     })
     .withMessage("Como mínimo 2 caracteres"),
 
+    check("email")
+    .notEmpty().withMessage('El email es obligatorio').bail()
+    .isEmail().withMessage('Debe ser un email válido').bail(),
+
 /* body("email")
     .notEmpty().withMessage('El email es obligatorio').bail()
     .isEmail().withMessage('Debe ser un email válido').bail()

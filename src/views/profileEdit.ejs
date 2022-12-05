@@ -25,23 +25,28 @@
             
             <div>
               <label for="">Nombre:</label>
-              <input type="text" name="name"  value="<%= user.name %>" />
+              <input type="text" name="name"  value="<%= user.name %>" id="name" />
               <p><%= locals.errors && errors.name ? errors.name.msg : null%></p>
+              <p id="errorNombre">  <%= locals.errors && errors.name ? errors.name.msg : null %> </p>
+                        
             </div>
             <div>
               <label for="">Apellido:</label>
-              <input type="text" name="surname"  value="<%= user.surname %>" />
+              <input type="text" name="surname"  value="<%= user.surname %>" id="surname" />
               <p><%= locals.errors && errors.surname ? errors.surname.msg : null%></p>
+              <p id="errorApellido">  <%= locals.errors && errors.name ? errors.name.msg : null %> </p>
             </div>
             <div>
               <label for="">Email:</label>
-              <input type="email" name="email" id=""  value="<%= user.email %>" />
+              <input type="email" name="email"   value="<%= user.email %>" id="email" />
               <p><%= locals.errors && errors.email ? errors.email.msg : null%></p>
+              <p id="errorEmail">  <%= locals.errors && errors.name ? errors.name.msg : null %> </p>
             </div>
             <div>
               <label for="">Telefono:</label>
-              <input type="number" name="tel" id=""  value="<%= user.tel %>">
+              <input type="number" name="tel"  value="<%= user.tel %>" id="tel">
               <p><%= locals.errors && errors.tel ? errors.tel.msg : null%></p>
+              <p id="errortel">  <%= locals.errors && errors.name ? errors.name.msg : null %> </p>
             </div>
             <div>
               <button type="submit" class="botooon"><h4>Aceptar Cambios</h4></button>
@@ -70,6 +75,7 @@
 
       <!-- Header -->
       <%- include('./partials/footer') %>
+      <script src="/javascript/profileEdit.js"></script>
   </body>
 
 </html>
