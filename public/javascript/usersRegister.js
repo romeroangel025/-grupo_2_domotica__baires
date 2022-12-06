@@ -8,8 +8,8 @@ const exRegAlfa = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/;
 const exRegEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 const exRegPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,12}/;
 
-
-
+let formulariooo = document.getElementById("formulariooo");
+let btnnn =document.getElementById("btnnn")
 const msgError = (element, msg, { target }) => {
   $(element).innerText = msg;
   target.classList.add("form__label input-invalid"); // aca tenes que poner una clase para que esten rojos los input
@@ -152,9 +152,14 @@ $("email").addEventListener("blur", function (e) {
   });
 
 
-
-
-
+  formulariooo.addEventListener("submit", function (e) {
+    if ( $("name").value === "" || $("tel").value === "" || $("surname").value === "" || $("email").value === "" || $$("password").value === "" || $("password2").value === "") {
+       console.log('esta vacio');
+       btnnn.style.backgroundColor = "red"
+    e.preventDefault();// detengo la funcion del boton
+    
+    }
+    })
 
 
 
