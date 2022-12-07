@@ -19,7 +19,7 @@ router
   .patch("/", checkToken, update)
 
   /* DELETE USER */
-  .delete("/:id?", checkToken, remove)
+  .delete("/:id?", remove)
 
   /* PREVIEW IMAGE */
   .get("/image/:img", image);
