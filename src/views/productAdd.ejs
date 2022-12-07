@@ -23,7 +23,7 @@
 
             <label for="descripcion">Descripción del producto</label>
             <textarea name="description" id="description" value="<%= locals.old && old.title ? old.title : null %>" ></textarea>
-            <p><span id="numberCharacters"></span> disponibles</p>
+            <p id="descriptionMsg" hidden><span id="numberCharacters"></span> disponibles</p>
 
             <p><%= locals.errors && errors.description ? errors.description.msg : null%></p>
 

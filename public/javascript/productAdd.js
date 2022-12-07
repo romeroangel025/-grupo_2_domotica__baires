@@ -4,6 +4,10 @@ const formProductAdd = $('formProductAdd');
 
 const elements = formProductAdd.elements;
 
+let totalCharacters = 200;
+
+let numberCharacters = 200;
+
 $('name').addEventListener('focus', function(e){
 
     $('nameMsg').innerHTML = "Este campo no puede estar en blanco";
@@ -42,5 +46,25 @@ $('discount').addEventListener('keyup', function(e){
 $('finalPrice').value = +price - (+price * +discount / 100)
 });
 
+$('description').addEventListener('focus', function(e){
+
+    $('descriptionMsg').hidden = false;
+    $('numberCharacters').innerHTML = numberCharacters;
+    
+});
+
+$('description').addEventListener('blur', function(e){
+
+    $('descriptionMsg').hidden = true;
+    
+});
+
+$('description').addEventListener('keyup', function(e){
+
+    numberCharacters = totalCharacters - +this.value.length;
+
+    $('numberCharacters').innerHTML = numberCharacters;
+
+});
 
 
