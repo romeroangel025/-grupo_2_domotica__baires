@@ -16,11 +16,14 @@
           </div>
           <form class="form__label" action="/products/store" enctype="multipart/form-data" method="POST" id="formProductAdd">
             <label for="nombre">Nombre del producto</label>
-            <input type="text" name="title" value="<%= locals.old && old.title ? old.title : null %>" />
+            <input type="text" id='name' name="title" value="<%= locals.old && old.title ? old.title : null %>" />
             <p><%= locals.errors && errors.title ? errors.title.msg : null%></p>
+            <p id="nameMsg"></p>
+
 
             <label for="descripcion">Descripción del producto</label>
             <textarea name="description" id="description" value="<%= locals.old && old.title ? old.title : null %>" ></textarea>
+            <p><span id="numberCharacters"></span> disponibles</p>
 
             <p><%= locals.errors && errors.description ? errors.description.msg : null%></p>
 
@@ -37,11 +40,16 @@
            <p> <%= locals.errors && errors.category ? errors.category.msg : null %> </p>
 
             <label for="precio">Precio</label>
-            <input type="number" name="price" value="<%= locals.old && old.price ? old.price : null %>" />
+            <input type="number" id="price" name="price" value="<%= locals.old && old.price ? old.price : null %>" />
             <p><%= locals.errors && errors.price ? errors.price.msg : null%></p>
+            <p id="priceMsg"></p>
 
             <label for="discount">Descuento</label>
-            <input type="number" name="discount" value="<%= locals.old && old.discount ? old.discount : null %>" />
+            <input type="number" id="discount"  name="discount" value="<%= locals.old && old.discount ? old.discount : null %>" />
+            <p><%= locals.errors && errors.discount ? errors.discount.msg : null%></p>
+
+            <label for="finalPrice">Precio final</label>
+            <input type="number" id="finalPrice" name="finalPrice" value="<%= locals.old && old.discount ? old.discount : null %>" />
             <p><%= locals.errors && errors.discount ? errors.discount.msg : null%></p>
 
             <label for="imagen">Suba la imagen del producto</label>
