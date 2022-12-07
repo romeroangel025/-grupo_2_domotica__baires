@@ -45,9 +45,40 @@ return res.status(200).json({
 
 },
 
-remove:async(req,res)=>{
+remove: async (req,res)=>{
+
+    try {
+        const idUser = req.params.id || req.userToken.id;
+
+     const removeuser = await db.User.destroy({where:{id:idUser}});
+
+if (!removeuser) {
+    return res.status(404).json({
+        ok:false,
+        status:404,
+        msg:"Es probable que el usuario no exista"
+    })
+}
+return res.status(200).json({
+    ok:false,
+    status:200,
+    msg:"El usuario se elimino"
+})
+
+
+    } catch (error) {
+        res.status(500).json({
+            ok:false,
+            status:200,
+            msg: error.message || "ocurrio un error en el server"
+    })
+
+
+
+
+
+}
+
 
 },
-
-
-};
+}
