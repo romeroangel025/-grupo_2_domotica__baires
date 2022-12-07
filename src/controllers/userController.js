@@ -5,7 +5,9 @@ const { hashSync, compare, hash } = require("bcryptjs");
 
 module.exports = {
   processRegister: (req, res) => {
+    
     let errors = validationResult(req);
+   
     if (errors.isEmpty()) {
       const { name, surname, email, tel, password, avatar } = req.body;
 
@@ -16,7 +18,7 @@ module.exports = {
         tel,
         password: hashSync(password, 10),
         rol: "user",
-        avatar: req.file ? req.file.filename : "userDefault.png",
+        avatar: req.file?.filename || "userDefault.png",
         createdAt: new Date(),
         updateAt: new Date(),
       })
@@ -121,7 +123,8 @@ module.exports = {
 
     const { name, surname, email, tel } = req.body;
     let errors = validationResult(req);
-/* return res.send(errors) */
+// return res.send(errors) 
+
     if (errors.isEmpty()) {
       db.User.update(
         {
@@ -130,7 +133,7 @@ module.exports = {
           email: email.trim(),
           tel,
           rol: "user",
-          avatar: req.file ? req.file.filename : "userDefault.png",
+          avatar: req.file ? req.file.filename : req.session.userLogin.avatar,
           createdAt: new Date(),
           updateAt: new Date(),
         },
@@ -139,8 +142,7 @@ module.exports = {
             id: req.session.userLogin.id,
           },
         }
-      )
-        .then(() => {
+                 ).then(() => {
 
 
 
@@ -151,7 +153,7 @@ module.exports = {
             surname,
             tel,
             email,//no se como traer la imagen del usuario para actualizar el icono de perfil 
-
+            avatar:req.file ? req.file.filename : req.session.userLogin.avatar,
           };
           // console.table(req.session.userLogin);
           if (req.cookies.domotica) {
@@ -159,9 +161,9 @@ module.exports = {
               maxAge: 1000 * 60,
             })
 
-            res.redirect("/users/profile")
+           
           }
-
+        return   res.redirect("/users/profile")
         }
         )
         .catch((error) => console.log(error));

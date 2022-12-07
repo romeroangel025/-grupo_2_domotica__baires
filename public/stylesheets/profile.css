@@ -56,6 +56,11 @@
 .container_info_profile2 div {
     padding: 10px;
 }
+
+.container_info_profile p {
+    color:red;
+    
+}
 .botooon{
 height: 30px;
 width: 80%;

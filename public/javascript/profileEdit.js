@@ -8,8 +8,8 @@ const exRegAlfa = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/;
 const exRegEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 const exRegPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,12}/;
 
-let formulariooo = document.getElementById("formulariooo");
-let btnnn =document.getElementById("btnnn")
+
+
 const msgError = (element, msg, { target }) => {
   $(element).innerText = msg;
   target.classList.add("form__label input-invalid"); // aca tenes que poner una clase para que esten rojos los input
@@ -110,59 +110,5 @@ $("email").addEventListener("blur", function (e) {
   $("tel").addEventListener("focus", function ({ target }) {
     cleanField("errortel", target);
   });
-
-
-
-  $("password").addEventListener("blur", function (e) {
-    switch (true) {
-      case !this.value.trim():
-        msgError("errorpassword", "El password es obligatorio", e); 
-           
-        break;
-      case !exRegPass.test(this.value):
-        msgError("errorpassword","El password tiene un formato invalido")
-        break;
-       default:
-        validField("errorpassword",e)
-        break;
-    }
-  });
-  
-  $("password").addEventListener("focus", function ({ target }) {
-    cleanField("errorpassword", target);
-  });
-
-  $("password2").addEventListener("blur", function (e) {
-    switch (true) {
-      case !this.value.trim():
-        msgError("errorpassword2", "El password es obligatorio", e); 
-           
-        break;
-      case !exRegPass.test(this.value):
-        msgError("errorpassword2","El password tiene un formato invalido")
-        break;
-       default:
-        validField("errorpassword2",e)
-        break;
-    }
-  });
-  
-  $("password2").addEventListener("focus", function ({ target }) {
-    cleanField("errorpassword2", target);
-  });
-
-
-  formulariooo.addEventListener("submit", function (e) {
-    if ( $("name").value === "" || $("tel").value === "" || $("surname").value === "" || $("email").value === "" || $$("password").value === "" || $("password2").value === "") {
-       console.log('esta vacio');
-       btnnn.style.backgroundColor = "red"
-    e.preventDefault();// detengo la funcion del boton
-    
-    }
-    })
-
-
-
-
 
 

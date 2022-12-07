@@ -15,6 +15,13 @@ var usersRouter = require('./routes/users');
 let productsRouter = require('./routes/products');
 let carritoRouter = require('./routes/carrito');
 
+
+
+// apis require *************************************************
+
+let authRegister = require('./routes/APIs/auth');
+const usersRouterAPIs = require("./routes/APIs/users");
+
 var app = express();
 
 app.use(express.static("public"));
@@ -44,6 +51,14 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/productCart', carritoRouter);
+
+
+// rutas apis ******************************************************************
+
+app.use("/APIs/auth", authRegister);
+app.use("/APIs/users", usersRouterAPIs);
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

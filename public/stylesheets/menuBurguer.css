@@ -1,21 +1,27 @@
 .nadvarH{
-background-color:#09363d;
+background-color: #2F8F9D;
 width: 100%;
 height: 100%;
 padding: 10px;
 position: fixed;
-left: -450px;
+left: 450px;/* modificar esto a -450 */
 top: 0px;
 
 }
 
-.nadvarH ul, li{
+.nadvarH ul{
     list-style: none;
     text-decoration: none;
     text-align: left;
     font-size: 20px;
     margin-top: 5px;
     padding: 1px 0px;
+}
+.nadvarH li{
+    height: 40px;
+    border-bottom: 1px solid #3BACB6;
+    padding: 5px;
+
 }
 .nadvarH div{
     margin: 20px 0px;
@@ -34,4 +40,40 @@ top: 0px;
 position: absolute;
     top: 3px;
     right: 3px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+  
+}
+.bbbt i{
+font-size: 35px;
+text-align: center;
+color: #22c4dd;
+
+}
+
+.utilidades-h{
+    position: absolute;
+    bottom: 1px;
+    left: 0px;
+    width: 100%;
+    margin: 0px;
+}
+.icono-h{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px ;
+    border-top: #3BACB6 solid 1px;
+}
+.icono-h p{
+    font-size: 24px;
+    padding: 5px;
+}
+.icono-h img {
+    width: 40px;
+    height: 40px;
+    padding: 0px;
 }
