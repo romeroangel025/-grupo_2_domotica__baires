@@ -67,4 +67,3 @@ $('description').addEventListener('keyup', function(e){
 
 });
 
-
