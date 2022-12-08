@@ -8,15 +8,40 @@ let totalCharacters = 200;
 
 let numberCharacters = 200;
 
+const msgError = (elemento, mensaje) => {
+
+    $('elemento').innerHTML = mensaje;
+}
+
 $('name').addEventListener('focus', function(e){
 
-    $('nameMsg').innerHTML = "Este campo no puede estar en blanco";
+    $('nameMsg').innerHTML = "El nombre debe tener como máximo 30 caracteres";
 
 });
 
 $('name').addEventListener('blur', function(e){
 
-    $('nameMsg').innerHTML = null;
+    switch (true) {
+        case !this.value.trim():
+            
+            msgError("nameMsg", "El nombre del producto es requerido");
+
+        break;
+
+        case this.value.trim().length < 10:
+
+        msgError("nameMsg", "El nombre debe tener como mínimo 10 caracteres");
+
+
+
+        default:
+
+            $('nameMsg').innerHTML = null;
+
+        break;
+    }
+
+    
 });
 
 $('price').addEventListener('focus', function(e){
