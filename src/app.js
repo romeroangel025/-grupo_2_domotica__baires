@@ -21,6 +21,7 @@ let carritoRouter = require('./routes/carrito');
 
 let authRegister = require('./routes/APIs/auth');
 const usersRouterAPIs = require("./routes/APIs/users");
+const productsRouterAPIs = require("./routes/APIs/products");
 
 var app = express();
 
@@ -57,7 +58,7 @@ app.use('/productCart', carritoRouter);
 
 app.use("/APIs/auth", authRegister);
 app.use("/APIs/users", usersRouterAPIs);
-
+app.use("/APIs/products", productsRouterAPIs);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

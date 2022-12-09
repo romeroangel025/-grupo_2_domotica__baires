@@ -22,10 +22,15 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
       validate:{
-
+        is: /^[a-z]+$/i
       }
     },
-    surname: DataTypes.STRING,
+    surname:{
+      type: DataTypes.STRING,
+      validate:{
+        is: /^[a-z]+$/i
+      }
+    },
     email: DataTypes.STRING,
     password: DataTypes.STRING,
     rol: DataTypes.STRING,
