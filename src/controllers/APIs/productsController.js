@@ -143,6 +143,41 @@ if(!products.length){
       sendJsonError(error, res);
     }
   },
+  detail: async (req,res) => {
+    let options = {
+        include: [
+          {
+            association: "images",
+            attributes: {
+              include: [
+                literalQueryUrlImage(req, "images.name", "urlImage"), //preguntar por los parametros
+              ],
+              exclude: ["updatedAt", "createdAt", "deletedAt"],
+            },
+          },
+        ],
+        attributes: {
+          exclude: ["updatedAt", "deletedAt"],
+        }
+        ,
+      };
+
+      try {
+        const data = await db.Product.findByPk(req.params.id, options);
+  
+        if (!data) {
+          return sendJsonError("El producto no existe", res, 404);
+        }
+  
+        return res.status(200).json({
+          ok: true,
+          status: 200,
+          data,
+        });
+      } catch (err) {
+        sendJsonError(err, res);
+      }
+  }
 };
 
 module.exports = controller;

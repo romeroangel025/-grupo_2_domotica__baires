@@ -32,7 +32,7 @@ router
 .get("/", all)
 
 /*** GET ONE PRODUCT ***/
-// .get("/:id", detail)
+ .get("/:id", detail)
 
 /*** STORAGE PRODUCT ***/
 //.post("/",checkToken, uploadImageProduct.array("images"), store)
