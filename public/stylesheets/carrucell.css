@@ -1,5 +1,9 @@
 
 /* Carrucell */
+
+.carrucell{
+display: none;
+}
 .galeria{
     padding: 0px;
     background-color: var(--color-celeste-claro);
@@ -30,6 +34,9 @@
 }
 
 @media (min-width:768px) {
+    .carrucell{
+        display: block;
+        }
     .imagen_principal img{
         width: 100%;
         object-fit: cover;
@@ -40,7 +47,7 @@
     .lista_de_imagenes{
         display: flex;}
 }
-@media (min-width:1024px) {
+@media (min-width:1240px) {
     .lista_de_imagenes img{
         height: 400px;
     }

@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+    
 }
 
 
@@ -26,4 +28,15 @@
     --font-size-precios: 14px;
     --font-size-descuentos: 14px;
     --font-size-descripciones: 14px;
+}
+
+.cbus{
+    width: 1200px;
+    height: 400px;
+    margin: 0px auto;
+}
+.cbus img{
+    width: 100%;
+    height: 400px;
+    size-adjust: cover;
 }

@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 
+
 @import './general.css';
 
 @import './index.css';
@@ -29,4 +30,5 @@
 @import './menuBurguer.css';
 
 @import './profile.css';
+
 
