@@ -191,7 +191,9 @@ flex-wrap: wrap;
 #avatar::before {
   content: 'Suba su imagen de avatar';
 }
-
+#imagenes::before {
+  content: 'Suba las imagenes de su producto';
+}
 
 
 @media (min-width: 767px){
