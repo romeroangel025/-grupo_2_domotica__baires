@@ -15,33 +15,13 @@ const msgError = (elemento, mensaje) => {
 
 $('name').addEventListener('focus', function(e){
 
-    $('nameMsg').innerHTML = "El nombre debe tener como máximo 30 caracteres";
+    $('nameMsg').innerHTML = "Este campo es requerido";
 
 });
 
 $('name').addEventListener('blur', function(e){
 
-    switch (true) {
-        case !this.value.trim():
-            
-            msgError("nameMsg", "El nombre del producto es requerido");
-
-        break;
-
-        case this.value.trim().length < 10:
-
-        msgError("nameMsg", "El nombre debe tener como mínimo 10 caracteres");
-
-
-
-        default:
-
-            $('nameMsg').innerHTML = null;
-
-        break;
-    }
-
-    
+    $('nameMsg').innerHTML = null;
 });
 
 $('price').addEventListener('focus', function(e){
@@ -58,14 +38,14 @@ $('price').addEventListener('blur', function(e){
 $('price').addEventListener('keyup', function(e){
 
     let price = this.value;
-    let discount = $('discount').value;
+    let discount = $("discount").value;
 
 $('finalPrice').value = +price - (+price * +discount / 100)
 });
 
 $('discount').addEventListener('keyup', function(e){
 
-    let price = $('price').value;
+    let price = $("price").value;
     let discount = this.value;
 
 $('finalPrice').value = +price - (+price * +discount / 100)
