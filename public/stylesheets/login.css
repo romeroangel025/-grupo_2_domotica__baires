@@ -159,6 +159,40 @@ flex-wrap: wrap;
   margin-bottom: 15px;
   }
   
+.input-file{
+  position: relative;
+  display: inline-block;
+  box-shadow: var(--color-blanco)!important;
+  border: 1px double var(--color-blanco)!important;
+}
+
+.input-file::before{
+  background-color: var(--color-azul-claro);
+  color:var(--color-blanco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  content: 'Seleccionar'; /* testo por defecto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.input-file input[type="file"] {
+  opacity: 0;
+  width: 200px;
+  height: 32px;
+  display: inline-block;
+}
+
+#avatar::before {
+  content: 'Suba su imagen de avatar';
+}
+
+
 
 @media (min-width: 767px){
 
