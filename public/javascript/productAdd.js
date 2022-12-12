@@ -33,6 +33,7 @@ $('price').addEventListener('focus', function(e){
 $('price').addEventListener('blur', function(e){
 
     $('priceMsg').innerHTML = null;
+
 });
 
 $('price').addEventListener('keyup', function(e){
