@@ -50,14 +50,14 @@
             <p><%= locals.errors && errors.discount ? errors.discount.msg : null%></p>
 
             <label for="finalPrice">Precio final</label>
-            <input type="number" id="finalPrice" name="finalPrice" value="<%= locals.old && old.discount ? old.discount : null %>" />
+            <input type="number" id="finalPrice" value="<%= locals.old && old.discount ? old.discount : null %>" />
             <p><%= locals.errors && errors.discount ? errors.discount.msg : null%></p>
 
             <img src="" alt="" id="image1">
 
             <label for="imagen">Suba la imagen del producto</label>
-            <input type="file" id="image" name="imagenes" multiple accept="image/*"/>
-            <button type="submit" disabled >Cree su producto</button>
+            <input class="input-file" type="file" id="image" name="imagenes" multiple accept="image/*"/>
+            <button type="submit" >Cree su producto</button>
           </form>
         </section>
       </main>
