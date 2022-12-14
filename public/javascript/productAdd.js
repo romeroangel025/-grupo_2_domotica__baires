@@ -10,29 +10,55 @@ let numberCharacters = 200;
 
 const msgError = (elemento, mensaje) => {
 
-    $('elemento').innerHTML = mensaje;
+    $(elemento).style.color = "red";
+    $(elemento).innerHTML = mensaje;
+
+};
+
+const cleanError = (elemento) => {
+    $(elemento).innerHTML = null;
 }
 
 $('name').addEventListener('focus', function(e){
-
-    $('nameMsg').innerHTML = "Este campo es requerido";
+    cleanError("nameMsg", e)
 
 });
 
 $('name').addEventListener('blur', function(e){
 
-    $('nameMsg').innerHTML = null;
+    switch (true) {
+        case !this.value.trim():
+            msgError('nameMsg', "El nombre del producto es requerido")
+        break;
+        case this.value.trim().length < 10:
+            msgError('nameMsg', "El nombre debe tener como mínimo 10 caracteres")   
+        break;
+        default:
+            $('nameMsg').innerHTML = null; 
+         break;
+    }
+
+    
 });
 
 $('price').addEventListener('focus', function(e){
-
-    $('priceMsg').innerHTML = "Mínimo 0";
+    cleanError("priceMsg", e)
 
 });
 
 $('price').addEventListener('blur', function(e){
 
-    $('priceMsg').innerHTML = null;
+    switch (true) {
+        case !this.value.trim():
+            msgError('priceMsg', "El precio es requerido")
+        break;
+        case this.value < 0:
+            msgError('priceMsg', "No puede ser un número negativo")   
+        break;
+        default:
+            $('priceMsg').innerHTML = null; 
+         break;
+    }
 
 });
 
@@ -72,4 +98,14 @@ $('description').addEventListener('keyup', function(e){
     $('numberCharacters').innerHTML = numberCharacters;
 
 });
+
+$('image').addEventListener('change', (e) => {
+
+
+    let reader = new FileReader();
+
+    reader.readAsDataURL(e.target.files[0]);
+
+})
+
 
