@@ -15,14 +15,31 @@ const msgError = (elemento, mensaje) => {
 
 $('name').addEventListener('focus', function(e){
 
-    $('nameMsg').innerHTML = "Máximo 30 caracteres";
+    $('nameMsg').innerHTML = "El nombre debe tener como máximo 30 caracteres";
     $('nameMsg').style.color = "green";
 
 });
 
 $('name').addEventListener('blur', function(e){
 
-    $('nameMsg').innerHTML = null;
+    switch (true) {
+        case !this.value.trim():
+            $('nameMsg').style.color = "red";
+            $('nameMsg').innerHTML = "El nombre del producto es requerido";
+
+        break;
+
+        case this.value.trim().length < 10:
+            $('nameMsg').style.color = "red";
+            $('nameMsg').innerHTML = "El nombre debe tener como mínimo 10 caracteres";
+        break;
+
+        default:
+
+        break;
+    }
+
+    
 });
 
 $('price').addEventListener('focus', function(e){
@@ -74,4 +91,14 @@ $('description').addEventListener('keyup', function(e){
     $('numberCharacters').innerHTML = numberCharacters;
 
 });
+
+$('image').addEventListener('change', (e) => {
+
+
+    let reader = new FileReader();
+
+    reader.readAsDataURL(e.target.files[0]);
+
+})
+
 
