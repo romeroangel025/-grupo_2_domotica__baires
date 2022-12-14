@@ -4,6 +4,10 @@ const formProductEdit = $('formProductEdit');
 
 console.log(formProductEdit);
 
+let totalCharacters = 200;
+
+let numberCharacters = 200;
+
 const msgError = (elemento, mensaje) => {
 
     $('elemento').innerHTML = mensaje;
@@ -23,13 +27,14 @@ $('name').addEventListener('blur', function(e){
 
 $('price').addEventListener('focus', function(e){
 
-    $('priceMsg').innerHTML = "Mínimo 0";
+    $('priceEditMsg').innerHTML = "Mínimo 0";
+    $('priceEditMsg').style.color = "green";
 
 });
 
 $('price').addEventListener('blur', function(e){
 
-    $('priceMsg').innerHTML = null;
+    $('priceEditMsg').innerHTML = null;
 
 });
 
@@ -51,14 +56,14 @@ $('finalPrice').value = +price - (+price * +discount / 100)
 
 $('description').addEventListener('focus', function(e){
 
-    $('descriptionMsg').hidden = false;
+    $('descriptionEditMsg').hidden = false;
     $('numberCharacters').innerHTML = numberCharacters;
     
 });
 
 $('description').addEventListener('blur', function(e){
 
-    $('descriptionMsg').hidden = true;
+    $('descriptionEditMsg').hidden = true;
     
 });
 
