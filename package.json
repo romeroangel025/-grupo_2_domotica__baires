@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./src/bin/www",
-    "dev": "nodemon node ./src/bin/www",
+    "server":"nodemon node ./src/bin/www",
+    "client:start": "cd admin && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client:start\"",
+
     "reset:db": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all"
   },
   "dependencies": {
@@ -22,5 +24,8 @@
     "multer": "^1.4.5-lts.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.25.8"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
   }
 }
