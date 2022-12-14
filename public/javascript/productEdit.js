@@ -1,27 +1,24 @@
-console.log('productAdd connected success!');
+console.log('productEdit connected success!');
 
-const formProducEdit = $('formProductEdit');
+const formProductEdit = $('formProductEdit');
 
-const elements = formProductEdit.elements;
-
-let totalCharacters = 200;
-
-let numberCharacters = 200;
+console.log(formProductEdit);
 
 const msgError = (elemento, mensaje) => {
 
     $('elemento').innerHTML = mensaje;
 }
 
-$('title').addEventListener('focus', function(e){
+$('name').addEventListener('focus', function(e){
 
-    $('nameMsg').innerHTML = "Este campo es requerido";
+    $('nameEditMsg').innerHTML = "Máximo 30 caracteres";
+    $('nameEditMsg').style.color = "green";
 
-});
+    });
 
-$('title').addEventListener('blur', function(e){
+$('name').addEventListener('blur', function(e){
 
-    $('nameMsg').innerHTML = null;
+    $('nameEditMsg').innerHTML = null;
 });
 
 $('price').addEventListener('focus', function(e){

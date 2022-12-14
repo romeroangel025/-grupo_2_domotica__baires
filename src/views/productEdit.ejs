@@ -11,12 +11,12 @@
                 
             <a href="/products/productAdd"><p>¿Desea crear un producto?</p></a>
             </div>
-            <form class="form__label" action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
+            <form class="form__label" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" id="formProductEdit" >
 
                 <label for="nombre">Nombre del producto</label>
-                <input type="text" name="title"  value="<%= product.title %> " />
+                <input type="text" id="name" name="title"  value="<%= product.title %> " />
                 <p><%= locals.errors && errors.title ? errors.title.msg : null%></p>
-                <p id="nameMsg"></p>
+                <p id="nameEditMsg"></p>
 
                 <label for="descripcion">Descripción del producto</label>
                 <textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
@@ -57,5 +57,10 @@
 
     <!-- Header -->
     <%- include('./partials/footer') %>
+
+    <%- include('./partials/script') %>
+
+    <script src="/javascript/productEdit.js"></script>
+
   </body>
 </html>

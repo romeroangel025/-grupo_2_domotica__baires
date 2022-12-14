@@ -15,7 +15,8 @@ const msgError = (elemento, mensaje) => {
 
 $('name').addEventListener('focus', function(e){
 
-    $('nameMsg').innerHTML = "Este campo es requerido";
+    $('nameMsg').innerHTML = "Máximo 30 caracteres";
+    $('nameMsg').style.color = "green";
 
 });
 
@@ -27,6 +28,7 @@ $('name').addEventListener('blur', function(e){
 $('price').addEventListener('focus', function(e){
 
     $('priceMsg').innerHTML = "Mínimo 0";
+    $('priceMsg').style.color = "green";
 
 });
 
