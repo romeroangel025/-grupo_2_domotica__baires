@@ -2,7 +2,7 @@ console.log('productEdit connected success!');
 
 const formProductEdit = $('formProductEdit');
 
-console.log(formProductEdit);
+const elements = formProductAdd.elements;
 
 let totalCharacters = 200;
 
@@ -10,7 +10,12 @@ let numberCharacters = 200;
 
 const msgError = (elemento, mensaje) => {
 
-    $('elemento').innerHTML = mensaje;
+    $(elemento).style.color = "red";
+    $(elemento).innerHTML = mensaje;
+};
+
+const cleanError = (elemento) => {
+    $(elemento).innerHTML = null;
 }
 
 $('name').addEventListener('focus', function(e){
@@ -22,19 +27,40 @@ $('name').addEventListener('focus', function(e){
 
 $('name').addEventListener('blur', function(e){
 
-    $('nameEditMsg').innerHTML = null;
+    switch (true) {
+        case !this.value.trim():
+            msgError('nameEditMsg', "El nombre del producto es requerido")
+        break;
+        case this.value.trim().length < 10:
+            msgError('nameEditMsg', "El nombre debe tener como mínimo 10 caracteres")   
+        break;
+        default:
+            $('nameEditMsg').innerHTML = null; 
+         break;
+}
+
 });
 
 $('price').addEventListener('focus', function(e){
 
-    $('priceEditMsg').innerHTML = "Mínimo 0";
-    $('priceEditMsg').style.color = "green";
+    cleanError("priceEditMsg", e)
 
 });
 
 $('price').addEventListener('blur', function(e){
 
-    $('priceEditMsg').innerHTML = null;
+    switch (true) {
+        case !this.value.trim():
+            msgError('priceEditMsg', "El precio es requerido")
+        break;
+        case this.value < 0:
+            msgError('priceEditMsg', "No puede ser un número negativo")   
+        break;
+        default:
+            $('priceEditMsg').innerHTML = null; 
+         break;
+    }
+
 
 });
 

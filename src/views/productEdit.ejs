@@ -22,6 +22,7 @@
                 <textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
                 <p><%= locals.errors && errors.description ? errors.description.msg : null%></p>
                 <p id="descriptionEditMsg" hidden><span id="numberCharacters"></span> disponibles</p>
+                
 
                 <label for="categoria">Categoria</label>
                 <select class="form_select" name="category_id" id="category" class="form-input">
@@ -45,7 +46,7 @@
                 <p><%= locals.errors && errors.discount ? errors.discount.msg : null%></p>
 
                 <label for="finalPrice">Precio final</label>
-                <input type="number" id="finalPrice" name="finalPrice"  value="<%= product.discount %>" >
+                <input type="number" id="finalPrice" value="<%= product.discount %>" >
                 <p><%= locals.errors && errors.discount ? errors.discount.msg : null%></p>
 
 
