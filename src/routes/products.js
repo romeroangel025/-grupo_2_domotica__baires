@@ -15,6 +15,7 @@ const productsEditValidator = require('../validations/productsEditValidator');
 
 
 
+
 router.get('/', index); 
 /* GET users listing. */
 router.get('/detail/:id', detail );
@@ -25,7 +26,7 @@ router.post('/store', uploadProducts.array("imagenes"),productsAddValidator,stor
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id',adminUserCheck,edit); 
-router.put('/edit/:id',productsEditValidator,update); 
+router.put('/edit/:id',uploadProducts.array("imagenes"),productsEditValidator,update); 
 
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/delete/:id', destroy); 
