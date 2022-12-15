@@ -14,7 +14,7 @@
             <form class="form__label" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" id="formProductEdit" >
 
                 <label for="nombre">Nombre del producto</label>
-                <input type="text" id="name" name="title"  value="<%= product.title %> " />
+                <input class="input-invalid" type="text" id="name" name="title"  value="<%= product.title %> " />
                 <p><%= locals.errors && errors.title ? errors.title.msg : null%></p>
                 <p id="nameEditMsg"></p>
 

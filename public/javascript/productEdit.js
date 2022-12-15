@@ -2,21 +2,25 @@ console.log('productEdit connected success!');
 
 const formProductEdit = $('formProductEdit');
 
-const elements = formProductAdd.elements;
+const elements = formProductEdit.elements;
 
 let totalCharacters = 200;
 
 let numberCharacters = 200;
 
-const msgError = (elemento, mensaje) => {
+const msgError = (element, msg, { target }) => {
+    $(element).innerText = msg;
+    target.classList.add("input-invalid"); // aca tenes que poner una clase para que esten rojos los input
+  };
+  
+  const validField = () => {
+  
+  }
 
-    $(elemento).style.color = "red";
-    $(elemento).innerHTML = mensaje;
-};
-
-const cleanError = (elemento) => {
-    $(elemento).innerHTML = null;
-}
+const cleanField = (element, target) => {
+    $(element).innerText = null;
+    target.classList.remove("input-invalid");
+  };
 
 $('name').addEventListener('focus', function(e){
 
@@ -43,7 +47,7 @@ $('name').addEventListener('blur', function(e){
 
 $('price').addEventListener('focus', function(e){
 
-    cleanError("priceEditMsg", e)
+    clean("priceEditMsg", e)
 
 });
 
