@@ -11,10 +11,10 @@
                 
             <a href="/products/productAdd"><p>¿Desea crear un producto?</p></a>
             </div>
-            <form class="form__label" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" id="formProductEdit" >
+            <form class="form__label" action="/products/edit/<%= product.id %>?_method=PUT" enctype="multipart/form-data" method="POST" id="formProductEdit" >
 
                 <label for="nombre">Nombre del producto</label>
-                <input class="input-invalid" type="text" id="name" name="title"  value="<%= product.title %> " />
+                <input class="input-valid" type="text" id="name" name="title"  value="<%= product.title %> " />
                 <p><%= locals.errors && errors.title ? errors.title.msg : null%></p>
                 <p id="nameEditMsg"></p>
 
@@ -36,22 +36,22 @@
                 </select>
 
                 <label for="precio">Precio</label>
-                <input type="number" id="price" name="price"  value="<%= product.price %>" >
+                <input  class="input-valid" type="number" id="price" name="price"  value="<%= product.price %>" >
                 <p><%= locals.errors && errors.price ? errors.price.msg : null%></p>
                 <p id="priceEditMsg"></p>
 
 
                 <label for="descuento">Descuento</label>
-                <input type="number" id="discount" name="discount"  value="<%= product.discount %>" >
+                <input  class="input-valid" type="number" id="discount" name="discount"  value="<%= product.discount %>" >
                 <p><%= locals.errors && errors.discount ? errors.discount.msg : null%></p>
 
                 <label for="finalPrice">Precio final</label>
-                <input type="number" id="finalPrice" value="<%= product.discount %>" >
+                <input  class="input-valid" type="number" id="finalPrice" value="<%= product.discount %>" >
                 <p><%= locals.errors && errors.discount ? errors.discount.msg : null%></p>
 
 
                 <label for="imagen">Suba la imagen del producto</label>
-                <input type="file" id="image" name="imagenes" multiple accept="image/*"/>
+                <input  class="input-file"   type="file" id="image" name="imagenes" multiple accept="image/*"/>
                 <button type="submit">Edite su producto</button>
               
             </form>
