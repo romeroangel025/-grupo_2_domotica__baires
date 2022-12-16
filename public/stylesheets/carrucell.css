@@ -1,12 +1,15 @@
-.container{
-display: none;}
-@media (min-width:768px){
-    .carousel-item{
+.carousel{display: none;}
+
+@media (min-width:768px) {
+    .carousel{
         display: block;
-        height: 400px;
-       margin-top: 20px;
-    }
+    margin:10px ;
 }
+    .carousel-item{
+        height: 400px;
+      ;
+    }}
+
 
 
 /* 
