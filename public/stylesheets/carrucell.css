@@ -6,9 +6,16 @@
     margin:10px ;
 }
     .carousel-item{
+        height: 300px;
+      ;
+    }
+}
+@media (min-width:1024px){
+    .carousel-item{
         height: 400px;
       ;
-    }}
+    }
+}
 
 
 
