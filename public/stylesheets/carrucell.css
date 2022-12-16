@@ -1,3 +1,14 @@
+.container{
+display: none;}
+@media (min-width:768px){
+    .carousel-item{
+        display: block;
+        height: 400px;
+       margin-top: 20px;
+    }
+}
+
+
 /* 
 
 .carrucell{
