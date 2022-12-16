@@ -5,7 +5,10 @@
 
 
 }
+.main__container article{
+    background-color: #f5f5f5;
 
+}
 .container__avatar {
     width: 100%;
     margin: 0px auto;
@@ -33,7 +36,7 @@
     display: none;
 }
 .container_info_profile {
-    background-color: var(--color-celeste-claro);
+    background-color: #f5f5f5;
     border-top: 1px solid var(--color-azul);
     width: 100%;
 }
@@ -48,8 +51,8 @@
     width: 80px;
 }
 .container_info_profile input{
-    background-color: var(--color-celeste-claro);
-    border: transparent ;
+    background-color: #f5f5f5;
+    border: dashed black 1px ;
     border-bottom: 1px lightskyblue solid;
     height: 25px;
 }
@@ -58,7 +61,7 @@
 }
 
 .container_info_profile p {
-    color:red;
+
     
 }
 .botooon{
@@ -87,7 +90,6 @@ border: solid 1px lightseagreen;
         width: 50%;
         border: 1px solid var(--color-azul);
         box-shadow: 5px 5px 10px rgb(100, 100, 100);
-
     }
 
 .rrr{
@@ -98,7 +100,6 @@ border: solid 1px lightseagreen;
         border: 1px solid var(--color-azul);
         padding: 15px;
         box-shadow: 5px 5px 10px rgb(100, 100, 100);
-
 
     }
     .container_info_profile2 div {
