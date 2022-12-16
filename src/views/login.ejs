@@ -24,7 +24,7 @@
             name="email"
             placeholder="Ej:juanito@hotmail.com"
             id="email"
-      
+            class="input-valid"
           />
           <p><%= locals.errors && errors.email ? errors.email.msg : null%></p>
           <p id="errorEmail">  <%= locals.errors && errors.name ? errors.name.msg : null %> </p>
@@ -36,7 +36,7 @@
             name="password"
             placeholder="Ej:nonono1234"
             id="password"
-            class=""
+            class="input-valid"
           />
           <p><%= locals.password && errors.password ? errors.password.msg : null%></p>
           <p id="errorpassword">  <%= locals.errors && errors.name ? errors.name.msg : null %> </p>
