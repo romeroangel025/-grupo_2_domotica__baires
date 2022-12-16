@@ -108,4 +108,13 @@ $('image').addEventListener('change', (e) => {
 
 })
 
+formProductAdd.addEventListener("submit", function (e) {
+    if ( $("name").value === "" || $("price").value === "" || $("description").value === "" || $("category").value === "") {
+       console.log('Está vacío');
+       style.color = "red"
+    e.preventDefault();// detengo la funcion del boton
+    
+    }
+    })
+
 

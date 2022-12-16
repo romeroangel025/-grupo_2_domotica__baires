@@ -12,15 +12,17 @@ const msgError = (element, msg, { target }) => {
     $(element).innerText = msg;
     target.classList.add("input-invalid"); // aca tenes que poner una clase para que esten rojos los input
   };
+
+  const cleanField = (element, target) => {
+    $(element).innerText = null;
+    target.classList.remove("input-invalid");
+  };
   
   const validField = () => {
   
   }
 
-const cleanField = (element, target) => {
-    $(element).innerText = null;
-    target.classList.remove("input-invalid");
-  };
+
 
 $('name').addEventListener('focus', function(e){
 
@@ -44,6 +46,10 @@ $('name').addEventListener('blur', function(e){
 }
 
 });
+
+$("name").addEventListener("focus", function ({ target }) {
+    cleanField("nameEditMsg", target);
+  });
 
 $('price').addEventListener('focus', function(e){
 
@@ -104,3 +110,13 @@ $('description').addEventListener('keyup', function(e){
     $('numberCharacters').innerHTML = numberCharacters;
 
 });
+
+formProductEdit.addEventListener("submit", function (e) {
+    if ( $("name").value === "" || $("price").value === "" || $("description").value === "" || $("category").value === "") {
+       console.log('Está vacío');
+       style.color = "red"
+    e.preventDefault();// detengo la funcion del boton
+    
+    }
+    })
+
