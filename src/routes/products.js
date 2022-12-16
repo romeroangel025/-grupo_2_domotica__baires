@@ -26,7 +26,8 @@ router.post('/store', uploadProducts.array("imagenes"),productsAddValidator,stor
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id',adminUserCheck,edit); 
-router.put('/edit/:id',uploadProducts.array("imagenes"),productsEditValidator,update); 
+router.put('/edit/:id',uploadProducts.array("imagenes",5),productsEditValidator,update); 
+
 
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/delete/:id', destroy); 
