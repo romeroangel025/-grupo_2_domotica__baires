@@ -1,8 +1,8 @@
-
-/* Carrucell */
+/* 
 
 .carrucell{
 display: none;
+
 }
 .galeria{
     padding: 0px;
@@ -11,7 +11,7 @@ display: none;
 }
 .imagen_principal img{
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     margin: 0;
    
 
@@ -53,4 +53,4 @@ display: none;
     }
 }
 
-
+ */
