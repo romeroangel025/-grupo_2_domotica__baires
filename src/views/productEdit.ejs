@@ -15,8 +15,8 @@
 
                 <label for="nombre">Nombre del producto</label>
                 <input class="input-valid" type="text" id="name" name="title"  value="<%= product.title %> " />
-                <p><%= locals.errors && errors.title ? errors.title.msg : null%></p>
-                <p id="nameEditMsg"></p>
+                <p id="nameEditMsg"><%= locals.errors && errors.title ? errors.title.msg : null%></p>
+               
 
                 <label for="descripcion">Descripción del producto</label>
                 <textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
