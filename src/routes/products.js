@@ -22,7 +22,7 @@ router.get('/detail/:id', detail );
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/productAdd',adminUserCheck, add);
-router.post('/store', uploadProducts.array("imagenes"),productsAddValidator,store); 
+router.post('/store', uploadProducts.array("imagenes",5),productsAddValidator,store); 
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id',adminUserCheck,edit); 

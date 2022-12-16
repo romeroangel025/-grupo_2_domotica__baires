@@ -4,7 +4,6 @@ const path = require("path");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); ////
 const { validationResult } = require("express-validator");
 
-
 module.exports = {
   ////
   index: (req, res) => {
@@ -51,7 +50,8 @@ module.exports = {
               product_id: product.id,
               /* createAt:new Date() */
             };
-          }) || [{ name: "default-image.png", product_id: product.id }];
+          }) || [{ name: "default-image.png", 
+          product_id: product.id }];
 
           /*  let image = req.files ? req.files.filename : "default-image.png"; */
           db.Image.bulkCreate(images).then(() => {
@@ -111,12 +111,9 @@ module.exports = {
   // Update - Method to update
   update: async (req, res) => {
     try {
-
-    
       let errors = validationResult(req);
- console.log(req.files);
+
       if (errors.isEmpty()) {
-       
         const {
           title,
           description,
@@ -129,7 +126,7 @@ module.exports = {
         let product = await db.Product.findByPk(req.params.id, {
           include: ["images"],
         });
-
+        console.log(product);
         product.title = title.trim();
         product.price = price;
         product.discount = discount;
@@ -145,10 +142,29 @@ module.exports = {
         }) || [{ name: "default-image.png", product_id: product.id }];
         console.log(imagesEdit);
 
-      await db.Image.bulkCreate(imagesEdit);
-
         await product.save();
         // await images.save();
+        // borro las imagenes
+        product.images.forEach(async (image) => {
+          const file = path.join(
+            __dirname,
+            `../../public/imagenes/imageProducts/${image.name}`
+          );
+          //fs.unlinkSync(file);
+
+          if (fs.existsSync(file)) {
+            fs.unlinkSync(`./public/imagenes/imageProducts/${image.name}`);
+          }
+
+          await db.Image.destroy({
+            where: {
+              name: image.name,
+            },
+          });
+        });
+
+        // guardo en db las nuevas imagenes
+        await db.Image.bulkCreate(imagesEdit);
 
         res.redirect("/products/detail/" + req.params.id);
       } else {
