@@ -14,7 +14,7 @@
             <form class="form__label" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" id="formProductEdit" >
 
                 <label for="nombre">Nombre del producto</label>
-                <input type="text" id="name" name="title"  value="<%= product.title %> " />
+                <input class="input-invalid" type="text" id="name" name="title"  value="<%= product.title %> " />
                 <p><%= locals.errors && errors.title ? errors.title.msg : null%></p>
                 <p id="nameEditMsg"></p>
 
@@ -22,6 +22,7 @@
                 <textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
                 <p><%= locals.errors && errors.description ? errors.description.msg : null%></p>
                 <p id="descriptionEditMsg" hidden><span id="numberCharacters"></span> disponibles</p>
+                
 
                 <label for="categoria">Categoria</label>
                 <select class="form_select" name="category_id" id="category" class="form-input">
@@ -45,12 +46,12 @@
                 <p><%= locals.errors && errors.discount ? errors.discount.msg : null%></p>
 
                 <label for="finalPrice">Precio final</label>
-                <input type="number" id="finalPrice" name="finalPrice"  value="<%= product.discount %>" >
+                <input type="number" id="finalPrice" value="<%= product.discount %>" >
                 <p><%= locals.errors && errors.discount ? errors.discount.msg : null%></p>
 
 
                 <label for="imagen">Suba la imagen del producto</label>
-                <input class="input-file" type="file" name="imagenes" />
+                <input type="file" id="image" name="imagenes" multiple accept="image/*"/>
                 <button type="submit">Edite su producto</button>
               
             </form>

@@ -10,13 +10,17 @@ let numberCharacters = 200;
 
 const msgError = (elemento, mensaje) => {
 
-    $('elemento').innerHTML = mensaje;
+    $(elemento).style.color = "red";
+    $(elemento).innerHTML = mensaje;
+
+};
+
+const cleanError = (elemento) => {
+    $(elemento).innerHTML = null;
 }
 
 $('name').addEventListener('focus', function(e){
-
-    $('nameMsg').innerHTML = "El nombre debe tener como máximo 30 caracteres";
-    $('nameMsg').style.color = "green";
+    cleanError("nameMsg", e)
 
 });
 
@@ -24,34 +28,37 @@ $('name').addEventListener('blur', function(e){
 
     switch (true) {
         case !this.value.trim():
-            $('nameMsg').style.color = "red";
-            $('nameMsg').innerHTML = "El nombre del producto es requerido";
-
+            msgError('nameMsg', "El nombre del producto es requerido")
         break;
-
         case this.value.trim().length < 10:
-            $('nameMsg').style.color = "red";
-            $('nameMsg').innerHTML = "El nombre debe tener como mínimo 10 caracteres";
+            msgError('nameMsg', "El nombre debe tener como mínimo 10 caracteres")   
         break;
-
         default:
-
-        break;
+            $('nameMsg').innerHTML = null; 
+         break;
     }
 
     
 });
 
 $('price').addEventListener('focus', function(e){
-
-    $('priceMsg').innerHTML = "Mínimo 0";
-    $('priceMsg').style.color = "green";
+    cleanError("priceMsg", e)
 
 });
 
 $('price').addEventListener('blur', function(e){
 
-    $('priceMsg').innerHTML = null;
+    switch (true) {
+        case !this.value.trim():
+            msgError('priceMsg', "El precio es requerido")
+        break;
+        case this.value < 0:
+            msgError('priceMsg', "No puede ser un número negativo")   
+        break;
+        default:
+            $('priceMsg').innerHTML = null; 
+         break;
+    }
 
 });
 
@@ -100,5 +107,14 @@ $('image').addEventListener('change', (e) => {
     reader.readAsDataURL(e.target.files[0]);
 
 })
+
+formProductAdd.addEventListener("submit", function (e) {
+    if ( $("name").value === "" || $("price").value === "" || $("description").value === "" || $("category").value === "") {
+       console.log('Está vacío');
+       style.color = "red"
+    e.preventDefault();// detengo la funcion del boton
+    
+    }
+    })
 
 

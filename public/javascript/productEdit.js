@@ -2,16 +2,27 @@ console.log('productEdit connected success!');
 
 const formProductEdit = $('formProductEdit');
 
-console.log(formProductEdit);
+const elements = formProductEdit.elements;
 
 let totalCharacters = 200;
 
 let numberCharacters = 200;
 
-const msgError = (elemento, mensaje) => {
+const msgError = (element, msg, { target }) => {
+    $(element).innerText = msg;
+    target.classList.add("input-invalid"); // aca tenes que poner una clase para que esten rojos los input
+  };
 
-    $('elemento').innerHTML = mensaje;
-}
+  const cleanField = (element, target) => {
+    $(element).innerText = null;
+    target.classList.remove("input-invalid");
+  };
+  
+  const validField = () => {
+  
+  }
+
+
 
 $('name').addEventListener('focus', function(e){
 
@@ -22,19 +33,44 @@ $('name').addEventListener('focus', function(e){
 
 $('name').addEventListener('blur', function(e){
 
-    $('nameEditMsg').innerHTML = null;
+    switch (true) {
+        case !this.value.trim():
+            msgError('nameEditMsg', "El nombre del producto es requerido")
+        break;
+        case this.value.trim().length < 10:
+            msgError('nameEditMsg', "El nombre debe tener como mínimo 10 caracteres")   
+        break;
+        default:
+            $('nameEditMsg').innerHTML = null; 
+         break;
+}
+
 });
+
+$("name").addEventListener("focus", function ({ target }) {
+    cleanField("nameEditMsg", target);
+  });
 
 $('price').addEventListener('focus', function(e){
 
-    $('priceEditMsg').innerHTML = "Mínimo 0";
-    $('priceEditMsg').style.color = "green";
+    clean("priceEditMsg", e)
 
 });
 
 $('price').addEventListener('blur', function(e){
 
-    $('priceEditMsg').innerHTML = null;
+    switch (true) {
+        case !this.value.trim():
+            msgError('priceEditMsg', "El precio es requerido")
+        break;
+        case this.value < 0:
+            msgError('priceEditMsg', "No puede ser un número negativo")   
+        break;
+        default:
+            $('priceEditMsg').innerHTML = null; 
+         break;
+    }
+
 
 });
 
@@ -74,3 +110,13 @@ $('description').addEventListener('keyup', function(e){
     $('numberCharacters').innerHTML = numberCharacters;
 
 });
+
+formProductEdit.addEventListener("submit", function (e) {
+    if ( $("name").value === "" || $("price").value === "" || $("description").value === "" || $("category").value === "") {
+       console.log('Está vacío');
+       style.color = "red"
+    e.preventDefault();// detengo la funcion del boton
+    
+    }
+    })
+

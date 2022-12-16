@@ -67,7 +67,7 @@
  color:#f6070a;
   
 }
-
+/*
 .form__label input {
   max-width: 600px;
   width: 100%;
@@ -78,6 +78,29 @@
   outline: 0 none;
   box-shadow: 1px 1px 1px 1px var(--color-azul);
 
+}
+*/
+
+.input-valid {
+  max-width: 600px;
+  width: 100%;
+  padding: 8px;
+  border: 1px double var(--color-verde);
+  border-radius: 20px;
+  border-color:var(--color-verde);
+  outline: 0 none;
+  box-shadow: 1px 1px 1px 1px var(--color-verde);
+}
+
+.input-invalid {
+  max-width: 600px;
+  width: 100%;
+  padding: 8px;
+  border: 1px double var(--color-rojo);
+  border-radius: 20px;
+  border-color:var(--color-rojo);
+  outline: 0 none;
+  box-shadow: 1px 1px 1px 1px var(--color-rojo);
 }
 
 .form__label_input_checkbox {
