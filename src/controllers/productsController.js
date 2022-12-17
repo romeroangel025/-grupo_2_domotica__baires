@@ -90,7 +90,8 @@ module.exports = {
         product_id: product.id,
         /* createAt:new Date() */
       };
-    }) || [{ name: "default-image.png", product_id: product.id }];
+    }) || [{ name: "default-image.png", product_id: product.id} ]
+    
 
     /*  let image = req.files ? req.files.filename : "default-image.png"; */
     let imagesEdit = db.Image.bulkCreate(images).then(() => {
@@ -145,26 +146,30 @@ module.exports = {
         await product.save();
         // await images.save();
         // borro las imagenes
-        product.images.forEach(async (image) => {
-          const file = path.join(
-            __dirname,
-            `../../public/imagenes/imageProducts/${image.name}`
-          );
-          //fs.unlinkSync(file);
 
-          if (fs.existsSync(file)) {
-            fs.unlinkSync(`./public/imagenes/imageProducts/${image.name}`);
-          }
-
-          await db.Image.destroy({
-            where: {
-              name: image.name,
-            },
+        if(req.files.length){
+          console.log("req.files");
+          product.images.forEach(async (image) => {
+            const file = path.join(
+              __dirname,
+              `../../public/imagenes/imageProducts/${image.name}`
+            );
+            //fs.unlinkSync(file);
+  
+            if (fs.existsSync(file)) {
+              fs.unlinkSync(`./public/imagenes/imageProducts/${image.name}`);
+            }
+  
+            await db.Image.destroy({
+              where: {
+                name: image.name,
+              },
+            });
           });
-        });
+          // guardo en db las nuevas imagenes
+          await db.Image.bulkCreate(imagesEdit);
+        }
 
-        // guardo en db las nuevas imagenes
-        await db.Image.bulkCreate(imagesEdit);
 
         res.redirect("/products/detail/" + req.params.id);
       } else {
