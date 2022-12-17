@@ -106,8 +106,9 @@ window.addEventListener('load', function () {
     });
 
     formProductEdit.addEventListener("submit", function (e) {
-        if ($("name").value === "" || $("price").value === "" || $("description").value === "" || $("category").value === "") {
+        if ( $("name").value === "" || $("price").value === "" || $("description").value === "" || $("category").value === "") {
             console.log('Está vacío');
+            
             e.preventDefault();// detengo la funcion del boton
 
         }

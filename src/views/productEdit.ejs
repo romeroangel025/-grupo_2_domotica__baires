@@ -37,8 +37,7 @@
 
                 <label for="precio">Precio</label>
                 <input  class="input-valid" type="number" id="price" name="price"  value="<%= product.price %>" >
-                <p><%= locals.errors && errors.price ? errors.price.msg : null%></p>
-                <p id="priceEditMsg"></p>
+                <p id="priceEditMsg"><%= locals.errors && errors.price ? errors.price.msg : null%></p>
 
 
                 <label for="descuento">Descuento</label>
