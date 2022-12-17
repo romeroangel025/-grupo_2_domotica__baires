@@ -397,9 +397,9 @@ text-decoration: none;
     }
     .detalle_main_section_imagenSecundaria_div{
         width: 22%;
-        height: 131px;
+       max-height: 250px ;
         padding: 1px;
-    
+        object-fit: contain;
         }
     .detalle_main_section_imagenSecundaria_div img{
         width: 100%;
@@ -544,7 +544,7 @@ margin: 10px;
         width: 25%;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: flex-start;
         width: 20%;
         gap: 10px;
         margin: 0px;
