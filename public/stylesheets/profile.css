@@ -52,7 +52,7 @@
 }
 .container_info_profile input{
     background-color: #f5f5f5;
-    border: dashed black 1px ;
+    border: solid var(--color-azul) 1px ;
     border-bottom: 1px lightskyblue solid;
     height: 25px;
 }
