@@ -32,7 +32,7 @@ Object.keys(db).forEach(modelName => {
   }
 });
 
-sequelize.authenticate().then(()=> console.log("conectada http://localhost:3000/"))
+sequelize.authenticate().then(()=> console.log("conectada http://localhost:4000/  react  http://localhost:000/"))
 .catch((error)=> console.log("No se pudo conectar",error))
 
 
