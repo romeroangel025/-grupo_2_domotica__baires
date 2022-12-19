@@ -1,6 +1,7 @@
 
 
 .body__header{
+ 
     background-color: var(--color-azul) ;
     padding: 20px 0;
     display: flex;
@@ -126,6 +127,7 @@ width: 50px;
     justify-content: center;
     align-items: center;
 }
+
 .icono_salir{
     display: none;
 

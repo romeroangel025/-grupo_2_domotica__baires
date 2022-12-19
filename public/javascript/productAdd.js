@@ -1,5 +1,3 @@
-console.log('productAdd connected success!');
-
 const formProductAdd = $('formProductAdd');
 
 const elements = formProductAdd.elements;
@@ -8,61 +6,61 @@ let totalCharacters = 200;
 
 let numberCharacters = 200;
 
-const msgError = (elemento, mensaje) => {
+const msgError = (element, msg, { target }) => {
 
-    $(elemento).style.color = "red";
-    $(elemento).innerHTML = mensaje;
+    $(element).innerText = msg;
+    target.classList.remove("input-invalid");
 
 };
 
-const cleanError = (elemento) => {
-    $(elemento).innerHTML = null;
-}
+const validField = (element, target) => {
+    $(element).innerText = null;
+    target?.classList.remove("input-invalid"); // target ==> input 
+};
 
-$('name').addEventListener('focus', function(e){
-    cleanError("nameMsg", e)
+window.addEventListener('load', function () {
 
-});
 
-$('name').addEventListener('blur', function(e){
+
+$('name').addEventListener('blur', (event) => {
 
     switch (true) {
-        case !this.value.trim():
-            msgError('nameMsg', "El nombre del producto es requerido")
+        case !event.target.value?.trim():
+            msgError('nameMsg', "El nombre del producto es requerido", event)
         break;
-        case this.value.trim().length < 10:
-            msgError('nameMsg', "El nombre debe tener como mínimo 10 caracteres")   
+        case event.target.value?.trim().length < 10:
+            msgError('nameMsg', "El nombre debe tener como mínimo 10 caracteres", event)   
         break;
         default:
-            $('nameMsg').innerHTML = null; 
+            validField('nameMsg', event.target)
          break;
     }
 
     
 });
 
-$('price').addEventListener('focus', function(e){
+/*$('price').addEventListener('focus', function(e){
     cleanError("priceMsg", e)
 
-});
+}); */
 
-$('price').addEventListener('blur', function(e){
+$('price').addEventListener('blur', function ({ target }) {
 
     switch (true) {
-        case !this.value.trim():
-            msgError('priceMsg', "El precio es requerido")
+        case !target.value.trim():
+            msgError('priceMsg', "El precio es requerido", { target })
         break;
-        case this.value < 0:
-            msgError('priceMsg', "No puede ser un número negativo")   
+        case target.value < 0:
+            msgError('priceMsg', "No puede ser un número negativo", { target })   
         break;
         default:
-            $('priceMsg').innerHTML = null; 
+             validField('priceMsg', target) 
          break;
     }
 
 });
 
-$('price').addEventListener('keyup', function(e){
+$('price').addEventListener('keyup', function (e) {
 
     let price = this.value;
     let discount = $("discount").value;
@@ -70,7 +68,7 @@ $('price').addEventListener('keyup', function(e){
 $('finalPrice').value = +price - (+price * +discount / 100)
 });
 
-$('discount').addEventListener('keyup', function(e){
+$('discount').addEventListener('keyup', function (e) {
 
     let price = $("price").value;
     let discount = this.value;
@@ -78,20 +76,20 @@ $('discount').addEventListener('keyup', function(e){
 $('finalPrice').value = +price - (+price * +discount / 100)
 });
 
-$('description').addEventListener('focus', function(e){
+$('description').addEventListener('focus', function (e) {
 
     $('descriptionMsg').hidden = false;
     $('numberCharacters').innerHTML = numberCharacters;
     
 });
 
-$('description').addEventListener('blur', function(e){
+$('description').addEventListener('blur', function (e) {
 
     $('descriptionMsg').hidden = true;
     
 });
 
-$('description').addEventListener('keyup', function(e){
+$('description').addEventListener('keyup', function (e) {
 
     numberCharacters = totalCharacters - +this.value.length;
 
@@ -99,13 +97,14 @@ $('description').addEventListener('keyup', function(e){
 
 });
 
-$('image').addEventListener('change', (e) => {
 
-
-    let reader = new FileReader();
-
-    reader.readAsDataURL(e.target.files[0]);
-
+formProductAdd.addEventListener("submit", function (e) {
+    if ( $("name").value === "" || $("price").value === "" || $("description").value === "" || $("category").value === "") {
+       console.log('Está vacío');
+    
+    e.preventDefault();// detengo la funcion del boton
+    
+    }
+    })
 })
-
 

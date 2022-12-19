@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+    
 }
 
 
@@ -17,7 +19,8 @@
     
     --color-negro: #111;
     --color-blanco: #fff;
-    --color-rojo: f6070a;
+    --color-rojo:#FF0000;
+    --color-verde: #008000;
 
     --font-general: 'Open Sans';
 
@@ -27,3 +30,14 @@
     --font-size-descuentos: 14px;
     --font-size-descripciones: 14px;
 }
+
+/* .cbus{
+    width: 1200px;
+    height: 400px;
+    margin: 0px auto;
+}
+.cbus img{
+    width: 100%;
+    height: 400px;
+    size-adjust: cover;
+} */

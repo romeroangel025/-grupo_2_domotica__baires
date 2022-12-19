@@ -20,6 +20,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
+   
 }
 .footer__seccion ul{
     display: flex;
@@ -39,6 +40,7 @@
     padding: 5px;
     color: rgba(255, 255, 255, 0.8);
     font-weight: 400;
+    align-items: flex-start;
 }
 .foter__redes{
     display: flex;
