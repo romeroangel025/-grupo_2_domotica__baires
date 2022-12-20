@@ -22,7 +22,7 @@ let carritoRouter = require('./routes/carrito');
 let authRegister = require('./routes/APIs/auth');
 const usersRouterAPIs = require("./routes/APIs/users");
 const productsRouterAPIs = require("./routes/APIs/products");
-
+const mainRouterAPIs = require("./routes/APIs/mainAPI");
 var app = express();
 
 app.use(express.static("public"));
@@ -54,11 +54,15 @@ app.use('/products', productsRouter);
 app.use('/productCart', carritoRouter);
 
 
+
 // rutas apis ******************************************************************
 
 app.use("/APIs/auth", authRegister);
 app.use("/APIs/users", usersRouterAPIs);
 app.use("/APIs/products", productsRouterAPIs);
+app.use('/APIs/main', mainRouterAPIs);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
