@@ -1,20 +1,10 @@
 const db = require("../database/models");
 module.exports = {
   carrito: (req, res) => {
-    const categoryCart = 3;
-
-    db.Product.findAll({
-      include: ["images"],
-
-      where: {
-        category_id: categoryCart,
-      },
-    }).then((carrito) =>
-      res.render("productCart", {
-        title: "Lista de productos",
+      return res.render("productCart", {
         title: "Carrito",
-        carrito,
+        items : req.session.orderCart.items,
+        total :  req.session.orderCart.total,
       })
-    );
   },
 };

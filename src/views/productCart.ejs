@@ -4,27 +4,27 @@
   <body class="body_carrito" >
     <%- include('./partials/header') %>
     <main class="carrito_main">
-        <section class="carrito_main_section">
-            <% carrito.forEach(({title,images,description,price,discount,id}) => { %>
+        <section class="carrito_main_section" id="cart-items">
+            <% items.forEach(({product, quantity}) => { %>
                 <article class="carrito_main_section_article">
                     <div class="carrito_main_section_article_imagen">
-                        <img src="/imagenes/imageProducts/<%= images[0].name %>" alt="">
+                        <img src="/imagenes/imageProducts/<%= product.images[0].name %>" alt="">
                     </div>
                     <div class="carrito_main_section_article_datos">
                         <div>
-                            <p><%= title %></p>
+                            <p><%= product.title %></p>
                         </div>
                         <div>
                             <form action="">
-                            <button class="menos">- </button>
-                            <button class="numero"> 1 </button>
-                            <button class="mas"> +</button>
+                            <button class="menos" onclick="event.preventDefault(); removeCartItem('<%=product.id%>')">- </button>
+                            <button class="numero"><%= quantity %> </button>
+                            <button class="mas" onclick="event.preventDefault(); addCartItem('<%=product.id%>')"> +</button>
                             </form>
                         </div>
                     </div>
                     <div class="carrito_main_section_article_precio">
-                        <h2><i class="fa-regular fa-trash-can"></i></h2>
-                        <P>$<%= price %></P>
+                        <h2 onclick="removeCartAllItem('<%=product.id%>')"><i class="fa-regular fa-trash-can"></i></h2>
+                        <P>$<%= product.price %></P>
                     </div>
                 </article>
             <% }) %>
@@ -33,13 +33,10 @@
           
         </section>
         <section class="carrito_main_section">
-            <div class="carrito_main_section_subtotal">
-                <h5>SUBTOTAL:</h5>
-                <h5>$ 11531</h5>
-            </div>
+           
             <div class="carrito_main_section_total">
                 <h3>TOTAL:</h3>
-                <h3>$11531 </h3>
+                <h3 id="total-order">$ <%= total  %></h3>
             </div>
             <div class="carrito_main_section_cuotas">
                 <p>O hasta 3 cuotas de $3846.66</p>
