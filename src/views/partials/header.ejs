@@ -1,68 +1,74 @@
 <header class=<%=locals.userLogin && userLogin.rol==="admin" ? "body__header2" : "body__header" %> >
     <section class="body__header__navegacion">
         <nav class="body__header__navegacion--menuBurguer">
-           
-            
-                <nav class="nadvarH">
-                    <div class="">
-                        <ul>
-                            <li><a href="/">Inicio</a></li>
-                            <!--   <li><a href="/products/edit">Editar</a></li> -->
-                            <% if (locals.userLogin&&(locals.userLogin.rol==="admin" )) { %>
-                                <li><a href="/products/productAdd">Crear</a></li>
-                                <% } %>
-            
-                
-                  
-                        
-                
-                            <li><a href="/iluminacion">Iluminacion</a></li>
-                            <li><a href="/alarmas">Alarmas y Sensores</a></li>
-                            <li><a href="/electronica">electronica, audio y video</a></li>
-                        
-                  
-                            <li><a href="/products">Lista de productos</a></li>
-                <!--                 <li><a href="">¿Quienes somos?</a></li>
-                -->            </ul>
-                    </div>
-                    <section class="utilidades-h">
-                        <% if (locals.userLogin) { %>
-                                   
+
+
+            <nav class="nadvarH">
+                <div class="">
+                    <ul>
+                        <li><a href="/">Inicio</a></li>
+                        <!--   <li><a href="/products/edit">Editar</a></li> -->
+                        <% if (locals.userLogin&&(locals.userLogin.rol==="admin" )) { %>
+                            <li><a href="/products/productAdd">Crear</a></li>
+                            <% } %>
+
+
+
+
+
+                                <li><a href="/iluminacion">Iluminacion</a></li>
+                                <li><a href="/alarmas">Alarmas y Sensores</a></li>
+                                <li><a href="/electronica">electronica, audio y video</a></li>
+
+
+                                <li><a href="/products">Lista de productos</a></li>
+                                <!--                 <li><a href="">¿Quienes somos?</a></li>
+                -->
+                    </ul>
+                </div>
+                <section class="utilidades-h">
+                    <% if (locals.userLogin) { %>
+
+                        <div class="icono-h">
+                            <a href="/users/profile"><img src="/imagenes/imageUsers/<%= locals.userLogin.avatar %> "
+                                    alt=""></a>
+
+                            <a href="/users/profile">
+                                <p>Mi cuenta</p>
+                            </a>
+
+                        </div>
+                        <div class="icono-h">
+                            <a href="/users/logout">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="/users/logout">
+                                <p>Salir</p>
+                            </a>
+
+
+                        </div>
+
+                        <% }else{ %>
                             <div class="icono-h">
-                                <a href="/users/profile"><img src="/imagenes/imageUsers/<%= locals.userLogin.avatar %> " alt=""></a>
-                                
-                                <a href="/users/profile"><p>Mi cuenta</p></a>
-                                
-                            </div>
-                            <div class="icono-h">
-                                <a href="/users/logout">
-                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+                                <a href="/users/login">
+                                    <p> Mi cuenta</p>
                                 </a>
-                                <a href="/users/logout">
-                                    <p>Salir</p>
-                                </a>
-                              
-                
+
                             </div>
-                
-                            <% }else{ %>
-                                <div class="icono-h">
-                                    
-                                    <a href="/users/login"><i class="fa-solid fa-user"></i></a>
-                                    <a href="/users/login"><p> Mi cuenta</p></a>
-                                    
-                                </div>
-                                <% } %>
-                    </section>
-                    <div >
-                        <button class="bbbt" id="salirH"><i class="fa-solid fa-square-xmark"></i></button>
-                    </div>
-            
-                    
-            
-                </nav>
-            
-              <button class="menuH"> <i class="fa-solid fa-bars"></i></button> 
+                            <% } %>
+                </section>
+                <div>
+                    <button class="bbbt" id="salirH"><i class="fa-solid fa-square-xmark"></i></button>
+                </div>
+
+
+
+            </nav>
+
+            <button class="menuH"> <i class="fa-solid fa-bars"></i></button>
             </div>
         </nav>
     </section class="body__header__navegacion">
@@ -80,16 +86,18 @@
 
         <div class="aa2">
             <ul>
-                <li><a href="">Iluminacion</a></li>
-                <li><a href="">Alarmas y Sensores</a></li>
-                <li><a href="">Electronica, Audio y Video</a></li>
+                <li><a href="/iluminacion">Iluminacion</a></li>
+                <li><a href="/alarmas">Alarmas y Sensores</a></li>
+                <li><a href="/electronica">electronica, audio y video</a></li>
+
             </ul>
         </div>
         <div class="aa3">
             <ul>
                 <li><a href="/products">Lista de Productos</a></li>
-<!--                 <li><a href="">¿Quienes somos?</a></li>
- -->            </ul>
+                <!--                 <li><a href="">¿Quienes somos?</a></li>
+ -->
+            </ul>
         </div>
 
 
@@ -144,5 +152,5 @@
                 <% } %>
 
     </section>
-<script src="/javascript/header.js"></script>
+    <script src="/javascript/header.js"></script>
 </header>
