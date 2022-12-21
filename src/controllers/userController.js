@@ -94,7 +94,7 @@ module.exports = {
               }
             ]
           }).then(order => {
-            console.log('ORDER', order);
+           
             if (order) {
               req.session.orderCart = {
                 id: order.id,
@@ -115,6 +115,8 @@ module.exports = {
                 }
               })
             }
+            console.log(req.session.orderCart);
+
             return res.redirect("/")
           })
         })
