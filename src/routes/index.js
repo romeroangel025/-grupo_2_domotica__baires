@@ -9,5 +9,9 @@ router.get('/search', search)
 router.get('/iluminacion', iluminacion)
 router.get('/alarmas', alarmas)
 router.get('/electronica', electronica)
-
+router.get('/grupo',(req,res) => {
+    res.render('grupo',{
+        title:'GRUPO-2'
+    })
+} )
 module.exports = router;

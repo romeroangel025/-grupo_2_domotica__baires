@@ -91,4 +91,8 @@ margin: 10px;
         display: flex;
         justify-content: space-between;
     }  
+    .grupo-2{
+        list-style: none;
+        text-decoration: none;
+    }
 }
