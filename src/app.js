@@ -61,7 +61,7 @@ app.use("/APIs/auth", authRegister);
 app.use("/APIs/users", usersRouterAPIs);
 app.use("/APIs/products", productsRouterAPIs);
 app.use('/APIs/main', mainRouterAPIs);
-
+app.use('/APIs/cart', require('./routes/APIs/cart'));
 
 
 // catch 404 and forward to error handler

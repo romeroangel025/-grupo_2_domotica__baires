@@ -79,12 +79,7 @@ right: 8px;
 top: 2px;
     
 }
-.body__header__logo{
 
-}
-.body__header__logo img{ 
-width: 50px;
-}
 .body__header__utilidades{
     display: flex;
     justify-content: center;
