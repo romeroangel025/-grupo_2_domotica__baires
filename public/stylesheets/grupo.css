@@ -1,6 +1,12 @@
 .grupo_main{
     display: none;
 }
+
+.body__header__logo img{ 
+width: 120px;
+margin: auto;
+
+}
 @media(min-width:1024px){
 
     .grupo_main{
@@ -58,6 +64,14 @@
     }
     .grupo_main_section_div-datos h3{
     
+    }
+
+    .body__header__logo{
+        width: 180px;
+    }
+    .body__header__logo img{ 
+    width: 180px;
+    height: 50px;
     }
           
 }
