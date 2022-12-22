@@ -50,7 +50,11 @@
                         </form>
                     </div>
                     <div>
-                        <button type="submit" class="agregar">Agregar al carrito</button>
+                        <% if (locals.userLogin&&(locals.userLogin.rol==="user" )) { %>
+                            <button type="submit" class="comprar" onclick="addCartItem('<%=product.id%>')">Comprar</button>
+                            <% }else{ %>
+                                <button type="submit" class="comprar">Comprar</button>
+                                <% }%>
                     </div>
                 </div>
                 <div>
