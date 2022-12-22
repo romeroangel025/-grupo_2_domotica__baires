@@ -64,7 +64,11 @@
                   <h5> <i class="fa-solid fa-credit-card"></i>  3 cuotas sin interés de  <%= toThousand((price / 3).toFixed(0)) %> </h5>
               </div>
               <div class="index_main_section_article_div-button">
+                <% if (locals.userLogin&&(locals.userLogin.rol==="user" )) { %>
                   <button type="submit" class="comprar" onclick="addCartItem('<%=id%>')">Comprar</button>
+                  <% }else{ %>
+                      <button type="submit" class="comprar">Comprar</button>
+                      <% }%>
                   <a href="/products/detail/<%= id %>"><button type="menu" class="ver">Ver</button></a>
               </div>
           </article>
