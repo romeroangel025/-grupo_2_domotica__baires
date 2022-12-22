@@ -107,6 +107,7 @@ module.exports = {
                     ...req.session.orderCart.items,
                     cartItem
                 ]
+                
                }
 
             }
@@ -174,7 +175,7 @@ module.exports = {
                     total,
                     items : itemsModify
                    }
-
+                   console.log(items)
             }else{
               
                    await db.Cart.destroy({
