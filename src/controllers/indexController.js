@@ -24,7 +24,7 @@ module.exports = {
     });
 
     res.render("index", {
-      title: "Articulos de iluminacion",
+      title: "Home",
       destacados,
       ofertas,
       toThousand,
