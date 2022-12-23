@@ -22,12 +22,13 @@ module.exports = {
         createdAt: new Date(),
         updateAt: new Date(),
       })
-        .then((user) => {
-          const { id, name, surname, rol, avatar } = user;
+        .then((user) => {/* 
+          const { id, name, surname, email, rol, avatar } = user;
           req.session.userLogin = {
             id,
             name,
             surname,
+            email,
             rol,
             avatar,
           };
@@ -37,8 +38,54 @@ module.exports = {
               maxAge: 1000 * 60,
             });
           }
-          res.redirect("/users/profile");
-        })
+          //carrito
+
+          db.Order.findOne({
+            where: {
+              users_id: req.session.userLogin.id,
+              statusId: 1
+            },
+            include: [
+              {
+                association: 'items',
+                atrributes: ['id', 'quantity'],
+                include: [
+                  {
+                    association: 'product',
+                    atrributes: ['id', 'title', 'price', 'discount'],
+                    include: ['images']
+                  }
+                ]
+              }
+            ]
+          }).then(order => {
+           
+            if (order) {
+              req.session.orderCart = {
+                id: order.id,
+                total: order.total,
+                items: order.items
+              }
+            } else {
+              db.Order.create({
+                total: 0,
+                users_id: req.session.userLogin.id,
+                statusId: 1
+              }).then(order => {
+
+                req.session.orderCart = {
+                  id: order.id,
+                  total: order.total,
+                  items: items=[]
+                }
+              })
+            }
+            console.log("items 118",req.session.orderCart); 
+
+            
+          })
+        }*/ return res.redirect("/users/login")}
+        )
         .catch((error) => console.log(error));
     } else {
       return res.render("register", {
@@ -111,11 +158,11 @@ module.exports = {
                 req.session.orderCart = {
                   id: order.id,
                   total: order.total,
-                  items: []
+                  items:[]
                 }
               })
             }
-            console.log(req.session.orderCart);
+            
 
             return res.redirect("/")
           })

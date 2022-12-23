@@ -17,8 +17,8 @@
           <form class="form__label" action="/products/store" enctype="multipart/form-data" method="POST" id="formProductAdd">
             <label for="nombre">Nombre del producto</label>
             <input  class="input-valid" type="text" id='name' name="title" value="<%= locals.old && old.title ? old.title : null %>" />
-            <p><%= locals.errors && errors.title ? errors.title.msg : null%></p>
-            <p id="nameMsg"></p>
+            <p id="nameMsg"><%= locals.errors && errors.title ? errors.title.msg : null%></p>
+           
 
             <label for="descripcion">Descripción del producto</label>
             <textarea name="description" id="description" value="<%= locals.old && old.title ? old.title : null %>" style="resize: none" ></textarea>
@@ -42,9 +42,8 @@
 
             <label for="precio">Precio</label>
             <input  class="input-valid" type="number" id="price" name="price" value="<%= locals.old && old.price ? old.price : null %>" />
-            <p><%= locals.errors && errors.price ? errors.price.msg : null%></p>
-            <p id="priceMsg"></p>
-
+            <p id="priceMsg"><%= locals.errors && errors.price ? errors.price.msg : null%></p>
+           
             <label for="discount">Descuento</label>
             <input  class="input-valid" type="number" id="discount"  name="discount" value="<%= locals.old && old.discount ? old.discount : null %>" />
             <p><%= locals.errors && errors.discount ? errors.discount.msg : null%></p>
