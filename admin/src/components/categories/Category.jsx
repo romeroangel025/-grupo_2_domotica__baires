@@ -1,11 +1,11 @@
 import React from 'react'
 
-export const Category = ({ name }) => {
+export const Category = ({ title }) => {
     return (
         <div className="col-lg-6 mb-4">
             <div className="card bg-dark text-white shadow">
                 <div className="card-body">
-                    {name}
+                    {title}
                 </div>
             </div>
         </div>

@@ -14,6 +14,7 @@ export const Categories = () => {
 
         UseFetch('/categories')
             .then(({ data }) => {
+           
                 setState({
                     loading: false,
                     categories: data
@@ -38,8 +39,9 @@ export const Categories = () => {
                                 ?
                                 <p>Cargando...</p>
                                 :
-                                state.categories.map((category, index) => (
-                                    <Category {...category} key={category.name + index}/>
+                                state.categories?.map((category, index) => (
+
+                                    <Category {...category} key={category + index}/>
                                 ))
 
 

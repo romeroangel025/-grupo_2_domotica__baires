@@ -27,7 +27,7 @@ export const Metrics = () => {
 
     useEffect(() => {
        
-        UseFetch('/totals')
+        UseFetch('/main/totals')
             .then(({data}) => {
                 setState({
                     products : {

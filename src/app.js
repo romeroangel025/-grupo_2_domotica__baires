@@ -9,6 +9,8 @@ const session = require('express-session');
 
 const localsUserCheck = require('./middlewares/localsUserCheck')
 const cookieCheck = require('./middlewares/cookieCheck');
+const cors = require("cors")
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -23,6 +25,7 @@ let authRegister = require('./routes/APIs/auth');
 const usersRouterAPIs = require("./routes/APIs/users");
 const productsRouterAPIs = require("./routes/APIs/products");
 const mainRouterAPIs = require("./routes/APIs/mainAPI");
+const categoriesApiRouter = require("./routes/APIs/apiCategories");
 var app = express();
 
 app.use(express.static("public"));
@@ -34,6 +37,7 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
@@ -44,6 +48,8 @@ app.use(session({
   resave:false,
   saveUninitialized:true
 }));
+
+app.use(cors())
 
 app.use(cookieCheck);
 app.use(localsUserCheck);
@@ -63,6 +69,7 @@ app.use("/APIs/products", productsRouterAPIs);
 app.use('/APIs/main', mainRouterAPIs);
 app.use('/APIs/cart', require('./routes/APIs/cart'));
 
+app.use("/APIs/categories", categoriesApiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
