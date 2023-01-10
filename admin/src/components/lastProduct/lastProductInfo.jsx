@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const LastProductInfo = ({ title, price, discount, description, category_id, images }) => {
-  
+export const LastProductInfo = (product) => {
+  console.log(product);
+  console.log(product.data);
+  let {title, price, discount, description, category_id, images }= product.data
   return (
     
     <div className="card">
@@ -9,7 +11,7 @@ export const LastProductInfo = ({ title, price, discount, description, category_
         <h5>Información</h5>
     </div>
     <div className="card-body">
-        <img className='img-thumbnail' src="" alt=""/>
+    <img className='img-thumbnail' src={images && images[0].urlImage} alt=""/>
         <ul className="list-group list-group-flush">
             <li className="list-group-item">
                 <label>Nombre:</label>

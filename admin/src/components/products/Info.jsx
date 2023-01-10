@@ -9,7 +9,7 @@ export const Info = ({ title, price, discount, description, category_id, images 
                 <h5>Información</h5>
             </div>
             <div className="card-body">
-                <img className='img-thumbnail' src="" alt=""/>
+                <img className='img-thumbnail' src={images && images[0].urlImage} alt=""/>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item">
                         <label>Nombre:</label>

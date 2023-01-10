@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { UseFetch } from '../../hooks/UseFetch';
-import { LastProductInfo } from './LastProductInfo';
+import {LastProductInfo} from "./LastProductInfo"
 
 
 export const LastProduct = () => {
@@ -15,11 +15,11 @@ export const LastProduct = () => {
       useEffect(() => {
         UseFetch("/products/detail/new")
           .then(({ meta, data }) => {
-          
+          console.log(data.product[0]);
             if (meta.ok) {
               setLastProducts({
                 loading: false,
-                data,
+                data:data.product[0],
               });
             }
           })

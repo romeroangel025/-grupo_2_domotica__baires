@@ -7,6 +7,7 @@ module.exports = {
             let categories = await db.Category.findAll({
                 attributes: ["id", "title"],
                 order: ["title"],
+                include:["products"]
               });
 
             return res.status(200).json({
