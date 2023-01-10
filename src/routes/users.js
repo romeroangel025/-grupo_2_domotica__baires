@@ -21,4 +21,5 @@ router.get('/profileEdit', profileEdit)
 router.put('/profileEdit',upload.single('avatar'),profileEditValidation,profileEditUpdate)
 
 
+
 module.exports = router;

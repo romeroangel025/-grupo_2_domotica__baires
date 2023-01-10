@@ -177,6 +177,47 @@ if(!products.length){
       } catch (err) {
         sendJsonError(err, res);
       }
+  },
+  newest: async (req,res) => {
+    let options = {
+      include: [
+        {
+          association: "images",
+          attributes: {
+            include: [
+              literalQueryUrlImage(req, "images.name", "urlImage"), //preguntar por los parametros
+            ],
+            exclude: ["updatedAt", "createdAt", "deletedAt"],
+          },
+        },
+      ],
+      attributes: {
+        exclude: ["updatedAt", "deletedAt"],
+      },
+      order : [
+        ['createdAt', 'DESC']
+      ],
+      limit: 1
+    };
+
+    try {
+
+      let product = await db.Product.findAll(options);
+
+      if(product.length){
+        return res.status(200).json({
+          meta: {
+            ok: true,
+            status: 200,
+          },
+          data: {product},
+        })
+      }
+      
+    } catch (error) {
+      sendJsonError(error, res);
+      
+    }
   }
 };
 

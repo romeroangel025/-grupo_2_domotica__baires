@@ -1,6 +1,6 @@
 // ************ Require's ************
 const express = require("express");
-const { image,remove,update } = require("../../controllers/APIs/usersControllers");
+const { image,remove,update,usersList } = require("../../controllers/APIs/usersControllers");
 
 
 
@@ -28,5 +28,7 @@ router
 
   /* PREVIEW IMAGE */
   .get("/image/:img", image);
+
+router.get("/userList", usersList);
 
 module.exports = router;

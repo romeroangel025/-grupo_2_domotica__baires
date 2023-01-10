@@ -12,7 +12,8 @@ const { store,
     update,
     destroy,
     all,
-    image } = require("../../controllers/APIs/productsController");
+    image, 
+    newest} = require("../../controllers/APIs/productsController");
 const checkToken = require("../../middlewares/checkToken");
 
 /* /products */
@@ -34,6 +35,7 @@ router
 /*** GET ONE PRODUCT ***/
  .get("/:id", detail)
 
+ .get('/detail/new', newest)
 /*** STORAGE PRODUCT ***/
 //.post("/",checkToken, uploadImageProduct.array("images"), store)
 /* 

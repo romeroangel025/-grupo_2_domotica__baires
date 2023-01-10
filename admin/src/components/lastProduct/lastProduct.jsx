@@ -15,6 +15,7 @@ export const LastProduct = () => {
       useEffect(() => {
         UseFetch("/products/detail/new")
           .then(({ meta, data }) => {
+          
             if (meta.ok) {
               setLastProducts({
                 loading: false,
@@ -39,7 +40,7 @@ export const LastProduct = () => {
           :
           
             <LastProductInfo {...lastProduct}/>
-       
+    
        }
     </div>
 </div>

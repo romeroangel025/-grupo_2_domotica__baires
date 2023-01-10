@@ -79,4 +79,33 @@ module.exports = {
       });
     }
   },
+    usersList: async (req, res) => {
+        try {
+            let users = await db.User.findAll({
+                attributes: {
+                    exclude: [
+                        "updatedAt",
+                        "createdAt",
+                        "rol",
+                        "password",
+                        
+                    ],
+                },
+            });
+            let {count} = await db.User.findAndCountAll()
+
+            if (users.length) {
+                return res.status(200).json({
+                    ok: true,
+                    data: {
+                        data: users,
+                        totalUser: count
+                    }
+                });
+            }
+            throw new Error("No hay usuarios registrados en la base de datos.");
+        } catch (error) {
+            console.log(error);
+        }
+    },
 };

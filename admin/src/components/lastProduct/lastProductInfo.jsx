@@ -1,16 +1,32 @@
 import React from 'react'
 
-export const LastProductInfo = ({data}) => {
-    let dataOfProduct = data.product[0];
+export const LastProductInfo = ({ title, price, discount, description, category_id, images }) => {
+  
   return (
     
+    <div className="card">
+    <div className="card-header">
+        <h5>Información</h5>
+    </div>
     <div className="card-body">
-            <div className="text-center">
-                <h5>{dataOfProduct.name}</h5>
-                <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "15rem" }} src={dataOfProduct.images[0].file} alt=" Star Wars - Mandalorian " />
-            </div>
-            <p>{dataOfProduct.description}</p>
-        </div>
+        <img className='img-thumbnail' src="" alt=""/>
+        <ul className="list-group list-group-flush">
+            <li className="list-group-item">
+                <label>Nombre:</label>
+                <p className='m-0'><b>{title}</b></p>
+            </li>
+            
+            <li className="list-group-item">
+                <label>Categoría:</label>
+                <p className='m-0'><b>{category_id}</b></p>
+            </li>
+            <li className="list-group-item">
+                <label>Descripción:</label>
+                <p className='m-0'><b>{description}</b></p>
+            </li>
+        </ul>
+    </div>
+</div>
   )
  
 }

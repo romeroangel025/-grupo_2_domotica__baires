@@ -122,7 +122,7 @@ module.exports = {
           }
           //carrito
 
-          db.Order.findOne({
+         /*  db.Order.findOne({
             where: {
               users_id: req.session.userLogin.id,
               statusId: 1
@@ -142,7 +142,25 @@ module.exports = {
             ]
           }).then(order => {
            
-            if (order) {
+            >>>>>>>>>>>>>>>>>>>>>>>><
+error al levantar el login 
+
+
+            Cannot add or update a child row: a foreign key constraint fails (`domotica_db`.`orders`, CONSTRAINT `Orders_statusId_foreign_idx` FOREIGN KEY (`statusId`) REFERENCES `statuses` (`id`))',
+[0]     sql: 'INSERT INTO `Orders` (`id`,`total`,`users_id`,`statusId`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?);',  
+[0]     parameters: [ 0, 3, 1, '2023-01-09 23:20:36', '2023-01-09 23:20:36' ]
+[0]   },
+[0]   sql: 'INSERT INTO `Orders` (`id`,`total`,`users_id`,`statusId`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?);',    
+[0]   parameters: [ 0, 3, 1, '2023-01-09 23:20:36', '2023-01-09 23:20:36' ],
+[0]   table: 'statuses',
+[0]   fields: [ 'statusId' ],
+[0]   value: 1,
+[0]   index: 'Orders_statusId_foreign_idx',
+[0]   reltype: 'child'
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>><
+            if (order) { // problema 
               req.session.orderCart = {
                 id: order.id,
                 total: order.total,
@@ -162,11 +180,11 @@ module.exports = {
                 }
               })
             }
-            
+             */
 
             return res.redirect("/")
           })
-        })
+       // })
         .catch((error) => console.log(error));
     } else {
       return res.render("login", {
